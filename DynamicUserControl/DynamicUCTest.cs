@@ -21,7 +21,6 @@ using System.Windows.Forms;
 //RentDate
 //ExceptReturnDate
 //Pirce
-//
 
 namespace Library
 {
