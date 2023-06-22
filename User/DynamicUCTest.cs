@@ -25,6 +25,7 @@ using System.Windows.Forms;
 //need to do
 //borrow form Db
 //buyerhistory same name validation
+//add price and quantity to bookdetail db
 
 namespace Library
 {
