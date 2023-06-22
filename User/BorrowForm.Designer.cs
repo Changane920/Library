@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pboBorrow = new System.Windows.Forms.PictureBox();
             this.lblBorrow = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.dtpBorrow = new System.Windows.Forms.DateTimePicker();
             this.pboPanel = new System.Windows.Forms.Panel();
             this.dtpReturn = new System.Windows.Forms.DateTimePicker();
             this.lblReturn = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblIssue = new System.Windows.Forms.Label();
+            this.txtIssue = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pboBorrow)).BeginInit();
             this.pboPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pboBorrow
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(37, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pboBorrow.Location = new System.Drawing.Point(37, 39);
+            this.pboBorrow.Name = "pboBorrow";
+            this.pboBorrow.Size = new System.Drawing.Size(120, 150);
+            this.pboBorrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboBorrow.TabIndex = 0;
+            this.pboBorrow.TabStop = false;
             // 
             // lblBorrow
             // 
@@ -87,7 +90,7 @@
             // pboPanel
             // 
             this.pboPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.pboPanel.Controls.Add(this.pictureBox1);
+            this.pboPanel.Controls.Add(this.pboBorrow);
             this.pboPanel.Controls.Add(this.btnConfirm);
             this.pboPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.pboPanel.Location = new System.Drawing.Point(0, 0);
@@ -115,29 +118,59 @@
             this.lblReturn.TabIndex = 5;
             this.lblReturn.Text = "Return Date";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Bisque;
-            this.panel1.Location = new System.Drawing.Point(652, 260);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 215);
-            this.panel1.TabIndex = 7;
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Bisque;
-            this.panel2.Location = new System.Drawing.Point(413, 346);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.panel2.Location = new System.Drawing.Point(695, 306);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 215);
             this.panel2.TabIndex = 8;
+            // 
+            // lblIssue
+            // 
+            this.lblIssue.AutoSize = true;
+            this.lblIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIssue.ForeColor = System.Drawing.Color.White;
+            this.lblIssue.Location = new System.Drawing.Point(267, 202);
+            this.lblIssue.Name = "lblIssue";
+            this.lblIssue.Size = new System.Drawing.Size(119, 25);
+            this.lblIssue.TabIndex = 9;
+            this.lblIssue.Text = "Book Issue";
+            // 
+            // txtIssue
+            // 
+            this.txtIssue.Location = new System.Drawing.Point(413, 180);
+            this.txtIssue.Multiline = true;
+            this.txtIssue.Name = "txtIssue";
+            this.txtIssue.Size = new System.Drawing.Size(200, 72);
+            this.txtIssue.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.panel1.Location = new System.Drawing.Point(620, 362);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 215);
+            this.panel1.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.panel3.Location = new System.Drawing.Point(739, 223);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 215);
+            this.panel3.TabIndex = 9;
             // 
             // BorrowForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtIssue);
+            this.Controls.Add(this.lblIssue);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dtpReturn);
             this.Controls.Add(this.lblReturn);
             this.Controls.Add(this.pboPanel);
@@ -145,8 +178,10 @@
             this.Controls.Add(this.lblBorrow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BorrowForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrowForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.BorrowForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pboBorrow)).EndInit();
             this.pboPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,14 +190,17 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pboBorrow;
         private System.Windows.Forms.Label lblBorrow;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.DateTimePicker dtpBorrow;
         private System.Windows.Forms.Panel pboPanel;
         private System.Windows.Forms.DateTimePicker dtpReturn;
         private System.Windows.Forms.Label lblReturn;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblIssue;
+        private System.Windows.Forms.TextBox txtIssue;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
     }
 }

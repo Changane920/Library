@@ -122,12 +122,6 @@
     <Compile Include="Admin\UpdateOrderedBook.Designer.cs">
       <DependentUpon>UpdateOrderedBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\UpdateUserControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\UpdateUserControl.Designer.cs">
-      <DependentUpon>UpdateUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\UpdateViewBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UpdateOrderedBook.resx">
       <DependentUpon>UpdateOrderedBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\UpdateUserControl.resx">
-      <DependentUpon>UpdateUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UpdateViewBook.resx">
       <DependentUpon>UpdateViewBook.cs</DependentUpon>

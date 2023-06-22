@@ -1,4 +1,5 @@
 ﻿using Library.DynamicUserControl;
+using Library.User;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -162,7 +163,8 @@ namespace Library
         private void btnBorrow_Click(object sender, EventArgs e)
         {
             getBookID();
-
+            BorrowForm borrorwForm = new BorrowForm(dataStore);
+            borrorwForm.ShowDialog();
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
