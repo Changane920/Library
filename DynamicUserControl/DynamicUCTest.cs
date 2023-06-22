@@ -20,11 +20,12 @@ using System.Windows.Forms;
 //BookName
 //RentDate
 //ExceptReturnDate
-//Pirce
+//Pirce (or not)
 
 //need to do
 //borrow form Db
 //buyerhistory same name validation
+//sort file
 
 namespace Library
 {
