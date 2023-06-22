@@ -22,6 +22,10 @@ using System.Windows.Forms;
 //ExceptReturnDate
 //Pirce
 
+//need to do
+//borrow form Db
+//buyerhistory same name validation
+
 namespace Library
 {
     public partial class DynamicUCTest : Form
