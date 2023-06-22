@@ -118,49 +118,55 @@ namespace Library
 
             if (string.IsNullOrEmpty(username)) //username null validation
             {
-                MessageBox.Show("Please enter your Name!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your Name!", "Signup Username Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUserName.Focus();
                 return;
             } 
             else if (string.IsNullOrEmpty(email)) //email null validation
             {
-                MessageBox.Show("PLease enter your Email!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("PLease enter your Email!", "Signup Email Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtEmail.Focus();
                 return;
             }
             else if (string.IsNullOrEmpty(password)) //password null validation
             {
-                MessageBox.Show("PLease enter your Password!!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("PLease enter your Password!!", "Signup Password Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPass.Focus();
                 return;
             }
             else if (string.IsNullOrEmpty(cpassword)) //check password null validation
             {
-                MessageBox.Show("PLease enter your Re-password!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("PLease enter your Re-password!", "Signup Re-password Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCheckPass.Focus();
+                return;
+            }
+            else if (string.IsNullOrEmpty(phone)) //phone number null validation
+            {
+                MessageBox.Show("PLease enter your Phone Number!", "Signup Phone Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPhone.Focus();
                 return;
             }
             else if (!Regex.IsMatch(username, namePattern)) //username format validation
             {
-                MessageBox.Show("At least 6 characters long & At most 12 characters long.", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("At least 6 characters long & At most 12 characters long.", "Signup Username Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUserName.Focus();
                 return;
             }
             else if (!Regex.IsMatch(email, emailPattern)) //email format validation
             {
-                MessageBox.Show("Unvalid Email","Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Unvalid Email","Signup Email Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtEmail.Focus();
                 return;
             }
             else if (!Regex.IsMatch(password, passPattern)) //password format validation
             {
-                MessageBox.Show("At least 8 characters long && at most 15 characters long. \n Contain at least one Uppercase letter. \n Contain at least one digit. \n Contain at least special one character.", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("At least 8 characters long && at most 15 characters long. \n Contain at least one Uppercase letter. \n Contain at least one digit. \n Contain at least special one character.", "Signup Password Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPass.Focus();
                 return;
             }
             else if (password != cpassword) // password & checkpassowrd match validation
             {
-                MessageBox.Show("Password and Re-password doesn't match.", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Password and Re-password doesn't match.", "Signup Password Match Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCheckPass.Focus();
             }
             else
@@ -170,7 +176,7 @@ namespace Library
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@password", password);
-                cmd.Parameters.AddWithValue("@phone", int.Parse(phone));
+                cmd.Parameters.AddWithValue("@phone", phone);
                 if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
                 {
                     MessageBox.Show("Create Account Success!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Information);

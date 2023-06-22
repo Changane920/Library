@@ -168,6 +168,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\BorrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\BorrowForm.Designer.cs">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\BuyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="User\BorrowForm.resx">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\BuyForm.resx">
       <DependentUpon>BuyForm.cs</DependentUpon>
     </EmbeddedResource>

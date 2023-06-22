@@ -25,7 +25,6 @@ using System.Windows.Forms;
 //need to do
 //borrow form Db
 //buyerhistory same name validation
-//sort file
 
 namespace Library
 {
