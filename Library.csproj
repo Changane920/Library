@@ -128,12 +128,6 @@
     <Compile Include="Admin\UpdateViewBook.Designer.cs">
       <DependentUpon>UpdateViewBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\User Control\BookDetail.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\User Control\BookDetail.Designer.cs">
-      <DependentUpon>BookDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\User Control\BuyerHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -198,9 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UpdateViewBook.resx">
       <DependentUpon>UpdateViewBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\User Control\BookDetail.resx">
-      <DependentUpon>BookDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\User Control\BuyerHistory.resx">
       <DependentUpon>BuyerHistory.cs</DependentUpon>

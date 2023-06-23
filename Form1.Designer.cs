@@ -63,10 +63,10 @@
             // pboProfile
             // 
             this.pboProfile.Image = ((System.Drawing.Image)(resources.GetObject("pboProfile.Image")));
-            this.pboProfile.Location = new System.Drawing.Point(202, 32);
+            this.pboProfile.Location = new System.Drawing.Point(202, 11);
             this.pboProfile.Margin = new System.Windows.Forms.Padding(2);
             this.pboProfile.Name = "pboProfile";
-            this.pboProfile.Size = new System.Drawing.Size(156, 112);
+            this.pboProfile.Size = new System.Drawing.Size(156, 133);
             this.pboProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboProfile.TabIndex = 0;
             this.pboProfile.TabStop = false;
@@ -150,7 +150,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(531, -1);

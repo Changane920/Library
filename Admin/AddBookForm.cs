@@ -20,11 +20,7 @@ namespace Library.DynamicUserControl
 
         private void AddBookForm_Load(object sender, EventArgs e)
         {
-            panel2.BackColor = Color.FromArgb(70, Color.White);
-            lblBookName.BackColor = Color.FromArgb(70, Color.White);
-            lblAuthorName.BackColor = Color.FromArgb(70, Color.White);
-            lblGenre.BackColor = Color.FromArgb(70, Color.White);
-            lblReleaseYear.BackColor = Color.FromArgb(70, Color.White);
+
         }
 
         private void btnUpload_Click_1(object sender, EventArgs e)

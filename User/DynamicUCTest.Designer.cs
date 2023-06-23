@@ -29,21 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.detailPanel = new System.Windows.Forms.Panel();
-            this.btnBorrow = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblRYear = new System.Windows.Forms.Label();
-            this.btnBuy = new System.Windows.Forms.Button();
-            this.lblReleaseYear = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lblBookName = new System.Windows.Forms.Label();
-            this.lblGenre2 = new System.Windows.Forms.Label();
             this.lblAuthorName = new System.Windows.Forms.Label();
+            this.lblRYear = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblGenre2 = new System.Windows.Forms.Label();
             this.lblGenre = new System.Windows.Forms.Label();
             this.lblAName = new System.Windows.Forms.Label();
+            this.lblReleaseYear = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBorrow = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.detailPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,158 +57,226 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.linkLabelLogout);
             this.panel1.Controls.Add(this.detailPanel);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(324, 0);
+            this.panel1.Location = new System.Drawing.Point(294, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(611, 450);
+            this.panel1.Size = new System.Drawing.Size(639, 534);
             this.panel1.TabIndex = 0;
+            // 
+            // linkLabelLogout
+            // 
+            this.linkLabelLogout.ActiveLinkColor = System.Drawing.Color.LightCoral;
+            this.linkLabelLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.linkLabelLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelLogout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.linkLabelLogout.Location = new System.Drawing.Point(529, 9);
+            this.linkLabelLogout.Name = "linkLabelLogout";
+            this.linkLabelLogout.Size = new System.Drawing.Size(107, 30);
+            this.linkLabelLogout.TabIndex = 13;
+            this.linkLabelLogout.TabStop = true;
+            this.linkLabelLogout.Text = "Logout";
+            this.linkLabelLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogout_LinkClicked);
             // 
             // detailPanel
             // 
-            this.detailPanel.Controls.Add(this.btnBorrow);
-            this.detailPanel.Controls.Add(this.lblTitle);
-            this.detailPanel.Controls.Add(this.lblRYear);
-            this.detailPanel.Controls.Add(this.btnBuy);
-            this.detailPanel.Controls.Add(this.lblReleaseYear);
-            this.detailPanel.Controls.Add(this.lblBookName);
-            this.detailPanel.Controls.Add(this.lblGenre2);
-            this.detailPanel.Controls.Add(this.lblAuthorName);
-            this.detailPanel.Controls.Add(this.lblGenre);
-            this.detailPanel.Controls.Add(this.lblAName);
-            this.detailPanel.Location = new System.Drawing.Point(3, 231);
+            this.detailPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.detailPanel.Controls.Add(this.panel3);
+            this.detailPanel.Location = new System.Drawing.Point(222, 51);
             this.detailPanel.Name = "detailPanel";
-            this.detailPanel.Size = new System.Drawing.Size(596, 207);
+            this.detailPanel.Size = new System.Drawing.Size(414, 480);
             this.detailPanel.TabIndex = 11;
             // 
-            // btnBorrow
+            // panel3
             // 
-            this.btnBorrow.ForeColor = System.Drawing.Color.Black;
-            this.btnBorrow.Location = new System.Drawing.Point(110, 163);
-            this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrow.TabIndex = 11;
-            this.btnBorrow.Text = "Borrow";
-            this.btnBorrow.UseVisualStyleBackColor = true;
-            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(161, 19);
-            this.lblTitle.MaximumSize = new System.Drawing.Size(300, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(41, 20);
-            this.lblTitle.TabIndex = 3;
-            this.lblTitle.Text = "Title";
-            // 
-            // lblRYear
-            // 
-            this.lblRYear.AutoSize = true;
-            this.lblRYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRYear.Location = new System.Drawing.Point(161, 126);
-            this.lblRYear.Name = "lblRYear";
-            this.lblRYear.Size = new System.Drawing.Size(41, 20);
-            this.lblRYear.TabIndex = 10;
-            this.lblRYear.Text = "year";
-            // 
-            // btnBuy
-            // 
-            this.btnBuy.ForeColor = System.Drawing.Color.Black;
-            this.btnBuy.Location = new System.Drawing.Point(29, 163);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(75, 23);
-            this.btnBuy.TabIndex = 1;
-            this.btnBuy.Text = "Buy";
-            this.btnBuy.UseVisualStyleBackColor = true;
-            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
-            // 
-            // lblReleaseYear
-            // 
-            this.lblReleaseYear.AutoSize = true;
-            this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReleaseYear.Location = new System.Drawing.Point(25, 126);
-            this.lblReleaseYear.Name = "lblReleaseYear";
-            this.lblReleaseYear.Size = new System.Drawing.Size(114, 20);
-            this.lblReleaseYear.TabIndex = 9;
-            this.lblReleaseYear.Text = "Release Year:";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.panel3.Controls.Add(this.lblBookName);
+            this.panel3.Controls.Add(this.lblAuthorName);
+            this.panel3.Controls.Add(this.lblRYear);
+            this.panel3.Controls.Add(this.lblTitle);
+            this.panel3.Controls.Add(this.lblGenre2);
+            this.panel3.Controls.Add(this.lblGenre);
+            this.panel3.Controls.Add(this.lblAName);
+            this.panel3.Controls.Add(this.lblReleaseYear);
+            this.panel3.Location = new System.Drawing.Point(4, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(405, 268);
+            this.panel3.TabIndex = 13;
             // 
             // lblBookName
             // 
-            this.lblBookName.AutoSize = true;
-            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookName.Location = new System.Drawing.Point(25, 19);
+            this.lblBookName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblBookName.Location = new System.Drawing.Point(33, 11);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(101, 20);
+            this.lblBookName.Size = new System.Drawing.Size(124, 34);
             this.lblBookName.TabIndex = 4;
             this.lblBookName.Text = "Book Name:";
-            // 
-            // lblGenre2
-            // 
-            this.lblGenre2.AutoSize = true;
-            this.lblGenre2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre2.Location = new System.Drawing.Point(161, 95);
-            this.lblGenre2.Name = "lblGenre2";
-            this.lblGenre2.Size = new System.Drawing.Size(51, 20);
-            this.lblGenre2.TabIndex = 8;
-            this.lblGenre2.Text = "genre";
+            this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAuthorName
             // 
-            this.lblAuthorName.AutoSize = true;
-            this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthorName.Location = new System.Drawing.Point(25, 64);
+            this.lblAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuthorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblAuthorName.Location = new System.Drawing.Point(33, 74);
             this.lblAuthorName.Name = "lblAuthorName";
-            this.lblAuthorName.Size = new System.Drawing.Size(112, 20);
+            this.lblAuthorName.Size = new System.Drawing.Size(124, 34);
             this.lblAuthorName.TabIndex = 5;
             this.lblAuthorName.Text = "Author Name:";
+            this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblRYear
+            // 
+            this.lblRYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblRYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblRYear.Location = new System.Drawing.Point(183, 198);
+            this.lblRYear.Name = "lblRYear";
+            this.lblRYear.Size = new System.Drawing.Size(124, 34);
+            this.lblRYear.TabIndex = 10;
+            this.lblRYear.Text = "year";
+            this.lblRYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblTitle.Location = new System.Drawing.Point(183, 18);
+            this.lblTitle.MaximumSize = new System.Drawing.Size(300, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(212, 62);
+            this.lblTitle.TabIndex = 3;
+            this.lblTitle.Text = "Title";
+            // 
+            // lblGenre2
+            // 
+            this.lblGenre2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblGenre2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblGenre2.Location = new System.Drawing.Point(183, 137);
+            this.lblGenre2.Name = "lblGenre2";
+            this.lblGenre2.Size = new System.Drawing.Size(124, 34);
+            this.lblGenre2.TabIndex = 8;
+            this.lblGenre2.Text = "genre";
+            this.lblGenre2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblGenre
             // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(25, 95);
+            this.lblGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblGenre.Location = new System.Drawing.Point(33, 137);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(60, 20);
+            this.lblGenre.Size = new System.Drawing.Size(124, 34);
             this.lblGenre.TabIndex = 7;
             this.lblGenre.Text = "Genre:";
+            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAName
             // 
-            this.lblAName.AutoSize = true;
-            this.lblAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAName.Location = new System.Drawing.Point(161, 64);
+            this.lblAName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblAName.Location = new System.Drawing.Point(183, 81);
             this.lblAName.Name = "lblAName";
-            this.lblAName.Size = new System.Drawing.Size(102, 20);
+            this.lblAName.Size = new System.Drawing.Size(124, 34);
             this.lblAName.TabIndex = 6;
             this.lblAName.Text = "author name";
             // 
+            // lblReleaseYear
+            // 
+            this.lblReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReleaseYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblReleaseYear.Location = new System.Drawing.Point(33, 198);
+            this.lblReleaseYear.Name = "lblReleaseYear";
+            this.lblReleaseYear.Size = new System.Drawing.Size(137, 34);
+            this.lblReleaseYear.TabIndex = 9;
+            this.lblReleaseYear.Text = "Release Year:";
+            this.lblReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.panel2.Controls.Add(this.btnBorrow);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.btnBuy);
+            this.panel2.Location = new System.Drawing.Point(4, 54);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(212, 477);
+            this.panel2.TabIndex = 12;
+            // 
+            // btnBorrow
+            // 
+            this.btnBorrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.btnBorrow.Location = new System.Drawing.Point(34, 309);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(150, 37);
+            this.btnBorrow.TabIndex = 11;
+            this.btnBorrow.Text = "Borrow";
+            this.btnBorrow.UseVisualStyleBackColor = false;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 19);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.btnBuy.Location = new System.Drawing.Point(34, 247);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(150, 37);
+            this.btnBuy.TabIndex = 1;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 51);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(308, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(293, 483);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(12, 14);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(59, 20);
+            this.lblUserName.TabIndex = 0;
+            this.lblUserName.Text = "label1";
             // 
             // DynamicUCTest
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(935, 450);
+            this.ClientSize = new System.Drawing.Size(933, 534);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -212,9 +286,11 @@
             this.Load += new System.EventHandler(this.DynamicUCTest_Load);
             this.panel1.ResumeLayout(false);
             this.detailPanel.ResumeLayout(false);
-            this.detailPanel.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -223,16 +299,20 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnBuy;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblAuthorName;
+        private System.Windows.Forms.Panel detailPanel;
+        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.LinkLabel linkLabelLogout;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblBookName;
+        private System.Windows.Forms.Label lblAuthorName;
         private System.Windows.Forms.Label lblRYear;
-        private System.Windows.Forms.Label lblReleaseYear;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblGenre2;
         private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.Label lblAName;
-        private System.Windows.Forms.Panel detailPanel;
-        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Label lblReleaseYear;
+        private System.Windows.Forms.Label lblUserName;
     }
 }

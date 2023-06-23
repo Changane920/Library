@@ -94,12 +94,12 @@ namespace Library
 
             if (dt != null)
             {
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     UserControl1[] ArrayItems = new UserControl1[dt.Rows.Count];
-                    for(int i = 0; i < 1; i++)
+                    for (int i = 0; i < 1; i++)
                     {
-                        foreach(DataRow row in dt.Rows)
+                        foreach (DataRow row in dt.Rows)
                         {
                             ArrayItems[i] = new UserControl1();
                             //binary to img
@@ -146,18 +146,32 @@ namespace Library
         {
             GenerateUserControl();
             detailPanel.Visible = false;
+
+            //connection open
+            MySqlConnection cn = Dataconnection.connect();
+
+            //get username from userdata
+            MySqlCommand cmd = new MySqlCommand("select username from userdata where uid = '"+dataStore.uid+"'", cn);
+
+            reader = cmd.ExecuteReader();
+
+            if (reader.Read()) lblUserName.Text = reader["username"].ToString();
+
+            reader.Close();
+            cn.Close();
         }
 
         public void getBookID()
         {
+            //connection open
             MySqlConnection cn = Dataconnection.connect();
-
+            
+            //get bid from bookdetail
             MySqlCommand cmd = new MySqlCommand("select bid from bookdetail where b_name='" + lblTitle.Text + "'", cn);
+            
             reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                dataStore.bid = int.Parse(reader["bid"].ToString());
-            }
+            
+            if (reader.Read()) dataStore.bid = int.Parse(reader["bid"].ToString());
         }
 
         private void btnBorrow_Click(object sender, EventArgs e)
@@ -173,6 +187,13 @@ namespace Library
             BuyForm buyForm = new BuyForm(dataStore);
             buyForm.ShowDialog();
 
+        }
+
+        private void linkLabelLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            Form1 form1 = new Form1(dataStore);
+            form1.Show();
         }
     }
 }

@@ -47,159 +47,175 @@
             // 
             // lblBookName
             // 
-            this.lblBookName.AutoSize = true;
+            this.lblBookName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookName.ForeColor = System.Drawing.Color.White;
-            this.lblBookName.Location = new System.Drawing.Point(11, 174);
+            this.lblBookName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblBookName.Location = new System.Drawing.Point(83, 187);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(101, 20);
+            this.lblBookName.Size = new System.Drawing.Size(121, 32);
             this.lblBookName.TabIndex = 0;
             this.lblBookName.Text = "Book Name:";
+            this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pictureBox1.Location = new System.Drawing.Point(84, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // lblShowTitle
             // 
-            this.lblShowTitle.AutoSize = true;
+            this.lblShowTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblShowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowTitle.ForeColor = System.Drawing.Color.White;
-            this.lblShowTitle.Location = new System.Drawing.Point(132, 174);
-            this.lblShowTitle.MaximumSize = new System.Drawing.Size(280, 0);
+            this.lblShowTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowTitle.Location = new System.Drawing.Point(254, 187);
             this.lblShowTitle.Name = "lblShowTitle";
-            this.lblShowTitle.Size = new System.Drawing.Size(36, 20);
+            this.lblShowTitle.Size = new System.Drawing.Size(321, 32);
             this.lblShowTitle.TabIndex = 3;
             this.lblShowTitle.Text = "title";
+            this.lblShowTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowAuthorName
             // 
-            this.lblShowAuthorName.AutoSize = true;
+            this.lblShowAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblShowAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowAuthorName.ForeColor = System.Drawing.Color.White;
-            this.lblShowAuthorName.Location = new System.Drawing.Point(132, 228);
+            this.lblShowAuthorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowAuthorName.Location = new System.Drawing.Point(254, 232);
             this.lblShowAuthorName.Name = "lblShowAuthorName";
-            this.lblShowAuthorName.Size = new System.Drawing.Size(56, 20);
+            this.lblShowAuthorName.Size = new System.Drawing.Size(166, 32);
             this.lblShowAuthorName.TabIndex = 5;
             this.lblShowAuthorName.Text = "author";
+            this.lblShowAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAuthorName
             // 
-            this.lblAuthorName.AutoSize = true;
+            this.lblAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthorName.ForeColor = System.Drawing.Color.White;
-            this.lblAuthorName.Location = new System.Drawing.Point(11, 228);
+            this.lblAuthorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblAuthorName.Location = new System.Drawing.Point(83, 232);
             this.lblAuthorName.Name = "lblAuthorName";
-            this.lblAuthorName.Size = new System.Drawing.Size(112, 20);
+            this.lblAuthorName.Size = new System.Drawing.Size(121, 32);
             this.lblAuthorName.TabIndex = 4;
             this.lblAuthorName.Text = "Author Name:";
+            this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblShowGenre
             // 
-            this.lblShowGenre.AutoSize = true;
+            this.lblShowGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblShowGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowGenre.ForeColor = System.Drawing.Color.White;
-            this.lblShowGenre.Location = new System.Drawing.Point(132, 262);
+            this.lblShowGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowGenre.Location = new System.Drawing.Point(254, 276);
             this.lblShowGenre.Name = "lblShowGenre";
-            this.lblShowGenre.Size = new System.Drawing.Size(51, 20);
+            this.lblShowGenre.Size = new System.Drawing.Size(166, 32);
             this.lblShowGenre.TabIndex = 7;
             this.lblShowGenre.Text = "genre";
+            this.lblShowGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblGenre
             // 
-            this.lblGenre.AutoSize = true;
+            this.lblGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.ForeColor = System.Drawing.Color.White;
-            this.lblGenre.Location = new System.Drawing.Point(11, 262);
+            this.lblGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblGenre.Location = new System.Drawing.Point(83, 276);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(60, 20);
+            this.lblGenre.Size = new System.Drawing.Size(121, 32);
             this.lblGenre.TabIndex = 6;
             this.lblGenre.Text = "Genre:";
+            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblShowReleaseYear
             // 
-            this.lblShowReleaseYear.AutoSize = true;
+            this.lblShowReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblShowReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowReleaseYear.ForeColor = System.Drawing.Color.White;
-            this.lblShowReleaseYear.Location = new System.Drawing.Point(132, 297);
+            this.lblShowReleaseYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowReleaseYear.Location = new System.Drawing.Point(254, 324);
             this.lblShowReleaseYear.Name = "lblShowReleaseYear";
-            this.lblShowReleaseYear.Size = new System.Drawing.Size(41, 20);
+            this.lblShowReleaseYear.Size = new System.Drawing.Size(166, 32);
             this.lblShowReleaseYear.TabIndex = 9;
             this.lblShowReleaseYear.Text = "year";
+            this.lblShowReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblReleaseYear
             // 
-            this.lblReleaseYear.AutoSize = true;
+            this.lblReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReleaseYear.ForeColor = System.Drawing.Color.White;
-            this.lblReleaseYear.Location = new System.Drawing.Point(11, 297);
+            this.lblReleaseYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblReleaseYear.Location = new System.Drawing.Point(83, 324);
             this.lblReleaseYear.Name = "lblReleaseYear";
-            this.lblReleaseYear.Size = new System.Drawing.Size(114, 20);
+            this.lblReleaseYear.Size = new System.Drawing.Size(121, 32);
             this.lblReleaseYear.TabIndex = 8;
             this.lblReleaseYear.Text = "Release Year:";
+            this.lblReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(135, 367);
+            this.txtQuantity.Location = new System.Drawing.Point(257, 420);
+            this.txtQuantity.Multiline = true;
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(100, 22);
+            this.txtQuantity.Size = new System.Drawing.Size(166, 32);
             this.txtQuantity.TabIndex = 10;
             this.txtQuantity.Text = "1";
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // lblPrice
             // 
-            this.lblPrice.AutoSize = true;
+            this.lblPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(16, 332);
+            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblPrice.Location = new System.Drawing.Point(83, 373);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(53, 20);
+            this.lblPrice.Size = new System.Drawing.Size(121, 32);
             this.lblPrice.TabIndex = 11;
             this.lblPrice.Text = "Price:";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblShowPrice
             // 
-            this.lblShowPrice.AutoSize = true;
+            this.lblShowPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblShowPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowPrice.ForeColor = System.Drawing.Color.White;
-            this.lblShowPrice.Location = new System.Drawing.Point(132, 332);
+            this.lblShowPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowPrice.Location = new System.Drawing.Point(257, 373);
             this.lblShowPrice.Name = "lblShowPrice";
-            this.lblShowPrice.Size = new System.Drawing.Size(46, 20);
+            this.lblShowPrice.Size = new System.Drawing.Size(166, 32);
             this.lblShowPrice.TabIndex = 12;
             this.lblShowPrice.Text = "price";
+            this.lblShowPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblQuantity
             // 
-            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(16, 368);
+            this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblQuantity.Location = new System.Drawing.Point(83, 420);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(71, 20);
+            this.lblQuantity.Size = new System.Drawing.Size(121, 32);
             this.lblQuantity.TabIndex = 13;
             this.lblQuantity.Text = "Quantity";
+            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnConfirm
             // 
-            this.BtnConfirm.Location = new System.Drawing.Point(15, 399);
+            this.BtnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.BtnConfirm.Location = new System.Drawing.Point(155, 470);
             this.BtnConfirm.Name = "BtnConfirm";
-            this.BtnConfirm.Size = new System.Drawing.Size(220, 23);
+            this.BtnConfirm.Size = new System.Drawing.Size(181, 36);
             this.BtnConfirm.TabIndex = 14;
             this.BtnConfirm.Text = "Confirm";
-            this.BtnConfirm.UseVisualStyleBackColor = true;
+            this.BtnConfirm.UseVisualStyleBackColor = false;
             this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // BuyForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(527, 523);
+            this.ClientSize = new System.Drawing.Size(607, 532);
             this.Controls.Add(this.BtnConfirm);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblShowPrice);
@@ -214,7 +230,9 @@
             this.Controls.Add(this.lblShowTitle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblBookName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BuyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuyForm";
             this.Load += new System.EventHandler(this.BuyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

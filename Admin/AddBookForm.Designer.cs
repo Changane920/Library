@@ -42,6 +42,7 @@
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,66 +54,71 @@
             // 
             // txtGenre
             // 
-            this.txtGenre.Location = new System.Drawing.Point(416, 411);
+            this.txtGenre.Location = new System.Drawing.Point(178, 197);
+            this.txtGenre.Multiline = true;
             this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(150, 22);
+            this.txtGenre.Size = new System.Drawing.Size(190, 34);
             this.txtGenre.TabIndex = 17;
             // 
             // lblGenre
             // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.BackColor = System.Drawing.SystemColors.Control;
+            this.lblGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenre.ForeColor = System.Drawing.Color.Black;
-            this.lblGenre.Location = new System.Drawing.Point(269, 413);
+            this.lblGenre.Location = new System.Drawing.Point(44, 197);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(55, 20);
+            this.lblGenre.Size = new System.Drawing.Size(112, 34);
             this.lblGenre.TabIndex = 22;
             this.lblGenre.Text = "Genre";
+            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtReleaseYear
             // 
-            this.txtReleaseYear.Location = new System.Drawing.Point(416, 439);
+            this.txtReleaseYear.Location = new System.Drawing.Point(178, 267);
+            this.txtReleaseYear.Multiline = true;
             this.txtReleaseYear.Name = "txtReleaseYear";
-            this.txtReleaseYear.Size = new System.Drawing.Size(150, 22);
+            this.txtReleaseYear.Size = new System.Drawing.Size(190, 34);
             this.txtReleaseYear.TabIndex = 18;
             // 
             // lblReleaseYear
             // 
-            this.lblReleaseYear.AutoSize = true;
-            this.lblReleaseYear.BackColor = System.Drawing.SystemColors.Control;
+            this.lblReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReleaseYear.ForeColor = System.Drawing.Color.Black;
-            this.lblReleaseYear.Location = new System.Drawing.Point(269, 441);
+            this.lblReleaseYear.Location = new System.Drawing.Point(44, 267);
             this.lblReleaseYear.Name = "lblReleaseYear";
-            this.lblReleaseYear.Size = new System.Drawing.Size(109, 20);
+            this.lblReleaseYear.Size = new System.Drawing.Size(112, 34);
             this.lblReleaseYear.TabIndex = 21;
             this.lblReleaseYear.Text = "Release Year";
+            this.lblReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtAuthorName
             // 
-            this.txtAuthorName.Location = new System.Drawing.Point(416, 383);
+            this.txtAuthorName.Location = new System.Drawing.Point(178, 127);
+            this.txtAuthorName.Multiline = true;
             this.txtAuthorName.Name = "txtAuthorName";
-            this.txtAuthorName.Size = new System.Drawing.Size(150, 22);
+            this.txtAuthorName.Size = new System.Drawing.Size(190, 34);
             this.txtAuthorName.TabIndex = 16;
             // 
             // lblAuthorName
             // 
-            this.lblAuthorName.AutoSize = true;
-            this.lblAuthorName.BackColor = System.Drawing.SystemColors.Control;
+            this.lblAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAuthorName.ForeColor = System.Drawing.Color.Black;
-            this.lblAuthorName.Location = new System.Drawing.Point(269, 385);
+            this.lblAuthorName.Location = new System.Drawing.Point(44, 127);
             this.lblAuthorName.Name = "lblAuthorName";
-            this.lblAuthorName.Size = new System.Drawing.Size(107, 20);
+            this.lblAuthorName.Size = new System.Drawing.Size(112, 34);
             this.lblAuthorName.TabIndex = 19;
             this.lblAuthorName.Text = "Author Name";
+            this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(491, 467);
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(472, 307);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(114, 34);
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -120,9 +126,11 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(334, 303);
+            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(436, 267);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(150, 23);
+            this.btnUpload.Size = new System.Drawing.Size(150, 34);
             this.btnUpload.TabIndex = 12;
             this.btnUpload.Text = "Upload Image";
             this.btnUpload.UseVisualStyleBackColor = true;
@@ -130,37 +138,51 @@
             // 
             // txtBookName
             // 
-            this.txtBookName.Location = new System.Drawing.Point(416, 355);
+            this.txtBookName.Location = new System.Drawing.Point(178, 57);
+            this.txtBookName.Multiline = true;
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(150, 22);
+            this.txtBookName.Size = new System.Drawing.Size(190, 34);
             this.txtBookName.TabIndex = 14;
             // 
             // lblBookName
             // 
-            this.lblBookName.AutoSize = true;
-            this.lblBookName.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBookName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookName.ForeColor = System.Drawing.Color.Black;
-            this.lblBookName.Location = new System.Drawing.Point(269, 357);
+            this.lblBookName.Location = new System.Drawing.Point(47, 57);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(91, 20);
+            this.lblBookName.Size = new System.Drawing.Size(109, 34);
             this.lblBookName.TabIndex = 15;
-            this.lblBookName.Text = "BookName";
+            this.lblBookName.Text = "Book Name";
+            this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pb1
             // 
+            this.pb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pb1.InitialImage = null;
-            this.pb1.Location = new System.Drawing.Point(334, 97);
+            this.pb1.Location = new System.Drawing.Point(436, 51);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(150, 200);
-            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 13;
             this.pb1.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.panel2.Location = new System.Drawing.Point(91, 45);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblGenre);
+            this.panel2.Controls.Add(this.lblReleaseYear);
+            this.panel2.Controls.Add(this.lblBookName);
+            this.panel2.Controls.Add(this.lblAuthorName);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.txtReleaseYear);
+            this.panel2.Controls.Add(this.txtGenre);
+            this.panel2.Controls.Add(this.pb1);
+            this.panel2.Controls.Add(this.txtAuthorName);
+            this.panel2.Controls.Add(this.btnUpload);
+            this.panel2.Controls.Add(this.txtBookName);
+            this.panel2.Location = new System.Drawing.Point(28, 25);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(652, 496);
             this.panel2.TabIndex = 11;
@@ -170,26 +192,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(835, 587);
-            this.Controls.Add(this.txtGenre);
-            this.Controls.Add(this.lblGenre);
-            this.Controls.Add(this.txtReleaseYear);
-            this.Controls.Add(this.lblReleaseYear);
-            this.Controls.Add(this.txtAuthorName);
-            this.Controls.Add(this.lblAuthorName);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.txtBookName);
-            this.Controls.Add(this.lblBookName);
-            this.Controls.Add(this.pb1);
+            this.ClientSize = new System.Drawing.Size(708, 546);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AddBookForm";
             this.Text = "AddBookForm";
             this.Load += new System.EventHandler(this.AddBookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

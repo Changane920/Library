@@ -23,10 +23,11 @@ namespace Library.User_Control
         private void RentBook_Load(object sender, EventArgs e)
         {
             MySqlConnection cn = Dataconnection.connect();
-            MySqlDataReader reader = null;
 
             MySqlCommand cmd1 = new MySqlCommand("select * from rentbook", cn);
-            reader = cmd1.ExecuteReader();
+
+            MySqlDataReader reader = cmd1.ExecuteReader();
+
             while (reader.Read())
             {
                 dataGridView1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("dd-MM-yyyy"), Convert.ToDateTime(reader[3]).ToString("dd-MM-yyyy"), reader[4]);

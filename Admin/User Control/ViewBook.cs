@@ -30,25 +30,24 @@ namespace Library.User_Control
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgv1.Rows.Clear();
-            string cnStr = "server=localhost; uid=root; pwd=root; database=library";
-            MySqlConnection cn = new MySqlConnection(cnStr);
-            cn.Open();
+            MySqlConnection cn = Dataconnection.connect();
 
             string sql = "select * from BookDetail";
             MySqlCommand cmd = new MySqlCommand(sql, cn);
             MySqlDataReader reader = cmd.ExecuteReader();
+
             while (reader.Read())
             {
                 dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5]);
             }
+
             cn.Close();
         }
 
         private void ViewBook_Load(object sender, EventArgs e)
         {
-            string cnStr = "server = localhost; uid = root; pwd = root; database = library";
-            MySqlConnection cn = new MySqlConnection(cnStr);
-            cn.Open();
+            MySqlConnection cn = Dataconnection.connect();
+
             try
             {
                 DialogResult response = MessageBox.Show("Connection success!", "Book Detail", MessageBoxButtons.OK);

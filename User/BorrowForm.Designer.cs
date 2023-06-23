@@ -35,20 +35,17 @@
             this.pboPanel = new System.Windows.Forms.Panel();
             this.dtpReturn = new System.Windows.Forms.DateTimePicker();
             this.lblReturn = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lblIssue = new System.Windows.Forms.Label();
             this.txtIssue = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pboBorrow)).BeginInit();
             this.pboPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pboBorrow
             // 
-            this.pboBorrow.Location = new System.Drawing.Point(37, 39);
+            this.pboBorrow.Location = new System.Drawing.Point(18, 17);
             this.pboBorrow.Name = "pboBorrow";
-            this.pboBorrow.Size = new System.Drawing.Size(120, 150);
+            this.pboBorrow.Size = new System.Drawing.Size(160, 179);
             this.pboBorrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboBorrow.TabIndex = 0;
             this.pboBorrow.TabStop = false;
@@ -70,9 +67,9 @@
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnConfirm.Location = new System.Drawing.Point(37, 404);
+            this.btnConfirm.Location = new System.Drawing.Point(18, 388);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(120, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(160, 39);
             this.btnConfirm.TabIndex = 2;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -86,6 +83,7 @@
             this.dtpBorrow.Name = "dtpBorrow";
             this.dtpBorrow.Size = new System.Drawing.Size(200, 22);
             this.dtpBorrow.TabIndex = 3;
+            this.dtpBorrow.ValueChanged += new System.EventHandler(this.dtpBorrow_ValueChanged);
             // 
             // pboPanel
             // 
@@ -118,14 +116,6 @@
             this.lblReturn.TabIndex = 5;
             this.lblReturn.Text = "Return Date";
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.panel2.Location = new System.Drawing.Point(695, 306);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 215);
-            this.panel2.TabIndex = 8;
-            // 
             // lblIssue
             // 
             this.lblIssue.AutoSize = true;
@@ -145,32 +135,13 @@
             this.txtIssue.Size = new System.Drawing.Size(200, 72);
             this.txtIssue.TabIndex = 10;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.panel1.Location = new System.Drawing.Point(620, 362);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 215);
-            this.panel1.TabIndex = 9;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.panel3.Location = new System.Drawing.Point(739, 223);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 215);
-            this.panel3.TabIndex = 9;
-            // 
             // BorrowForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtIssue);
             this.Controls.Add(this.lblIssue);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dtpReturn);
             this.Controls.Add(this.lblReturn);
             this.Controls.Add(this.pboPanel);
@@ -197,10 +168,7 @@
         private System.Windows.Forms.Panel pboPanel;
         private System.Windows.Forms.DateTimePicker dtpReturn;
         private System.Windows.Forms.Label lblReturn;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblIssue;
         private System.Windows.Forms.TextBox txtIssue;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
     }
 }
