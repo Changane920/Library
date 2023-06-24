@@ -36,16 +36,16 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnCC = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dv_bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_RentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_ActualReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -112,6 +112,7 @@
             // 
             // dgv1
             // 
+            this.dgv1.AllowUserToAddRows = false;
             this.dgv1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.dgv1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -135,39 +136,12 @@
             this.dgv1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgv1.Location = new System.Drawing.Point(152, 0);
             this.dgv1.Name = "dgv1";
+            this.dgv1.RowHeadersVisible = false;
             this.dgv1.RowHeadersWidth = 51;
             this.dgv1.RowTemplate.Height = 24;
             this.dgv1.Size = new System.Drawing.Size(1133, 516);
             this.dgv1.TabIndex = 6;
             this.dgv1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem,
-            this.closeToolStripMenuItem,
-            this.returnToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 76);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
-            this.updateToolStripMenuItem.Text = "Update";
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
-            this.closeToolStripMenuItem.Text = "Delete";
-            // 
-            // returnToolStripMenuItem
-            // 
-            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
-            this.returnToolStripMenuItem.Text = "Return";
             // 
             // dv_bid
             // 
@@ -219,6 +193,34 @@
             this.dv_Issue.HeaderText = "Issue";
             this.dv_Issue.MinimumWidth = 6;
             this.dv_Issue.Name = "dv_Issue";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.closeToolStripMenuItem,
+            this.returnToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 76);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.closeToolStripMenuItem.Text = "Delete";
+            // 
+            // returnToolStripMenuItem
+            // 
+            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.returnToolStripMenuItem.Text = "Return";
             // 
             // RentBook
             // 

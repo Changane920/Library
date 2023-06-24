@@ -35,14 +35,21 @@ namespace Library
 
             //get image from database
             MySqlConnection cn = Dataconnection.connect();
-            MySqlCommand cmd = new MySqlCommand("select image from bookdetail where bid = '" + id + "'", cn);
+
+            MySqlCommand cmd = new MySqlCommand("select image,price,quantity from bookdetail where bid = '" + id + "'", cn);
             MySqlDataReader reader = cmd.ExecuteReader();
+            
             if (reader.Read())
             {
                 //binary to image
                 MemoryStream ms = new MemoryStream((byte[])reader["Image"]);
                 pboUpdate.Image = new Bitmap(ms);
+
+                txtPrice.Text = reader["price"].ToString();
+                txtQuantity.Text = reader["quantity"].ToString();
             }
+
+            cn.Close();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -50,8 +57,20 @@ namespace Library
             //connection open
             MySqlConnection cn = Dataconnection.connect();
 
-            string sql = "update BookDetail set b_Name = '" + txtBookName.Text + "',author_Name='" + txtAuthorName.Text + "',releaseYear='" + txtReleaseYear.Text + "',genre='" + txtGenre.Text + "'where bid='" + id + "'";
-            MySqlCommand cmd = new MySqlCommand(sql, cn);
+            MySqlCommand cmd = new MySqlCommand("update bookdetail set b_name=@bookName, author_Name=@authorName, genre=@genre, releaseYear=@releaseYear, image=@image , price=@price, quantity=@quantity where bid=@bid", cn);
+            cmd.Parameters.AddWithValue("@bookName", txtBookName.Text);
+            cmd.Parameters.AddWithValue("@authorName", txtAuthorName.Text);
+            cmd.Parameters.AddWithValue("@genre", txtGenre.Text);
+            cmd.Parameters.AddWithValue("@releaseYear", txtReleaseYear.Text);
+
+            //image to binary 
+            MemoryStream ms = new MemoryStream();
+            pboUpdate.Image.Save(ms, pboUpdate.Image.RawFormat);
+            cmd.Parameters.AddWithValue("@image", ms.ToArray());
+
+            cmd.Parameters.AddWithValue("@price", int.Parse(txtPrice.Text));
+            cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text));
+            cmd.Parameters.AddWithValue("@bid", id);
 
             DialogResult dr = MessageBox.Show("Are you sure want to update this?", "Update Form", MessageBoxButtons.OKCancel);
 
@@ -59,6 +78,10 @@ namespace Library
             {
                 cmd.ExecuteReader();
                 MessageBox.Show("Update Complete!", "Update Form", MessageBoxButtons.OK);
+                this.Close();
+            } else
+            {
+                txtBookName.Focus();
             }
 
             //connection close

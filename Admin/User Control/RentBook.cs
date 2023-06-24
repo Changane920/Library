@@ -18,21 +18,21 @@ namespace Library.User_Control
         {
             InitializeComponent();
             dataStore = data;
-        }
-
-        
+        }        
 
         private void RentBook_Load(object sender, EventArgs e)
         {
+            //connection
             MySqlConnection cn = Dataconnection.connect();
 
+            //get data from rentbook
             MySqlCommand cmd1 = new MySqlCommand("select * from rentbook", cn);
 
             MySqlDataReader reader = cmd1.ExecuteReader();
 
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("dd-MM-yyyy"), Convert.ToDateTime(reader[3]).ToString("dd-MM-yyyy"), reader[5]);
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy-MM-dd"), Convert.ToDateTime(reader[3]).ToString("yyyy-MM-dd"), Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"), reader[5]);
             }            
             reader.Close();
         }

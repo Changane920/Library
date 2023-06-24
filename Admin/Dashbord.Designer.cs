@@ -66,12 +66,12 @@
             this.booksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newBooksToolStripMenuItem,
             this.viewBooksToolStripMenuItem});
-            this.booksToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.booksToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.booksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("booksToolStripMenuItem.Image")));
             this.booksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(129, 54);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(119, 54);
             this.booksToolStripMenuItem.Text = "Books";
             // 
             // newBooksToolStripMenuItem
@@ -79,7 +79,7 @@
             this.newBooksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newBooksToolStripMenuItem.Image")));
             this.newBooksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.newBooksToolStripMenuItem.Name = "newBooksToolStripMenuItem";
-            this.newBooksToolStripMenuItem.Size = new System.Drawing.Size(264, 56);
+            this.newBooksToolStripMenuItem.Size = new System.Drawing.Size(241, 56);
             this.newBooksToolStripMenuItem.Text = "Add new books";
             this.newBooksToolStripMenuItem.Click += new System.EventHandler(this.newBooksToolStripMenuItem_Click);
             // 
@@ -88,7 +88,7 @@
             this.viewBooksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewBooksToolStripMenuItem.Image")));
             this.viewBooksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.viewBooksToolStripMenuItem.Name = "viewBooksToolStripMenuItem";
-            this.viewBooksToolStripMenuItem.Size = new System.Drawing.Size(264, 56);
+            this.viewBooksToolStripMenuItem.Size = new System.Drawing.Size(241, 56);
             this.viewBooksToolStripMenuItem.Text = "View books";
             this.viewBooksToolStripMenuItem.Click += new System.EventHandler(this.viewBooksToolStripMenuItem_Click);
             // 
@@ -97,37 +97,37 @@
             this.studentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addStudentToolStripMenuItem,
             this.viewStudentInfoToolStripMenuItem});
-            this.studentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.studentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
-            this.studentToolStripMenuItem.Size = new System.Drawing.Size(65, 54);
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(58, 54);
             this.studentToolStripMenuItem.Text = "User";
             // 
             // addStudentToolStripMenuItem
             // 
             this.addStudentToolStripMenuItem.Name = "addStudentToolStripMenuItem";
-            this.addStudentToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.addStudentToolStripMenuItem.Size = new System.Drawing.Size(227, 28);
             this.addStudentToolStripMenuItem.Text = "Add student";
             // 
             // viewStudentInfoToolStripMenuItem
             // 
             this.viewStudentInfoToolStripMenuItem.Name = "viewStudentInfoToolStripMenuItem";
-            this.viewStudentInfoToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.viewStudentInfoToolStripMenuItem.Size = new System.Drawing.Size(227, 28);
             this.viewStudentInfoToolStripMenuItem.Text = "View student info";
             this.viewStudentInfoToolStripMenuItem.Click += new System.EventHandler(this.viewStudentInfoToolStripMenuItem_Click);
             // 
             // orderToolStrip
             // 
-            this.orderToolStrip.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.orderToolStrip.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.orderToolStrip.Name = "orderToolStrip";
-            this.orderToolStrip.Size = new System.Drawing.Size(149, 54);
+            this.orderToolStrip.Size = new System.Drawing.Size(130, 54);
             this.orderToolStrip.Text = "Ordered Book";
             this.orderToolStrip.Click += new System.EventHandler(this.orderToolStrip_Click);
             // 
             // rentBookToolStripMenuItem
             // 
-            this.rentBookToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.rentBookToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rentBookToolStripMenuItem.Name = "rentBookToolStripMenuItem";
-            this.rentBookToolStripMenuItem.Size = new System.Drawing.Size(115, 54);
+            this.rentBookToolStripMenuItem.Size = new System.Drawing.Size(102, 54);
             this.rentBookToolStripMenuItem.Text = "Rent Book";
             this.rentBookToolStripMenuItem.Click += new System.EventHandler(this.rentBookToolStripMenuItem_Click);
             // 

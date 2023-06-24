@@ -20,6 +20,7 @@ using System.Windows.Forms;
 //borrow form price
 //buyerhistory same name validation
 //add price and quantity to bookdetail db
+//return date
 
 namespace Library
 {

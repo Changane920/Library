@@ -24,6 +24,8 @@ namespace Library
             dataStore = data;
         }
 
+        int price,quantity;
+
         private void BuyForm_Load(object sender, EventArgs e)
         {
             //connection open
@@ -36,9 +38,13 @@ namespace Library
             cmd.Parameters.AddWithValue("@bid", dataStore.bid);
 
             MySqlDataReader reader = cmd.ExecuteReader();
-            
+
+
             while (reader.Read())
             {
+                price = int.Parse(reader["price"].ToString());
+                quantity = int.Parse(reader["quantity"].ToString());
+
                 //binary to image
                 MemoryStream ms = new MemoryStream((byte[])reader["Image"]);
                 pictureBox1.Image = new Bitmap(ms);
@@ -48,7 +54,7 @@ namespace Library
                 lblShowAuthorName.Text = reader["author_Name"].ToString();
                 lblShowGenre.Text = reader["genre"].ToString();
                 lblShowReleaseYear.Text = reader["releaseYear"].ToString();
-                lblShowPrice.Text = "500";
+                lblShowPrice.Text = price.ToString();
             }
             reader.Close();
             cn.Close();
@@ -56,15 +62,21 @@ namespace Library
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure?", "Library", MessageBoxButtons.OKCancel);
-            if (dr == DialogResult.OK)
+            if (MessageBox.Show("Are you sure?", "Library", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (string.IsNullOrEmpty(txtQuantity.Text))
                 {
                     txtQuantity.Text = "1";
                 }
 
-                //connection
+                //check instock
+                if(int.Parse(txtQuantity.Text) > quantity)
+                {
+                    MessageBox.Show($"Our of stock! \n{quantity} left in our inventory!","Buy Form",MessageBoxButtons.OK);
+                    return;
+                }
+
+                //connection open
                 MySqlConnection cn = Dataconnection.connect();
 
                 //add data into buyerhistory
@@ -81,9 +93,25 @@ namespace Library
 
                 if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
                 {
-                    MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
-                    this.Close();
+                    if (MessageBox.Show("Do you want a voucher?", "Library", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        MessageBox.Show($"Book Name is {lblShowTitle.Text}.\nAuthor Name is {lblShowAuthorName.Text}.\n");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
+                        this.Close();
+                    }
                 }
+
+                // reduce quantity
+                MySqlCommand updateCmd = new MySqlCommand("update bookdetail set quantity = @quantity - @txtquantity where bid = @bid",cn);
+                updateCmd.Parameters.AddWithValue("@quantity", quantity);
+                updateCmd.Parameters.AddWithValue("@txtquantity", int.Parse(txtQuantity.Text));
+                updateCmd.Parameters.AddWithValue("@bid", dataStore.bid);
+                updateCmd.ExecuteNonQuery();
+
+                cn.Close();
             }
             else
             {
@@ -95,27 +123,23 @@ namespace Library
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             int result = 0;
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
-
-                if (string.IsNullOrEmpty(txtQuantity.Text))
-                {
-                    txtQuantity.Text = "1";
-                }
 
                 int num = int.Parse(lblShowPrice.Text);
                 int limit = int.Parse(txtQuantity.Text);
 
-                for(int i = 0; i < limit; i++)
+                for (int i = 0; i < limit; i++)
                 {
                     result += num;
                     lblShowPrice.Text = result.ToString();
                 }
             }
-            else if(e.KeyChar == (char)Keys.Back)
+            else if (e.KeyChar == (char)Keys.Back)
             {
-                lblShowPrice.Text = "500";
+                lblShowPrice.Text = price.ToString();
+                txtQuantity.Text = "1";
             }
         }
     }

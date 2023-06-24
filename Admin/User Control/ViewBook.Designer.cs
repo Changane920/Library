@@ -44,6 +44,8 @@
             this.dv_Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_ReleaseYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dv_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dv_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -97,6 +99,7 @@
             // 
             // dgv1
             // 
+            this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgv1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -118,12 +121,15 @@
             this.dv_Author,
             this.dv_Genre,
             this.dv_ReleaseYear,
-            this.dv_Image});
+            this.dv_Image,
+            this.dv_price,
+            this.dv_quantity});
             this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv1.Location = new System.Drawing.Point(152, 0);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
+            this.dgv1.RowHeadersVisible = false;
             this.dgv1.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             this.dgv1.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -183,6 +189,22 @@
             this.dv_Image.ReadOnly = true;
             this.dv_Image.Width = 125;
             // 
+            // dv_price
+            // 
+            this.dv_price.HeaderText = "Price";
+            this.dv_price.MinimumWidth = 6;
+            this.dv_price.Name = "dv_price";
+            this.dv_price.ReadOnly = true;
+            this.dv_price.Width = 125;
+            // 
+            // dv_quantity
+            // 
+            this.dv_quantity.HeaderText = "Quantity";
+            this.dv_quantity.MinimumWidth = 6;
+            this.dv_quantity.Name = "dv_quantity";
+            this.dv_quantity.ReadOnly = true;
+            this.dv_quantity.Width = 125;
+            // 
             // ViewBook
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -213,5 +235,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Genre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_ReleaseYear;
         private System.Windows.Forms.DataGridViewImageColumn dv_Image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dv_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dv_quantity;
     }
 }

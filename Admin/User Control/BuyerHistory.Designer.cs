@@ -92,6 +92,7 @@
             // 
             // dgv1
             // 
+            this.dgv1.AllowUserToAddRows = false;
             this.dgv1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.dgv1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -115,6 +116,7 @@
             this.dgv1.Location = new System.Drawing.Point(152, 0);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
+            this.dgv1.RowHeadersVisible = false;
             this.dgv1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgv1.RowTemplate.Height = 24;
             this.dgv1.ScrollBars = System.Windows.Forms.ScrollBars.None;
