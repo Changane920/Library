@@ -27,7 +27,7 @@ namespace Library.User_Control
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dgv.Rows.Clear();
+            dgv1.Rows.Clear();
             MySqlConnection cn = Dataconnection.connect();
 
             string sql = "select * from buyerhistory";
@@ -35,14 +35,14 @@ namespace Library.User_Control
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                dgv.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4]);
+                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4]);
             }
             cn.Close();
         }
 
         private void OrderedBook_Load(object sender, EventArgs e)
         {
-            dgv.Visible = false;
+            dgv1.Visible = false;
             //connection open
             MySqlConnection cn = Dataconnection.connect();
 
@@ -52,8 +52,8 @@ namespace Library.User_Control
 
                 if (response == DialogResult.OK)
                 {
-                    dgv.Visible = true;
-                    dgv.Rows.Clear();
+                    dgv1.Visible = true;
+                    dgv1.Rows.Clear();
 
                     string sql = "select * from buyerhistory;";
                     MySqlCommand cmd = new MySqlCommand(sql, cn);
@@ -62,7 +62,7 @@ namespace Library.User_Control
                     //insert into datagridview
                     while (reader.Read())
                     {
-                        dgv.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4]);
+                        dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4]);
                     }
                 }
             }
@@ -80,15 +80,15 @@ namespace Library.User_Control
             {
                 if (e.Button == MouseButtons.Right)
                 {
-                    dgv.ClearSelection();
+                    dgv1.ClearSelection();
 
                     //get row
-                    dgv.CurrentCell = dgv.Rows[e.RowIndex].Cells[1];
-                    dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+                    dgv1.CurrentCell = dgv1.Rows[e.RowIndex].Cells[1];
+                    dgv1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
 
                     contextMenuStrip1.Show(MousePosition);
 
-                    DataGridViewRow row = this.dgv.Rows[e.RowIndex];
+                    DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
                 }
             }
             catch

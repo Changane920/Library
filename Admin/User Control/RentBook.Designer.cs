@@ -28,21 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnCC = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dv_bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_RentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dv_ActualReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,10 +110,10 @@
             this.btnCC.Text = "Check Connection";
             this.btnCC.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgv1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dgv1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.dgv1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,23 +121,53 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv1.ColumnHeadersHeight = 30;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dv_bid,
             this.dv_UserId,
             this.dv_RentDate,
             this.dv_ReturnDate,
+            this.dv_ActualReturnDate,
             this.dv_Issue});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(152, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1133, 516);
-            this.dataGridView1.TabIndex = 6;
+            this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgv1.Location = new System.Drawing.Point(152, 0);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.RowHeadersWidth = 51;
+            this.dgv1.RowTemplate.Height = 24;
+            this.dgv1.Size = new System.Drawing.Size(1133, 516);
+            this.dgv1.TabIndex = 6;
+            this.dgv1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.closeToolStripMenuItem,
+            this.returnToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 76);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.closeToolStripMenuItem.Text = "Delete";
+            // 
+            // returnToolStripMenuItem
+            // 
+            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.returnToolStripMenuItem.Text = "Return";
             // 
             // dv_bid
             // 
@@ -163,10 +200,17 @@
             // 
             this.dv_ReturnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dv_ReturnDate.FillWeight = 16.04278F;
-            this.dv_ReturnDate.HeaderText = "Return Date";
+            this.dv_ReturnDate.HeaderText = "Expected Return Date";
             this.dv_ReturnDate.MinimumWidth = 6;
             this.dv_ReturnDate.Name = "dv_ReturnDate";
-            this.dv_ReturnDate.Width = 107;
+            this.dv_ReturnDate.Width = 167;
+            // 
+            // dv_ActualReturnDate
+            // 
+            this.dv_ActualReturnDate.HeaderText = "Actual Return Date";
+            this.dv_ActualReturnDate.MinimumWidth = 6;
+            this.dv_ActualReturnDate.Name = "dv_ActualReturnDate";
+            this.dv_ActualReturnDate.Width = 125;
             // 
             // dv_Issue
             // 
@@ -180,14 +224,15 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv1);
             this.Controls.Add(this.panel1);
             this.Name = "RentBook";
             this.Size = new System.Drawing.Size(1285, 516);
             this.Load += new System.EventHandler(this.RentBook_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -199,11 +244,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnCC;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_bid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_UserId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_RentDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_ReturnDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dv_ActualReturnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Issue;
+        private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
     }
 }

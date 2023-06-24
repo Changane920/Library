@@ -113,7 +113,6 @@ namespace Library.User_Control
                     uf.authorName = row.Cells[2].Value.ToString();
                     uf.genre = row.Cells[3].Value.ToString();
                     uf.releaseYear = row.Cells[4].Value.ToString();
-                    
                 }
             }
             catch

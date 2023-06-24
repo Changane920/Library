@@ -20,6 +20,8 @@ namespace Library.User_Control
             dataStore = data;
         }
 
+        
+
         private void RentBook_Load(object sender, EventArgs e)
         {
             MySqlConnection cn = Dataconnection.connect();
@@ -30,9 +32,37 @@ namespace Library.User_Control
 
             while (reader.Read())
             {
-                dataGridView1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("dd-MM-yyyy"), Convert.ToDateTime(reader[3]).ToString("dd-MM-yyyy"), reader[4]);
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("dd-MM-yyyy"), Convert.ToDateTime(reader[3]).ToString("dd-MM-yyyy"), reader[5]);
             }            
             reader.Close();
+        }
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    dgv1.ClearSelection();
+
+                    //get data when click cell
+                    dgv1.CurrentCell = dgv1.Rows[e.RowIndex].Cells[1];
+                    dgv1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+
+                    contextMenuStrip1.Show(MousePosition);
+
+                    DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+                    
+                }
+            }
+            catch
+            {
+                DialogResult dr = MessageBox.Show("Error!", "Error Box", MessageBoxButtons.OKCancel);
+                if (dr == DialogResult.OK)
+                {
+                    contextMenuStrip1.Visible = false;
+                }
+            }
         }
     }
 }
