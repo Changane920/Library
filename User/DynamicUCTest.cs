@@ -13,18 +13,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 //need to add function list
-//logout
+//buyerform make a slip
 //add to cart
-//username at corner
-
-//to make borrow form 
-//BookName
-//RentDate
-//ExceptReturnDate
-//Pirce (or not)
 
 //need to do
-//borrow form Db
+//borrow form price
 //buyerhistory same name validation
 //add price and quantity to bookdetail db
 
