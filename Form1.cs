@@ -201,6 +201,11 @@ namespace Library
             }
         }
 
+        private void pboShowPass_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MySqlConnection cn = Dataconnection.connect();

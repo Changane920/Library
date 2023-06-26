@@ -61,7 +61,6 @@ namespace Library
             {
                 throw;
             }
-            cn.Close();
         }
 
         //read items from table
@@ -136,16 +135,13 @@ namespace Library
             detailPanel.Visible = false;
         }
 
-        private void DynamicUCTest_Load(object sender, EventArgs e)
+        public void getUserName()
         {
-            GenerateUserControl();
-            detailPanel.Visible = false;
-
             //connection open
             MySqlConnection cn = Dataconnection.connect();
 
             //get username from userdata
-            MySqlCommand cmd = new MySqlCommand("select username from userdata where uid = '"+dataStore.uid+"'", cn);
+            MySqlCommand cmd = new MySqlCommand("select username from userdata where uid = '" + dataStore.uid + "'", cn);
 
             reader = cmd.ExecuteReader();
 
@@ -168,6 +164,14 @@ namespace Library
             if (reader.Read()) dataStore.bid = int.Parse(reader["bid"].ToString());
         }
 
+        private void DynamicUCTest_Load(object sender, EventArgs e)
+        {
+            GenerateUserControl();
+            detailPanel.Visible = false;
+
+            getUserName();
+        }
+
         private void btnBorrow_Click(object sender, EventArgs e)
         {
             getBookID();
@@ -188,6 +192,12 @@ namespace Library
             this.Close();
             Form1 form1 = new Form1(dataStore);
             form1.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            CartForm cf = new CartForm(dataStore);
+            cf.ShowDialog();
         }
     }
 }

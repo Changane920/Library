@@ -80,14 +80,12 @@ namespace Library.User_Control
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string cnStr = "server = localhost; uid = root; pwd = root; database = library";
-            MySqlConnection cn = new MySqlConnection(cnStr);
-            cn.Open();
+            MySqlConnection cn = Dataconnection.connect();
 
             string sql = "delete from BookDetail where bid = '" + uf.id + "'";
             MySqlCommand cmd = new MySqlCommand(sql, cn);
-            DialogResult dr = MessageBox.Show("Are you sure want to delete this?", "Delete Form", MessageBoxButtons.OKCancel);
-            if (dr == DialogResult.OK)
+
+            if (MessageBox.Show("Are you sure want to delete this?", "Delete Form", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 cmd.ExecuteReader();
                 MessageBox.Show("Delete Finish!");

@@ -63,9 +63,59 @@ namespace Library.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6684701 {
+            get {
+                object obj = ResourceManager.GetObject("6684701", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_icon_4 {
+            get {
+                object obj = ResourceManager.GetObject("close-icon-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Flat_restart_icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("Flat_restart_icon.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_stanislav_kondratiev_2908984 {
             get {
                 object obj = ResourceManager.GetObject("pexels-stanislav-kondratiev-2908984", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shopping_Cart_Flat_Icon_Vector_svg {
+            get {
+                object obj = ResourceManager.GetObject("Shopping_Cart_Flat_Icon_Vector.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_can_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("trash-can-icon-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

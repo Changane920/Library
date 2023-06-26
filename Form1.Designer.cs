@@ -56,8 +56,10 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.pboShowPass = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboProfile)).BeginInit();
             this.signuppanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboShowPass)).BeginInit();
             this.SuspendLayout();
             // 
             // pboProfile
@@ -95,6 +97,7 @@
             this.txtLoginPass.Location = new System.Drawing.Point(246, 239);
             this.txtLoginPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoginPass.Name = "txtLoginPass";
+            this.txtLoginPass.PasswordChar = '*';
             this.txtLoginPass.Size = new System.Drawing.Size(171, 21);
             this.txtLoginPass.TabIndex = 2;
             this.txtLoginPass.Text = "Password";
@@ -192,6 +195,7 @@
             // 
             // signuppanel
             // 
+            this.signuppanel.Controls.Add(this.pboShowPass);
             this.signuppanel.Controls.Add(this.lblCheckPass);
             this.signuppanel.Controls.Add(this.txtCheckPass);
             this.signuppanel.Controls.Add(this.lblPhNo);
@@ -204,7 +208,7 @@
             this.signuppanel.Controls.Add(this.txtPhone);
             this.signuppanel.Controls.Add(this.txtEmail);
             this.signuppanel.Controls.Add(this.txtUserName);
-            this.signuppanel.Location = new System.Drawing.Point(74, 148);
+            this.signuppanel.Location = new System.Drawing.Point(76, 148);
             this.signuppanel.Margin = new System.Windows.Forms.Padding(2);
             this.signuppanel.Name = "signuppanel";
             this.signuppanel.Size = new System.Drawing.Size(408, 299);
@@ -227,6 +231,7 @@
             this.txtCheckPass.Location = new System.Drawing.Point(181, 184);
             this.txtCheckPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtCheckPass.Name = "txtCheckPass";
+            this.txtCheckPass.PasswordChar = '*';
             this.txtCheckPass.Size = new System.Drawing.Size(171, 22);
             this.txtCheckPass.TabIndex = 4;
             // 
@@ -312,6 +317,7 @@
             this.txtPass.Location = new System.Drawing.Point(181, 144);
             this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(171, 22);
             this.txtPass.TabIndex = 3;
             // 
@@ -340,6 +346,18 @@
             this.txtUserName.Size = new System.Drawing.Size(171, 22);
             this.txtUserName.TabIndex = 0;
             // 
+            // pboShowPass
+            // 
+            this.pboShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboShowPass.Image = global::Library.Properties.Resources._6684701;
+            this.pboShowPass.Location = new System.Drawing.Point(358, 143);
+            this.pboShowPass.Name = "pboShowPass";
+            this.pboShowPass.Size = new System.Drawing.Size(25, 25);
+            this.pboShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboShowPass.TabIndex = 13;
+            this.pboShowPass.TabStop = false;
+            this.pboShowPass.Click += new System.EventHandler(this.pboShowPass_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -367,6 +385,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboProfile)).EndInit();
             this.signuppanel.ResumeLayout(false);
             this.signuppanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboShowPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,6 +419,7 @@
         private System.Windows.Forms.Label lblPhNo;
         private System.Windows.Forms.Label lblCheckPass;
         private System.Windows.Forms.TextBox txtCheckPass;
+        private System.Windows.Forms.PictureBox pboShowPass;
     }
 }
 

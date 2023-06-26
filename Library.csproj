@@ -162,6 +162,18 @@
     <Compile Include="User\BuyForm.Designer.cs">
       <DependentUpon>BuyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\CartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\CartForm.Designer.cs">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\CartUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\CartUserControl.Designer.cs">
+      <DependentUpon>CartUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\DynamicUCTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,12 @@
     <EmbeddedResource Include="User\BuyForm.resx">
       <DependentUpon>BuyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\CartForm.resx">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\CartUserControl.resx">
+      <DependentUpon>CartUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\DynamicUCTest.resx">
       <DependentUpon>DynamicUCTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,9 +251,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Image\trash-can-icon-24.png" />
+    <None Include="Image\close-icon-4.png" />
+    <None Include="Image\6684701.png" />
     <Content Include="Image\Columbus and other cannibals.jpg" />
     <None Include="Image\pexels-stanislav-kondratiev-2908984.jpg" />
+    <None Include="Image\Flat_restart_icon.svg.png" />
     <Content Include="Image\phoenix.jpg" />
+    <None Include="Image\Shopping_Cart_Flat_Icon_Vector.svg.png" />
     <Content Include="Image\survival artist.jpg" />
     <Content Include="Image\the rise of the meritocracy.jpg" />
   </ItemGroup>

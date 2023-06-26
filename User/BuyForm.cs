@@ -40,7 +40,7 @@ namespace Library
             MySqlDataReader reader = cmd.ExecuteReader();
 
 
-            while (reader.Read())
+            if (reader.Read())
             {
                 price = int.Parse(reader["price"].ToString());
                 quantity = int.Parse(reader["quantity"].ToString());
@@ -95,7 +95,9 @@ namespace Library
                 {
                     if (MessageBox.Show("Do you want a voucher?", "Library", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        MessageBox.Show($"Book Name is {lblShowTitle.Text}.\nAuthor Name is {lblShowAuthorName.Text}.\n");
+                        MessageBox.Show($"Book Name is {lblShowTitle.Text}.\nAuthor Name is {lblShowAuthorName.Text}.\nPrice = {price.ToString()}.\nQuantity = {txtQuantity.Text}.\nTotal = {lblShowPrice.Text}");
+                        MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
+                        this.Close();
                     }
                     else
                     {
