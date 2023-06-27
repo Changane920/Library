@@ -70,6 +70,7 @@
             this.btnRefresh.TabIndex = 6;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // contextMenuStrip1
             // 
@@ -78,19 +79,21 @@
             this.updateToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.closeToolStripMenuItem.Text = "Delete";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // dgv1
             // 
@@ -131,6 +134,7 @@
             this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv1.Size = new System.Drawing.Size(1133, 516);
             this.dgv1.TabIndex = 8;
+            this.dgv1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv1_CellMouseDown);
             // 
             // dv_Uid
             // 
@@ -189,6 +193,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UserInfo";
             this.Size = new System.Drawing.Size(1285, 516);
+            this.Load += new System.EventHandler(this.UserInfo_Load);
             this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();

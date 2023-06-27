@@ -132,12 +132,11 @@
             // 
             this.lblUpdateForm.AutoSize = true;
             this.lblUpdateForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateForm.Location = new System.Drawing.Point(57, 27);
+            this.lblUpdateForm.Location = new System.Drawing.Point(39, 27);
             this.lblUpdateForm.Name = "lblUpdateForm";
             this.lblUpdateForm.Size = new System.Drawing.Size(160, 29);
             this.lblUpdateForm.TabIndex = 9;
             this.lblUpdateForm.Text = "Update Form";
-            this.lblUpdateForm.Click += new System.EventHandler(this.lblUpdateForm_Click);
             // 
             // pboUpdate
             // 

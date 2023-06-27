@@ -1,4 +1,5 @@
-﻿using Library.DynamicUserControl;
+﻿using Library.Admin.User_Control;
+using Library.DynamicUserControl;
 using Library.User_Control;
 using System;
 using System.Collections.Generic;
@@ -73,7 +74,8 @@ namespace Library
 
         private void studentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            UserInfo userInfo = new UserInfo();
+            addUserControl(userInfo);
         }
     }
 }

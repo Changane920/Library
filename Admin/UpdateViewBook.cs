@@ -97,10 +97,5 @@ namespace Library
                 pboUpdate.Image = img;
             }
         }
-
-        private void lblUpdateForm_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

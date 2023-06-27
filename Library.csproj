@@ -119,6 +119,12 @@
     <Compile Include="Admin\Dashbord.Designer.cs">
       <DependentUpon>Dashbord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\UpdateUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateUserInfo.Designer.cs">
+      <DependentUpon>UpdateUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UpdateViewBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Dashbord.resx">
       <DependentUpon>Dashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UpdateUserInfo.resx">
+      <DependentUpon>UpdateUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UpdateViewBook.resx">
       <DependentUpon>UpdateViewBook.cs</DependentUpon>

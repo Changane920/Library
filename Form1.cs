@@ -114,16 +114,16 @@ namespace Library
             string cpassword = txtCheckPass.Text;
 
             //validation pattern
-            string namePattern = @"^[a-zA-Z]{6,12}$";
+            string namePattern = @"^[a-zA-Z0-9]{6,12}$";
             string passPattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,16}$";
             string emailPattern = @"^[a-zA-Z0-9._%+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            
+
             if (string.IsNullOrEmpty(username)) //username null validation
             {
                 MessageBox.Show("Please enter your Name!", "Signup Username Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUserName.Focus();
                 return;
-            } 
+            }
             else if (string.IsNullOrEmpty(email)) //email null validation
             {
                 MessageBox.Show("PLease enter your Email!", "Signup Email Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -156,7 +156,7 @@ namespace Library
             }
             else if (!Regex.IsMatch(email, emailPattern)) //email format validation
             {
-                MessageBox.Show("Unvalid Email","Signup Email Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Unvalid Email", "Signup Email Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtEmail.Focus();
                 return;
             }
@@ -171,19 +171,38 @@ namespace Library
                 MessageBox.Show("Password and Re-password doesn't match.", "Signup Password Match Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCheckPass.Focus();
             }
-            else
+            else if (!string.IsNullOrEmpty(username))
             {
+                //username already exist or not validation
+                //connection open
                 MySqlConnection cn = Dataconnection.connect();
-                MySqlCommand cmd = new MySqlCommand("insert into userdata(username,email,password,phone,type) values (@username,@email,@password,@phone,@type)",cn);
+
+                //get username from userdata
+                MySqlCommand query = new MySqlCommand("select username from userdata", cn);
+                reader = query.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (username == reader["username"].ToString())
+                    {
+                        MessageBox.Show("User already exist.", "Username Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtUserName.Focus();
+                        return;
+                    }
+                }
+                reader.Close();
+
+                MySqlCommand cmd = new MySqlCommand("insert into userdata(username,email,password,phone,type) values (@username,@email,@password,@phone,@type)", cn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@phone", phone);
-                cmd.Parameters.AddWithValue("@type","member");
+                cmd.Parameters.AddWithValue("@type", "member");
                 if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
                 {
                     MessageBox.Show("Create Account Success!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Create Account Fail!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

@@ -135,7 +135,7 @@ namespace Library
             detailPanel.Visible = false;
         }
 
-        public string getUserName()
+        public void getUserName()
         {
             //connection open
             MySqlConnection cn = Dataconnection.connect();
@@ -147,7 +147,6 @@ namespace Library
 
             if (reader.Read()) lblUserName.Text = reader["username"].ToString();
 
-            return lblUserName.Text;
             reader.Close();
             cn.Close();
         }
