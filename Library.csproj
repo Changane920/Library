@@ -51,6 +51,8 @@
     <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.33\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -92,6 +94,7 @@
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -133,6 +136,12 @@
     </Compile>
     <Compile Include="Admin\User Control\RentBook.Designer.cs">
       <DependentUpon>RentBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User Control\UserInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\User Control\UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\User Control\ViewBook.cs">
       <SubType>UserControl</SubType>
@@ -202,6 +211,9 @@
     <EmbeddedResource Include="Admin\User Control\RentBook.resx">
       <DependentUpon>RentBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\User Control\UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\User Control\ViewBook.resx">
       <DependentUpon>ViewBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +266,7 @@
     <None Include="Image\trash-can-icon-24.png" />
     <None Include="Image\close-icon-4.png" />
     <None Include="Image\6684701.png" />
+    <None Include="Image\close-icon-png-19.png" />
     <Content Include="Image\Columbus and other cannibals.jpg" />
     <None Include="Image\pexels-stanislav-kondratiev-2908984.jpg" />
     <None Include="Image\Flat_restart_icon.svg.png" />

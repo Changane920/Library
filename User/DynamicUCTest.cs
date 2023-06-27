@@ -135,7 +135,7 @@ namespace Library
             detailPanel.Visible = false;
         }
 
-        public void getUserName()
+        public string getUserName()
         {
             //connection open
             MySqlConnection cn = Dataconnection.connect();
@@ -147,6 +147,7 @@ namespace Library
 
             if (reader.Read()) lblUserName.Text = reader["username"].ToString();
 
+            return lblUserName.Text;
             reader.Close();
             cn.Close();
         }
@@ -155,12 +156,12 @@ namespace Library
         {
             //connection open
             MySqlConnection cn = Dataconnection.connect();
-            
+
             //get bid from bookdetail
             MySqlCommand cmd = new MySqlCommand("select bid from bookdetail where b_name='" + lblTitle.Text + "'", cn);
-            
+
             reader = cmd.ExecuteReader();
-            
+
             if (reader.Read()) dataStore.bid = int.Parse(reader["bid"].ToString());
         }
 
@@ -174,6 +175,12 @@ namespace Library
 
         private void btnBorrow_Click(object sender, EventArgs e)
         {
+            if(pictureBox1.Image == null)
+            {
+                MessageBox.Show("Please select a item!");
+                return;
+            }
+
             getBookID();
             BorrowForm borrorwForm = new BorrowForm(dataStore);
             borrorwForm.ShowDialog();
@@ -181,6 +188,11 @@ namespace Library
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
+            if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("Please select a item!");
+                return;
+            }
             getBookID();
             BuyForm buyForm = new BuyForm(dataStore);
             buyForm.ShowDialog();

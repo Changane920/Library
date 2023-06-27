@@ -52,16 +52,19 @@
             this.txtBookName.Location = new System.Drawing.Point(442, 65);
             this.txtBookName.Name = "txtBookName";
             this.txtBookName.Size = new System.Drawing.Size(149, 22);
-            this.txtBookName.TabIndex = 0;
+            this.txtBookName.TabIndex = 2;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(319, 504);
+            this.btnUpdate.BackColor = System.Drawing.Color.Black;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnUpdate.Location = new System.Drawing.Point(371, 365);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblBookName
@@ -123,17 +126,18 @@
             this.txtGenre.Location = new System.Drawing.Point(442, 161);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.Size = new System.Drawing.Size(149, 22);
-            this.txtGenre.TabIndex = 7;
+            this.txtGenre.TabIndex = 4;
             // 
             // lblUpdateForm
             // 
             this.lblUpdateForm.AutoSize = true;
             this.lblUpdateForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateForm.Location = new System.Drawing.Point(39, 34);
+            this.lblUpdateForm.Location = new System.Drawing.Point(57, 27);
             this.lblUpdateForm.Name = "lblUpdateForm";
             this.lblUpdateForm.Size = new System.Drawing.Size(160, 29);
             this.lblUpdateForm.TabIndex = 9;
             this.lblUpdateForm.Text = "Update Form";
+            this.lblUpdateForm.Click += new System.EventHandler(this.lblUpdateForm_Click);
             // 
             // pboUpdate
             // 
@@ -146,12 +150,15 @@
             // 
             // btnUpload
             // 
+            this.btnUpload.BackColor = System.Drawing.Color.Black;
+            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpload.ForeColor = System.Drawing.SystemColors.Control;
             this.btnUpload.Location = new System.Drawing.Point(62, 261);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(117, 23);
-            this.btnUpload.TabIndex = 11;
+            this.btnUpload.TabIndex = 1;
             this.btnUpload.Text = "Upload Image";
-            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // lblPrice
@@ -169,7 +176,7 @@
             this.txtPrice.Location = new System.Drawing.Point(442, 257);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(149, 22);
-            this.txtPrice.TabIndex = 12;
+            this.txtPrice.TabIndex = 6;
             // 
             // lblQuantity
             // 
@@ -186,13 +193,13 @@
             this.txtQuantity.Location = new System.Drawing.Point(442, 305);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(149, 22);
-            this.txtQuantity.TabIndex = 14;
+            this.txtQuantity.TabIndex = 7;
             // 
             // UpdateViewBook
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(729, 552);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(684, 442);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.lblPrice);

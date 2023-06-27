@@ -35,6 +35,7 @@
             // 
             // FlpCart
             // 
+            this.FlpCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.FlpCart.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FlpCart.Location = new System.Drawing.Point(0, 36);
             this.FlpCart.Name = "FlpCart";
@@ -44,7 +45,7 @@
             // pboClose
             // 
             this.pboClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboClose.Image = global::Library.Properties.Resources.close_icon_4;
+            this.pboClose.Image = global::Library.Properties.Resources.close_icon_png_19;
             this.pboClose.Location = new System.Drawing.Point(334, 7);
             this.pboClose.Name = "pboClose";
             this.pboClose.Size = new System.Drawing.Size(20, 20);
@@ -56,7 +57,7 @@
             // CartForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(362, 483);
             this.Controls.Add(this.pboClose);
             this.Controls.Add(this.FlpCart);

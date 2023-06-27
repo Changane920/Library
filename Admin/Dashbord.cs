@@ -58,11 +58,6 @@ namespace Library
             addUserControl(ob);
         }
 
-        private void viewStudentInfoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void rentBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RentBook rentBook = new RentBook(dataStore);
@@ -74,6 +69,11 @@ namespace Library
             this.Close();
             Form1 form1 = new Form1(dataStore);
             form1.Show();
+        }
+
+        private void studentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

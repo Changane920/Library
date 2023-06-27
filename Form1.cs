@@ -105,6 +105,8 @@ namespace Library
 
         private void signupcreateaccbtn_Click_1(object sender, EventArgs e)
         {
+            DynamicUCTest duc = new DynamicUCTest(dataStore);
+
             string username = txtUserName.Text;
             string email = txtEmail.Text;
             string phone = txtPhone.Text;
@@ -168,6 +170,11 @@ namespace Library
             {
                 MessageBox.Show("Password and Re-password doesn't match.", "Signup Password Match Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCheckPass.Focus();
+            }
+            else if(username == duc.getUserName())
+            {
+                MessageBox.Show("Username already exist!","Signup UserName Validation Form",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                txtUserName.Focus();
             }
             else
             {

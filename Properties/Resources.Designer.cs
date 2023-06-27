@@ -83,6 +83,16 @@ namespace Library.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_icon_png_19 {
+            get {
+                object obj = ResourceManager.GetObject("close-icon-png-19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Flat_restart_icon_svg {
             get {
                 object obj = ResourceManager.GetObject("Flat_restart_icon.svg", resourceCulture);
