@@ -117,7 +117,7 @@ namespace Library
             string namePattern = @"^[a-zA-Z]{6,12}$";
             string passPattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,16}$";
             string emailPattern = @"^[a-zA-Z0-9._%+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
+            
             if (string.IsNullOrEmpty(username)) //username null validation
             {
                 MessageBox.Show("Please enter your Name!", "Signup Username Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -171,19 +171,15 @@ namespace Library
                 MessageBox.Show("Password and Re-password doesn't match.", "Signup Password Match Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCheckPass.Focus();
             }
-            else if(username == duc.getUserName())
-            {
-                MessageBox.Show("Username already exist!","Signup UserName Validation Form",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                txtUserName.Focus();
-            }
             else
             {
                 MySqlConnection cn = Dataconnection.connect();
-                MySqlCommand cmd = new MySqlCommand("insert into userdata(username,email,password,phone) values (@username,@email,@password,@phone)",cn);
+                MySqlCommand cmd = new MySqlCommand("insert into userdata(username,email,password,phone,type) values (@username,@email,@password,@phone,@type)",cn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@type","member");
                 if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
                 {
                     MessageBox.Show("Create Account Success!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Information);
