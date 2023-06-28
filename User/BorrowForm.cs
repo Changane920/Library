@@ -41,7 +41,7 @@ namespace Library.User
             MySqlConnection cn = Dataconnection.connect();
 
             //isnert into rentbook db
-            MySqlCommand cmd = new MySqlCommand("update rentbook set rentDate=@rentDate,returnDate=@returnDate,issue=@issue where bid = @bid",cn);
+            MySqlCommand cmd = new MySqlCommand("update rentbook set rentDate=@rentDate,expectReturnDate=@returnDate,issue=@issue where bid = @bid",cn);
 
             //cmd assign value
             cmd.Parameters.AddWithValue("@rentDate",dtpBorrow.Text);

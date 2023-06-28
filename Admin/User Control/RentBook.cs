@@ -36,7 +36,7 @@ namespace Library.User_Control
 
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy-MM-dd"), Convert.ToDateTime(reader[3]).ToString("yyyy-MM-dd"), reader[4], reader[5]);
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), reader[4], reader[5]);
             }
             reader.Close();
         }
@@ -92,11 +92,31 @@ namespace Library.User_Control
             MySqlConnection cn = Dataconnection.connect();
 
             MySqlCommand cmd = new MySqlCommand("update rentbook set actualReturnDate=@date where bid = @bid && uid = @uid", cn);
-            cmd.Parameters.AddWithValue("@date", newTime.ToString("yyyy-MM-dd-h"));
+            cmd.Parameters.AddWithValue("@date", newTime);
             cmd.Parameters.AddWithValue("@bid", bid);
             cmd.Parameters.AddWithValue("@uid", uid);
-
             cmd.ExecuteNonQuery();
+
+            MySqlCommand query = new MySqlCommand("select expectReturnDate,actualReturnDate from rentbook where bid = @bid && uid = @uid", cn);
+            query.Parameters.AddWithValue("@bid", bid);
+            query.Parameters.AddWithValue("uid", uid);
+            MySqlDataReader reader = query.ExecuteReader();
+
+            if (reader.Read())
+            {
+                if (Convert.ToDateTime(reader["expectReturnDate"]) < Convert.ToDateTime(reader["actualReturnDate"]))
+                {
+                    TimeSpan expireDate = Convert.ToDateTime(reader["actualReturnDate"]) - Convert.ToDateTime(reader["expectReturnDate"]);
+                    int getDay = expireDate.Days;
+
+                    MessageBox.Show($"{getDay} is expired. So 1 day = 100. Total penalty fee is" + 100*getDay,"Form",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                } 
+                else
+                {
+                    MessageBox.Show("Finish");
+                }
+            }
+
             cn.Close();
         }
 
@@ -112,7 +132,7 @@ namespace Library.User_Control
 
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy-MM-dd"), Convert.ToDateTime(reader[3]).ToString("yyyy-MM-dd"), reader[4], reader[5]);
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[4]).ToString("yyyy/MM/dd"), reader[5]);
             }
 
             cn.Close();

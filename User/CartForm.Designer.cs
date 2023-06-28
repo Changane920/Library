@@ -30,6 +30,8 @@
         {
             this.FlpCart = new System.Windows.Forms.FlowLayoutPanel();
             this.pboClose = new System.Windows.Forms.PictureBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pboClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,11 +56,33 @@
             this.pboClose.TabStop = false;
             this.pboClose.Click += new System.EventHandler(this.pboClose_Click);
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(12, 7);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(62, 24);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "Total:";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(80, 7);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(52, 24);
+            this.lblPrice.TabIndex = 3;
+            this.lblPrice.Text = "price";
+            // 
             // CartForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(362, 483);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.pboClose);
             this.Controls.Add(this.FlpCart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -68,6 +92,7 @@
             this.Load += new System.EventHandler(this.CartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboClose)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -75,5 +100,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel FlpCart;
         private System.Windows.Forms.PictureBox pboClose;
+        private System.Windows.Forms.Label lblTotal;
+        public System.Windows.Forms.Label lblPrice;
     }
 }

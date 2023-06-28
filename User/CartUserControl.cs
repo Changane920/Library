@@ -49,9 +49,7 @@ namespace Library.User
             {
                 MessageBox.Show("Fail!");
             }
-            cn.Close();
-
-            
+            cn.Close();            
         }
 
         private void CartUserControl_Load(object sender, EventArgs e)

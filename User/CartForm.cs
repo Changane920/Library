@@ -25,11 +25,14 @@ namespace Library.User
         public DataTable readItem()
         {
             MySqlConnection cn = Dataconnection.connect();
-            string query = "select bid,image,b_name from bookdetail b where bid in(select bid from buyerhistory where uid = @uid);";
+            string query = "select bid,image,b_name,price from bookdetail b where bid in(select bid from buyerhistory where uid = @uid);";
             MySqlCommand cmd = new MySqlCommand(query, cn);
             cmd.Parameters.AddWithValue("@uid", dataStore.uid);
             try
             {
+                MySqlDataReader reader = cmd.ExecuteReader();
+                lblPrice.Text = reader["price"].ToString();
+
                 MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 mda.Fill(dt);

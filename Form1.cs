@@ -117,6 +117,7 @@ namespace Library
             string namePattern = @"^[a-zA-Z0-9]{6,12}$";
             string passPattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,16}$";
             string emailPattern = @"^[a-zA-Z0-9._%+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            string phonePattern = @"^09";
 
             if (string.IsNullOrEmpty(username)) //username null validation
             {
@@ -145,6 +146,12 @@ namespace Library
             else if (string.IsNullOrEmpty(phone)) //phone number null validation
             {
                 MessageBox.Show("PLease enter your Phone Number!", "Signup Phone Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPhone.Focus();
+                return;
+            }
+            else if (!Regex.IsMatch(phone, phonePattern)) //phone number must start with 09 validation
+            {
+                MessageBox.Show("Phone Number must start with 09!", "Signup Phone Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPhone.Focus();
                 return;
             }
