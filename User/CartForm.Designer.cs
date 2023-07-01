@@ -32,16 +32,16 @@
             this.pboClose = new System.Windows.Forms.PictureBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboClose)).BeginInit();
             this.SuspendLayout();
             // 
             // FlpCart
             // 
             this.FlpCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.FlpCart.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FlpCart.Location = new System.Drawing.Point(0, 36);
             this.FlpCart.Name = "FlpCart";
-            this.FlpCart.Size = new System.Drawing.Size(362, 447);
+            this.FlpCart.Size = new System.Drawing.Size(362, 412);
             this.FlpCart.TabIndex = 0;
             // 
             // pboClose
@@ -72,15 +72,26 @@
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.Location = new System.Drawing.Point(80, 7);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(52, 24);
+            this.lblPrice.Size = new System.Drawing.Size(0, 24);
             this.lblPrice.TabIndex = 3;
-            this.lblPrice.Text = "price";
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(279, 454);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 24);
+            this.btnConfirm.TabIndex = 0;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // CartForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(362, 483);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.pboClose);
@@ -102,5 +113,6 @@
         private System.Windows.Forms.PictureBox pboClose;
         private System.Windows.Forms.Label lblTotal;
         public System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }

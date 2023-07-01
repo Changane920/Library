@@ -30,12 +30,12 @@ namespace Library.User_Control
             dgv1.Rows.Clear();
             MySqlConnection cn = Dataconnection.connect();
 
-            string sql = "select * from buyerhistory";
+            string sql = "select * from buyerrecord";
             MySqlCommand cmd = new MySqlCommand(sql, cn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4]);
+                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
             }
             cn.Close();
         }
@@ -55,14 +55,14 @@ namespace Library.User_Control
                     dgv1.Visible = true;
                     dgv1.Rows.Clear();
 
-                    string sql = "select * from buyerhistory;";
+                    string sql = "select * from buyerrecord;";
                     MySqlCommand cmd = new MySqlCommand(sql, cn);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     //insert into datagridview
                     while (reader.Read())
                     {
-                        dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4]);
+                        dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
                     }
                 }
             }

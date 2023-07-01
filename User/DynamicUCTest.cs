@@ -194,6 +194,7 @@ namespace Library
                 MessageBox.Show("Please select a item!");
                 return;
             }
+
             getBookID();
             BuyForm buyForm = new BuyForm(dataStore);
             buyForm.ShowDialog();

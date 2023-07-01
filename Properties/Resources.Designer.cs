@@ -63,6 +63,16 @@ namespace Library.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _22249_200 {
+            get {
+                object obj = ResourceManager.GetObject("22249-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6684701 {
             get {
                 object obj = ResourceManager.GetObject("6684701", resourceCulture);
@@ -86,6 +96,16 @@ namespace Library.Properties {
         internal static System.Drawing.Bitmap close_icon_png_19 {
             get {
                 object obj = ResourceManager.GetObject("close-icon-png-19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_close_1 {
+            get {
+                object obj = ResourceManager.GetObject("eye-close-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

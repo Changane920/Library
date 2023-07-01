@@ -26,8 +26,10 @@ CREATE TABLE `buyerhistory` (
   `bid` int DEFAULT NULL,
   `uid` int DEFAULT NULL,
   `price` int DEFAULT NULL,
-  `quantity` int DEFAULT NULL,
-  `boughDate` date DEFAULT NULL
+  `bQuantity` int DEFAULT NULL,
+  `boughDate` date DEFAULT NULL,
+  KEY `bid` (`bid`),
+  CONSTRAINT `buyerhistory_ibfk_1` FOREIGN KEY (`bid`) REFERENCES `bookdetail` (`bid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -37,7 +39,7 @@ CREATE TABLE `buyerhistory` (
 
 LOCK TABLES `buyerhistory` WRITE;
 /*!40000 ALTER TABLE `buyerhistory` DISABLE KEYS */;
-INSERT INTO `buyerhistory` VALUES (116,6,1000,2,'2023-06-21'),(114,5,500,1,'2023-06-24'),(114,5,1200,2,'2023-06-25'),(114,5,600,2,'2023-06-25'),(114,6,1200,2,'2023-06-25'),(116,5,800,1,'2023-06-25');
+INSERT INTO `buyerhistory` VALUES (113,14,1000,2,'2023-06-30');
 /*!40000 ALTER TABLE `buyerhistory` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-26 18:53:49
+-- Dump completed on 2023-07-01 22:17:12

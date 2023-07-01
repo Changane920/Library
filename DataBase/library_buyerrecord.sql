@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `rentbook`
+-- Table structure for table `buyerrecord`
 --
 
-DROP TABLE IF EXISTS `rentbook`;
+DROP TABLE IF EXISTS `buyerrecord`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `rentbook` (
+CREATE TABLE `buyerrecord` (
   `bid` int DEFAULT NULL,
   `uid` int DEFAULT NULL,
-  `rentDate` date DEFAULT NULL,
-  `expectReturnDate` date DEFAULT NULL,
-  `actualReturnDate` date DEFAULT NULL,
-  `issue` varchar(255) DEFAULT NULL
+  `price` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `boughDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `rentbook`
+-- Dumping data for table `buyerrecord`
 --
 
-LOCK TABLES `rentbook` WRITE;
-/*!40000 ALTER TABLE `rentbook` DISABLE KEYS */;
-INSERT INTO `rentbook` VALUES (114,5,'2023-06-28','2023-07-05','2023-06-28',''),(116,5,'2023-06-07','2023-06-14','2023-06-28',''),(116,12,'2023-06-07','2023-06-14','2023-06-28','');
-/*!40000 ALTER TABLE `rentbook` ENABLE KEYS */;
+LOCK TABLES `buyerrecord` WRITE;
+/*!40000 ALTER TABLE `buyerrecord` DISABLE KEYS */;
+INSERT INTO `buyerrecord` VALUES (120,12,2000,2,'2023-06-30'),(120,12,2000,2,'2023-06-30'),(113,12,1000,2,'2023-06-30'),(120,12,2000,2,'2023-06-30'),(113,12,1000,2,'2023-06-30');
+/*!40000 ALTER TABLE `buyerrecord` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-01 22:17:11
+-- Dump completed on 2023-07-01 22:17:08

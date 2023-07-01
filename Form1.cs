@@ -78,6 +78,15 @@ namespace Library
         private void Form1_Load(object sender, EventArgs e)
         {
             attempt = 0;
+
+            //hide password
+            txtPass.UseSystemPasswordChar = true;
+            txtCheckPass.UseSystemPasswordChar = true;
+            txtLoginPass.UseSystemPasswordChar = true;
+
+            pboHidden.Hide();
+            pboHidden2.Hide();
+            pboHidden3.Hide();
         }
 
         private void loginTimer_Tick(object sender, EventArgs e)
@@ -103,7 +112,62 @@ namespace Library
             signuppanel.Visible = true;
         }
 
-        private void signupcreateaccbtn_Click_1(object sender, EventArgs e)
+        //phone textbox digit only
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Suppress the key press
+            }
+        }
+
+        //show password
+
+        private void pboShowPass_Click(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = false;
+            pboShowPass.Hide();
+            pboHidden.Show();
+        }
+
+        private void pboShowPass2_Click(object sender, EventArgs e)
+        {
+            txtCheckPass.UseSystemPasswordChar = false;
+            pboShowPass2.Hide();
+            pboHidden2.Show();
+        }
+
+        private void pboShowPass3_Click(object sender, EventArgs e)
+        {
+            txtLoginPass.UseSystemPasswordChar = false;
+            pboHidden3.Show();
+            pboShowPass3.Hide();
+        }
+
+        //hide password
+
+        private void pboHidden_Click(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = true;
+            pboHidden.Hide();
+            pboShowPass.Show();
+        }
+
+        private void pboHidden2_Click(object sender, EventArgs e)
+        {
+            txtCheckPass.UseSystemPasswordChar = true;
+            pboHidden2.Hide();
+            pboShowPass2.Show();
+        }
+
+        private void pboHidden3_Click(object sender, EventArgs e)
+        {
+            txtLoginPass.UseSystemPasswordChar = true;
+            pboHidden3.Hide();
+            pboShowPass3.Show();
+        }
+
+        private void signupcreateaccbtn_Click(object sender, EventArgs e)
         {
             DynamicUCTest duc = new DynamicUCTest(dataStore);
 
@@ -216,23 +280,9 @@ namespace Library
             }
         }
 
-        private void signuploginbtn_Click_1(object sender, EventArgs e)
+        private void signuploginbtn_Click(object sender, EventArgs e)
         {
             signuppanel.Visible = false;
-        }
-
-        //phone textbox digit only
-        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Suppress the key press
-            }
-        }
-
-        private void pboShowPass_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

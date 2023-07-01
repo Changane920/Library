@@ -276,9 +276,11 @@
     <None Include="Image\close-icon-4.png" />
     <None Include="Image\6684701.png" />
     <None Include="Image\close-icon-png-19.png" />
+    <None Include="Image\22249-200.png" />
     <Content Include="Image\Columbus and other cannibals.jpg" />
     <None Include="Image\pexels-stanislav-kondratiev-2908984.jpg" />
     <None Include="Image\Flat_restart_icon.svg.png" />
+    <None Include="Image\eye-close-1.png" />
     <Content Include="Image\phoenix.jpg" />
     <None Include="Image\Shopping_Cart_Flat_Icon_Vector.svg.png" />
     <Content Include="Image\survival artist.jpg" />

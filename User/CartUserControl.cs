@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace Library.User
 
         private Image img;
         private string title;
+        private string productDetail;
 
         public Image Img
         {
@@ -33,12 +35,18 @@ namespace Library.User
             get { return title; }
             set { title = value; lblTitle.Text = value; }
         }
+        public string ProductDetail
+        {
+            get { return productDetail; }
+            set { productDetail = value; lblProductDetail.Text = value; }
+        }
 
         private void pboDelete_Click(object sender, EventArgs e)
         {
             MySqlConnection cn = Dataconnection.connect();
-            MySqlCommand query = new MySqlCommand("delete from buyerhistory where bid in(select bid from bookdetail where b_name=@bookName)",cn);
+            MySqlCommand query = new MySqlCommand("delete from buyerhistory where bid in(select bid from bookdetail where b_name=@bookName && uid = @uid)",cn);
             query.Parameters.AddWithValue("@bookName", title);
+            query.Parameters.AddWithValue("@uid", dataStore.uid);
 
             if(MessageBox.Show("Are you sure?","Delete Form",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
             {

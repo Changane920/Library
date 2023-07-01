@@ -31,7 +31,7 @@ CREATE TABLE `userdata` (
   `phone` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `ID_UNIQUE` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `userdata` (
 
 LOCK TABLES `userdata` WRITE;
 /*!40000 ALTER TABLE `userdata` DISABLE KEYS */;
-INSERT INTO `userdata` VALUES (1,'admin',NULL,'admin','Admin',NULL),(2,'member',NULL,'member','Member',NULL),(5,'user',NULL,'user',NULL,NULL),(6,'Chanmyae','email@gmail.com','Pass@123',NULL,'955555'),(7,'Chanmyae','email@gmail.com','Pass@123$%^',NULL,'9999'),(8,'Chanmyae','email@gmail.com','Pass@123',NULL,'0999999999');
+INSERT INTO `userdata` VALUES (1,'admin',NULL,'admin','Admin',NULL),(12,'Chanmyaee','email@gmail.com','Pass@123','member','09123'),(13,'username','user@email.com','User@123','member','09123'),(14,'Userno1','user@gmail.com','User@123','member','0999999');
 /*!40000 ALTER TABLE `userdata` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-26 18:53:52
+-- Dump completed on 2023-07-01 22:17:10

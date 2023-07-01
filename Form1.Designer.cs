@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pboProfile = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txtLoginUserName = new System.Windows.Forms.TextBox();
             this.txtLoginPass = new System.Windows.Forms.TextBox();
@@ -43,7 +42,14 @@
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.lblLoginUserName = new System.Windows.Forms.Label();
             this.lblLoginPass = new System.Windows.Forms.Label();
+            this.pboProfile = new System.Windows.Forms.PictureBox();
+            this.pboHidden3 = new System.Windows.Forms.PictureBox();
+            this.pboShowPass3 = new System.Windows.Forms.PictureBox();
             this.signuppanel = new System.Windows.Forms.Panel();
+            this.pboHidden2 = new System.Windows.Forms.PictureBox();
+            this.pboShowPass2 = new System.Windows.Forms.PictureBox();
+            this.pboHidden = new System.Windows.Forms.PictureBox();
+            this.pboShowPass = new System.Windows.Forms.PictureBox();
             this.lblCheckPass = new System.Windows.Forms.Label();
             this.txtCheckPass = new System.Windows.Forms.TextBox();
             this.lblPhNo = new System.Windows.Forms.Label();
@@ -56,22 +62,15 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.pboShowPass = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboHidden3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboShowPass3)).BeginInit();
             this.signuppanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboHidden2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboShowPass2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboHidden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboShowPass)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pboProfile
-            // 
-            this.pboProfile.Image = ((System.Drawing.Image)(resources.GetObject("pboProfile.Image")));
-            this.pboProfile.Location = new System.Drawing.Point(202, 11);
-            this.pboProfile.Margin = new System.Windows.Forms.Padding(2);
-            this.pboProfile.Name = "pboProfile";
-            this.pboProfile.Size = new System.Drawing.Size(156, 133);
-            this.pboProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboProfile.TabIndex = 0;
-            this.pboProfile.TabStop = false;
             // 
             // txtLoginUserName
             // 
@@ -97,7 +96,6 @@
             this.txtLoginPass.Location = new System.Drawing.Point(246, 239);
             this.txtLoginPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoginPass.Name = "txtLoginPass";
-            this.txtLoginPass.PasswordChar = '*';
             this.txtLoginPass.Size = new System.Drawing.Size(171, 21);
             this.txtLoginPass.TabIndex = 2;
             this.txtLoginPass.Text = "Password";
@@ -193,8 +191,46 @@
             this.lblLoginPass.TabIndex = 9;
             this.lblLoginPass.Text = "Password";
             // 
+            // pboProfile
+            // 
+            this.pboProfile.Image = ((System.Drawing.Image)(resources.GetObject("pboProfile.Image")));
+            this.pboProfile.Location = new System.Drawing.Point(202, 11);
+            this.pboProfile.Margin = new System.Windows.Forms.Padding(2);
+            this.pboProfile.Name = "pboProfile";
+            this.pboProfile.Size = new System.Drawing.Size(156, 133);
+            this.pboProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboProfile.TabIndex = 0;
+            this.pboProfile.TabStop = false;
+            // 
+            // pboHidden3
+            // 
+            this.pboHidden3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboHidden3.Image = global::Library.Properties.Resources._22249_200;
+            this.pboHidden3.Location = new System.Drawing.Point(422, 237);
+            this.pboHidden3.Name = "pboHidden3";
+            this.pboHidden3.Size = new System.Drawing.Size(25, 25);
+            this.pboHidden3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboHidden3.TabIndex = 18;
+            this.pboHidden3.TabStop = false;
+            this.pboHidden3.Click += new System.EventHandler(this.pboHidden3_Click);
+            // 
+            // pboShowPass3
+            // 
+            this.pboShowPass3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboShowPass3.Image = global::Library.Properties.Resources._6684701;
+            this.pboShowPass3.Location = new System.Drawing.Point(422, 237);
+            this.pboShowPass3.Name = "pboShowPass3";
+            this.pboShowPass3.Size = new System.Drawing.Size(25, 25);
+            this.pboShowPass3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboShowPass3.TabIndex = 17;
+            this.pboShowPass3.TabStop = false;
+            this.pboShowPass3.Click += new System.EventHandler(this.pboShowPass3_Click);
+            // 
             // signuppanel
             // 
+            this.signuppanel.Controls.Add(this.pboHidden2);
+            this.signuppanel.Controls.Add(this.pboShowPass2);
+            this.signuppanel.Controls.Add(this.pboHidden);
             this.signuppanel.Controls.Add(this.pboShowPass);
             this.signuppanel.Controls.Add(this.lblCheckPass);
             this.signuppanel.Controls.Add(this.txtCheckPass);
@@ -212,7 +248,55 @@
             this.signuppanel.Margin = new System.Windows.Forms.Padding(2);
             this.signuppanel.Name = "signuppanel";
             this.signuppanel.Size = new System.Drawing.Size(408, 299);
-            this.signuppanel.TabIndex = 11;
+            this.signuppanel.TabIndex = 19;
+            // 
+            // pboHidden2
+            // 
+            this.pboHidden2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboHidden2.Image = global::Library.Properties.Resources._22249_200;
+            this.pboHidden2.Location = new System.Drawing.Point(352, 183);
+            this.pboHidden2.Name = "pboHidden2";
+            this.pboHidden2.Size = new System.Drawing.Size(25, 25);
+            this.pboHidden2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboHidden2.TabIndex = 16;
+            this.pboHidden2.TabStop = false;
+            this.pboHidden2.Click += new System.EventHandler(this.pboHidden2_Click);
+            // 
+            // pboShowPass2
+            // 
+            this.pboShowPass2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboShowPass2.Image = global::Library.Properties.Resources._6684701;
+            this.pboShowPass2.Location = new System.Drawing.Point(352, 183);
+            this.pboShowPass2.Name = "pboShowPass2";
+            this.pboShowPass2.Size = new System.Drawing.Size(25, 25);
+            this.pboShowPass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboShowPass2.TabIndex = 15;
+            this.pboShowPass2.TabStop = false;
+            this.pboShowPass2.Click += new System.EventHandler(this.pboShowPass2_Click);
+            // 
+            // pboHidden
+            // 
+            this.pboHidden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboHidden.Image = global::Library.Properties.Resources._22249_200;
+            this.pboHidden.Location = new System.Drawing.Point(352, 144);
+            this.pboHidden.Name = "pboHidden";
+            this.pboHidden.Size = new System.Drawing.Size(25, 25);
+            this.pboHidden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboHidden.TabIndex = 14;
+            this.pboHidden.TabStop = false;
+            this.pboHidden.Click += new System.EventHandler(this.pboHidden_Click);
+            // 
+            // pboShowPass
+            // 
+            this.pboShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboShowPass.Image = global::Library.Properties.Resources._6684701;
+            this.pboShowPass.Location = new System.Drawing.Point(352, 144);
+            this.pboShowPass.Name = "pboShowPass";
+            this.pboShowPass.Size = new System.Drawing.Size(25, 25);
+            this.pboShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboShowPass.TabIndex = 13;
+            this.pboShowPass.TabStop = false;
+            this.pboShowPass.Click += new System.EventHandler(this.pboShowPass_Click);
             // 
             // lblCheckPass
             // 
@@ -231,7 +315,6 @@
             this.txtCheckPass.Location = new System.Drawing.Point(181, 184);
             this.txtCheckPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtCheckPass.Name = "txtCheckPass";
-            this.txtCheckPass.PasswordChar = '*';
             this.txtCheckPass.Size = new System.Drawing.Size(171, 22);
             this.txtCheckPass.TabIndex = 4;
             // 
@@ -260,7 +343,7 @@
             this.signuploginbtn.TabIndex = 6;
             this.signuploginbtn.Text = "Login";
             this.signuploginbtn.UseVisualStyleBackColor = false;
-            this.signuploginbtn.Click += new System.EventHandler(this.signuploginbtn_Click_1);
+            this.signuploginbtn.Click += new System.EventHandler(this.signuploginbtn_Click);
             // 
             // signupcreateaccbtn
             // 
@@ -274,7 +357,7 @@
             this.signupcreateaccbtn.TabIndex = 5;
             this.signupcreateaccbtn.Text = "Create Account";
             this.signupcreateaccbtn.UseVisualStyleBackColor = false;
-            this.signupcreateaccbtn.Click += new System.EventHandler(this.signupcreateaccbtn_Click_1);
+            this.signupcreateaccbtn.Click += new System.EventHandler(this.signupcreateaccbtn_Click);
             // 
             // lblPassword
             // 
@@ -317,7 +400,6 @@
             this.txtPass.Location = new System.Drawing.Point(181, 144);
             this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(171, 22);
             this.txtPass.TabIndex = 3;
             // 
@@ -328,7 +410,6 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(171, 22);
             this.txtPhone.TabIndex = 2;
-            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtEmail
             // 
@@ -346,18 +427,6 @@
             this.txtUserName.Size = new System.Drawing.Size(171, 22);
             this.txtUserName.TabIndex = 0;
             // 
-            // pboShowPass
-            // 
-            this.pboShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboShowPass.Image = global::Library.Properties.Resources._6684701;
-            this.pboShowPass.Location = new System.Drawing.Point(358, 143);
-            this.pboShowPass.Name = "pboShowPass";
-            this.pboShowPass.Size = new System.Drawing.Size(25, 25);
-            this.pboShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboShowPass.TabIndex = 13;
-            this.pboShowPass.TabStop = false;
-            this.pboShowPass.Click += new System.EventHandler(this.pboShowPass_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -366,6 +435,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(561, 458);
             this.Controls.Add(this.signuppanel);
+            this.Controls.Add(this.pboHidden3);
+            this.Controls.Add(this.pboShowPass3);
             this.Controls.Add(this.lblLoginPass);
             this.Controls.Add(this.lblLoginUserName);
             this.Controls.Add(this.btnClose);
@@ -383,8 +454,13 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboHidden3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboShowPass3)).EndInit();
             this.signuppanel.ResumeLayout(false);
             this.signuppanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboHidden2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboShowPass2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboHidden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboShowPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -406,7 +482,16 @@
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private System.Windows.Forms.Label lblLoginUserName;
         private System.Windows.Forms.Label lblLoginPass;
+        private System.Windows.Forms.PictureBox pboHidden3;
+        private System.Windows.Forms.PictureBox pboShowPass3;
         private System.Windows.Forms.Panel signuppanel;
+        private System.Windows.Forms.PictureBox pboHidden2;
+        private System.Windows.Forms.PictureBox pboShowPass2;
+        private System.Windows.Forms.PictureBox pboHidden;
+        private System.Windows.Forms.PictureBox pboShowPass;
+        private System.Windows.Forms.Label lblCheckPass;
+        private System.Windows.Forms.TextBox txtCheckPass;
+        private System.Windows.Forms.Label lblPhNo;
         private System.Windows.Forms.Button signuploginbtn;
         private System.Windows.Forms.Button signupcreateaccbtn;
         private System.Windows.Forms.Label lblPassword;
@@ -416,10 +501,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Label lblPhNo;
-        private System.Windows.Forms.Label lblCheckPass;
-        private System.Windows.Forms.TextBox txtCheckPass;
-        private System.Windows.Forms.PictureBox pboShowPass;
     }
 }
 

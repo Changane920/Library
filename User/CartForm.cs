@@ -22,16 +22,33 @@ namespace Library.User
             dataStore = data;
         }
 
+        MySqlDataReader reader = null;
+        int quantity,price,result;
+
         public DataTable readItem()
         {
             MySqlConnection cn = Dataconnection.connect();
             string query = "select bid,image,b_name,price from bookdetail b where bid in(select bid from buyerhistory where uid = @uid);";
             MySqlCommand cmd = new MySqlCommand(query, cn);
             cmd.Parameters.AddWithValue("@uid", dataStore.uid);
+
             try
             {
-                MySqlDataReader reader = cmd.ExecuteReader();
-                lblPrice.Text = reader["price"].ToString();
+
+                MySqlCommand query2 = new MySqlCommand("select bQuantity,price from buyerhistory where uid = @uid", cn);
+                query2.Parameters.AddWithValue("@uid", dataStore.uid);
+
+                reader = query2.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    result += int.Parse(reader["price"].ToString());
+                    quantity = int.Parse(reader["bQuantity"].ToString());
+                }
+
+                lblPrice.Text = result.ToString();
+                
+                reader.Close();
 
                 MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -47,14 +64,35 @@ namespace Library.User
             CartUserControl();
         }
 
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure?","Cart",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MySqlConnection cn = Dataconnection.connect();
+                MySqlCommand query = new MySqlCommand("insert into buyerrecord select * from buyerhistory where uid=@uid",cn);
+                query.Parameters.AddWithValue("@uid", dataStore.uid);
+                if (Convert.ToBoolean(query.ExecuteNonQuery()))
+                {
+                    MessageBox.Show("Thank You!");
+                    MySqlCommand query2 = new MySqlCommand("delete from buyerhistory where uid=@uid",cn);
+                    query2.Parameters.AddWithValue("@uid", dataStore.uid);
+                    query2.ExecuteNonQuery();
+                    this.Close();
+                }
+            } else
+            {
+                MessageBox.Show("Thank you!");
+            }
+        }
+
         private void CartUserControl()
         {
             FlpCart.Controls.Clear();
             DataTable dt = readItem();
-            
-            if(dt != null)
+
+            if (dt != null)
             {
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     CartUserControl[] ArrayItems = new CartUserControl[dt.Rows.Count];
                     for (int i = 0; i < 1; i++)
@@ -66,6 +104,19 @@ namespace Library.User
                             MemoryStream ms = new MemoryStream((byte[])row["Image"]);
                             ArrayItems[i].Img = new Bitmap(ms);
                             ArrayItems[i].Title = row["b_name"].ToString();
+
+                            MySqlConnection cn = Dataconnection.connect();
+
+                            MySqlCommand query = new MySqlCommand("select bQuantity,price from buyerhistory where uid = @uid && bid in (select bid from bookdetail where b_name = @bookName)", cn);
+                            query.Parameters.AddWithValue("@uid", dataStore.uid);
+                            query.Parameters.AddWithValue("@bookName", ArrayItems[i].Title);
+
+                            MySqlDataReader reader = query.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                ArrayItems[i].ProductDetail = $"Item = {int.Parse(reader["bQuantity"].ToString())}, Price = {int.Parse(reader["price"].ToString())}";
+                            }
 
                             FlpCart.Controls.Add(ArrayItems[i]);
                         }
