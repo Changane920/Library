@@ -62,6 +62,15 @@ namespace Library.User
         {
             ControlBox = false;
             CartUserControl();
+
+            if (FlpCart.Controls.Count == 0)
+            {
+                btnConfirm.Visible = false;
+            } 
+            else
+            {
+                btnConfirm.Visible = true;
+            }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

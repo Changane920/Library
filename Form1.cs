@@ -35,7 +35,7 @@ namespace Library
                 MessageBox.Show("you have made too many attempts! \nPlease try again.", "Attempts", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 attempt = 0;
 
-                count = 10;
+                count = 30;
 
                 loginTimer.Enabled = true;
                 btnLogin.Enabled = false;
@@ -63,7 +63,6 @@ namespace Library
             {
                 txtLoginUserName.Clear();
             }
-
         }
 
         private void txtPassword_MouseClick(object sender, MouseEventArgs e)
@@ -71,7 +70,6 @@ namespace Library
             if (txtLoginPass.Text == "Password")
             {
                 txtLoginPass.Clear();
-                txtLoginPass.PasswordChar = '*';
             }
         }
 
@@ -179,7 +177,7 @@ namespace Library
 
             //validation pattern
             string namePattern = @"^[a-zA-Z0-9]{6,12}$";
-            string passPattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,16}$";
+            string passPattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8}$";
             string emailPattern = @"^[a-zA-Z0-9._%+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             string phonePattern = @"^09";
 
@@ -189,22 +187,22 @@ namespace Library
                 txtUserName.Focus();
                 return;
             }
+            else if (!Regex.IsMatch(username, namePattern)) //username format validation
+            {
+                MessageBox.Show("At least 6 characters long & At most 12 characters long.", "Signup Username Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUserName.Focus();
+                return;
+            }
             else if (string.IsNullOrEmpty(email)) //email null validation
             {
                 MessageBox.Show("PLease enter your Email!", "Signup Email Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtEmail.Focus();
                 return;
             }
-            else if (string.IsNullOrEmpty(password)) //password null validation
+            else if (!Regex.IsMatch(email, emailPattern)) //email format validation
             {
-                MessageBox.Show("PLease enter your Password!!", "Signup Password Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPass.Focus();
-                return;
-            }
-            else if (string.IsNullOrEmpty(cpassword)) //check password null validation
-            {
-                MessageBox.Show("PLease enter your Re-password!", "Signup Re-password Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtCheckPass.Focus();
+                MessageBox.Show("Unvalid Email", "Signup Email Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
                 return;
             }
             else if (string.IsNullOrEmpty(phone)) //phone number null validation
@@ -219,22 +217,22 @@ namespace Library
                 txtPhone.Focus();
                 return;
             }
-            else if (!Regex.IsMatch(username, namePattern)) //username format validation
+            else if (string.IsNullOrEmpty(password)) //password null validation
             {
-                MessageBox.Show("At least 6 characters long & At most 12 characters long.", "Signup Username Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUserName.Focus();
-                return;
-            }
-            else if (!Regex.IsMatch(email, emailPattern)) //email format validation
-            {
-                MessageBox.Show("Unvalid Email", "Signup Email Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtEmail.Focus();
+                MessageBox.Show("PLease enter your Password!!", "Signup Password Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPass.Focus();
                 return;
             }
             else if (!Regex.IsMatch(password, passPattern)) //password format validation
             {
-                MessageBox.Show("At least 8 characters long && at most 15 characters long. \n Contain at least one Uppercase letter. \n Contain at least one digit. \n Contain at least special one character.", "Signup Password Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("At least 8 characters long. \n Contain at least one Uppercase letter. \n Contain at least one digit. \n Contain at least special one character.", "Signup Password Validation Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPass.Focus();
+                return;
+            }
+            else if (string.IsNullOrEmpty(cpassword)) //check password null validation
+            {
+                MessageBox.Show("PLease enter your Re-password!", "Signup Re-password Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCheckPass.Focus();
                 return;
             }
             else if (password != cpassword) // password & checkpassowrd match validation
@@ -249,15 +247,21 @@ namespace Library
                 MySqlConnection cn = Dataconnection.connect();
 
                 //get username from userdata
-                MySqlCommand query = new MySqlCommand("select username from userdata", cn);
+                MySqlCommand query = new MySqlCommand("select username,email from userdata", cn);
                 reader = query.ExecuteReader();
 
                 while (reader.Read())
                 {
                     if (username == reader["username"].ToString())
                     {
-                        MessageBox.Show("User already exist.", "Username Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Username already exist.", "Username Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtUserName.Focus();
+                        return;
+                    }
+                    else if (email == reader["email"].ToString())
+                    {
+                        MessageBox.Show("Email already exist.", "Username Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtEmail.Focus();
                         return;
                     }
                 }
@@ -271,18 +275,16 @@ namespace Library
                 cmd.Parameters.AddWithValue("@type", "member");
                 if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
                 {
-                    MessageBox.Show("Create Account Success!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (MessageBox.Show("Create Account Success!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        signuppanel.Visible = false;
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Create Account Fail!", "Signup Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void signuploginbtn_Click(object sender, EventArgs e)
-        {
-            signuppanel.Visible = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -324,7 +326,7 @@ namespace Library
             else
             {
                 MessageBox.Show("Username or Password is incorrect. \nPlease try again later", "Login fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
                 txtLoginUserName.Clear();
                 txtLoginPass.Clear();
                 txtLoginUserName.Focus();

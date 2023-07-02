@@ -25,10 +25,19 @@ namespace Library
             dataStore = data;
         }
 
-        int price,quantity;
+        int price, quantity;
 
         private void BuyForm_Load(object sender, EventArgs e)
         {
+            if (txtQuantity.Text == "1")
+            {
+                btnQuantityMinus.Enabled = false;
+                lblShowPrice.Text = price.ToString();
+            } else
+            {
+                btnQuantityMinus.Enabled = true;
+            }
+
             //connection open
             MySqlConnection cn = Dataconnection.connect();
 
@@ -71,9 +80,9 @@ namespace Library
                 }
 
                 //check instock
-                if(int.Parse(txtQuantity.Text) > quantity)
+                if (int.Parse(txtQuantity.Text) > quantity)
                 {
-                    MessageBox.Show($"Our of stock! \n{quantity} left in our inventory!","Buy Form",MessageBoxButtons.OK);
+                    MessageBox.Show($"Our of stock! \n{quantity} left in our inventory!", "Buy Form", MessageBoxButtons.OK);
                     return;
                 }
 
@@ -108,7 +117,7 @@ namespace Library
                 }
 
                 // reduce quantity
-                MySqlCommand updateCmd = new MySqlCommand("update bookdetail set quantity = @quantity - @txtquantity where bid = @bid",cn);
+                MySqlCommand updateCmd = new MySqlCommand("update bookdetail set quantity = @quantity - @txtquantity where bid = @bid", cn);
                 updateCmd.Parameters.AddWithValue("@quantity", quantity);
                 updateCmd.Parameters.AddWithValue("@txtquantity", int.Parse(txtQuantity.Text));
                 updateCmd.Parameters.AddWithValue("@bid", dataStore.bid);
@@ -121,6 +130,40 @@ namespace Library
                 MessageBox.Show("Fail!", "Library", MessageBoxButtons.OK);
                 this.Close();
             }
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQuantity.Text == "1")
+            {
+                btnQuantityMinus.Enabled = false;
+                lblShowPrice.Text = price.ToString();
+            }else
+            {
+                btnQuantityMinus.Enabled = true;
+            }
+
+            int result = 0;
+            int num = price;
+            int limit = int.Parse(txtQuantity.Text);
+
+            for (int i = 0; i < limit; i++)
+            {
+                result += num;
+                lblShowPrice.Text = result.ToString();
+            }
+        }
+
+        private void btnQuantityPlus_Click(object sender, EventArgs e)
+        {
+            int plusQuantity = int.Parse(txtQuantity.Text) + 1;
+            txtQuantity.Text = plusQuantity.ToString();
+        }
+
+        private void btnQuantityMinus_Click(object sender, EventArgs e)
+        {
+            int minusQuantity = int.Parse(txtQuantity.Text) - 1;
+            txtQuantity.Text = minusQuantity.ToString();
         }
 
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)

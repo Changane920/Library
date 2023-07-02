@@ -29,32 +29,20 @@
         private void InitializeComponent()
         {
             this.FlpCart = new System.Windows.Forms.FlowLayoutPanel();
-            this.pboClose = new System.Windows.Forms.PictureBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.pboClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboClose)).BeginInit();
             this.SuspendLayout();
             // 
             // FlpCart
             // 
-            this.FlpCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.FlpCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.FlpCart.Location = new System.Drawing.Point(0, 36);
             this.FlpCart.Name = "FlpCart";
             this.FlpCart.Size = new System.Drawing.Size(362, 412);
             this.FlpCart.TabIndex = 0;
-            // 
-            // pboClose
-            // 
-            this.pboClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboClose.Image = global::Library.Properties.Resources.close_icon_png_19;
-            this.pboClose.Location = new System.Drawing.Point(334, 7);
-            this.pboClose.Name = "pboClose";
-            this.pboClose.Size = new System.Drawing.Size(20, 20);
-            this.pboClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboClose.TabIndex = 1;
-            this.pboClose.TabStop = false;
-            this.pboClose.Click += new System.EventHandler(this.pboClose_Click);
             // 
             // lblTotal
             // 
@@ -77,19 +65,34 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(279, 454);
+            this.btnConfirm.BackColor = System.Drawing.Color.Black;
+            this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.LightBlue;
+            this.btnConfirm.Location = new System.Drawing.Point(268, 454);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 24);
+            this.btnConfirm.Size = new System.Drawing.Size(90, 26);
             this.btnConfirm.TabIndex = 0;
             this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // pboClose
+            // 
+            this.pboClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboClose.Image = global::Library.Properties.Resources.error;
+            this.pboClose.Location = new System.Drawing.Point(330, 6);
+            this.pboClose.Name = "pboClose";
+            this.pboClose.Size = new System.Drawing.Size(28, 24);
+            this.pboClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboClose.TabIndex = 1;
+            this.pboClose.TabStop = false;
+            this.pboClose.Click += new System.EventHandler(this.pboClose_Click);
             // 
             // CartForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(362, 483);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lblPrice);

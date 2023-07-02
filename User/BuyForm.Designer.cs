@@ -42,20 +42,22 @@
             this.lblShowPrice = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.BtnConfirm = new System.Windows.Forms.Button();
+            this.btnQuantityPlus = new System.Windows.Forms.Button();
+            this.btnQuantityMinus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBookName
             // 
             this.lblBookName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookName.ForeColor = System.Drawing.Color.Black;
             this.lblBookName.Location = new System.Drawing.Point(83, 187);
             this.lblBookName.Name = "lblBookName";
             this.lblBookName.Size = new System.Drawing.Size(121, 32);
             this.lblBookName.TabIndex = 0;
             this.lblBookName.Text = "Book Name:";
-            this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -69,9 +71,9 @@
             // 
             // lblShowTitle
             // 
-            this.lblShowTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblShowTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblShowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowTitle.ForeColor = System.Drawing.Color.Black;
             this.lblShowTitle.Location = new System.Drawing.Point(254, 187);
             this.lblShowTitle.Name = "lblShowTitle";
             this.lblShowTitle.Size = new System.Drawing.Size(321, 32);
@@ -81,9 +83,9 @@
             // 
             // lblShowAuthorName
             // 
-            this.lblShowAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblShowAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblShowAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowAuthorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowAuthorName.ForeColor = System.Drawing.Color.Black;
             this.lblShowAuthorName.Location = new System.Drawing.Point(254, 232);
             this.lblShowAuthorName.Name = "lblShowAuthorName";
             this.lblShowAuthorName.Size = new System.Drawing.Size(166, 32);
@@ -94,20 +96,20 @@
             // lblAuthorName
             // 
             this.lblAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuthorName.ForeColor = System.Drawing.Color.Black;
             this.lblAuthorName.Location = new System.Drawing.Point(83, 232);
             this.lblAuthorName.Name = "lblAuthorName";
             this.lblAuthorName.Size = new System.Drawing.Size(121, 32);
             this.lblAuthorName.TabIndex = 4;
             this.lblAuthorName.Text = "Author Name:";
-            this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowGenre
             // 
-            this.lblShowGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblShowGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblShowGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowGenre.ForeColor = System.Drawing.Color.Black;
             this.lblShowGenre.Location = new System.Drawing.Point(254, 276);
             this.lblShowGenre.Name = "lblShowGenre";
             this.lblShowGenre.Size = new System.Drawing.Size(166, 32);
@@ -118,20 +120,20 @@
             // lblGenre
             // 
             this.lblGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre.ForeColor = System.Drawing.Color.Black;
             this.lblGenre.Location = new System.Drawing.Point(83, 276);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(121, 32);
             this.lblGenre.TabIndex = 6;
             this.lblGenre.Text = "Genre:";
-            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowReleaseYear
             // 
-            this.lblShowReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblShowReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblShowReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowReleaseYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblShowReleaseYear.ForeColor = System.Drawing.Color.Black;
             this.lblShowReleaseYear.Location = new System.Drawing.Point(254, 324);
             this.lblShowReleaseYear.Name = "lblShowReleaseYear";
             this.lblShowReleaseYear.Size = new System.Drawing.Size(166, 32);
@@ -142,43 +144,46 @@
             // lblReleaseYear
             // 
             this.lblReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReleaseYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReleaseYear.ForeColor = System.Drawing.Color.Black;
             this.lblReleaseYear.Location = new System.Drawing.Point(83, 324);
             this.lblReleaseYear.Name = "lblReleaseYear";
             this.lblReleaseYear.Size = new System.Drawing.Size(121, 32);
             this.lblReleaseYear.TabIndex = 8;
             this.lblReleaseYear.Text = "Release Year:";
-            this.lblReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(257, 420);
-            this.txtQuantity.Multiline = true;
+            this.txtQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtQuantity.Enabled = false;
+            this.txtQuantity.Location = new System.Drawing.Point(291, 426);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(166, 32);
+            this.txtQuantity.Size = new System.Drawing.Size(53, 22);
             this.txtQuantity.TabIndex = 10;
             this.txtQuantity.Text = "1";
+            this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // lblPrice
             // 
             this.lblPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.Black;
             this.lblPrice.Location = new System.Drawing.Point(83, 373);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(121, 32);
             this.lblPrice.TabIndex = 11;
             this.lblPrice.Text = "Price:";
-            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowPrice
             // 
-            this.lblShowPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblShowPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblShowPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblShowPrice.Location = new System.Drawing.Point(257, 373);
+            this.lblShowPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblShowPrice.Location = new System.Drawing.Point(254, 373);
             this.lblShowPrice.Name = "lblShowPrice";
             this.lblShowPrice.Size = new System.Drawing.Size(166, 32);
             this.lblShowPrice.TabIndex = 12;
@@ -188,22 +193,22 @@
             // lblQuantity
             // 
             this.lblQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.Color.Black;
             this.lblQuantity.Location = new System.Drawing.Point(83, 420);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(121, 32);
             this.lblQuantity.TabIndex = 13;
             this.lblQuantity.Text = "Quantity";
-            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BtnConfirm
             // 
-            this.BtnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnConfirm.BackColor = System.Drawing.Color.Black;
             this.BtnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.BtnConfirm.Location = new System.Drawing.Point(155, 470);
+            this.BtnConfirm.ForeColor = System.Drawing.Color.LightBlue;
+            this.BtnConfirm.Location = new System.Drawing.Point(87, 472);
             this.BtnConfirm.Name = "BtnConfirm";
             this.BtnConfirm.Size = new System.Drawing.Size(181, 36);
             this.BtnConfirm.TabIndex = 14;
@@ -211,11 +216,37 @@
             this.BtnConfirm.UseVisualStyleBackColor = false;
             this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
+            // btnQuantityPlus
+            // 
+            this.btnQuantityPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuantityPlus.Location = new System.Drawing.Point(350, 426);
+            this.btnQuantityPlus.Name = "btnQuantityPlus";
+            this.btnQuantityPlus.Size = new System.Drawing.Size(27, 22);
+            this.btnQuantityPlus.TabIndex = 15;
+            this.btnQuantityPlus.Text = "+";
+            this.btnQuantityPlus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnQuantityPlus.UseVisualStyleBackColor = true;
+            this.btnQuantityPlus.Click += new System.EventHandler(this.btnQuantityPlus_Click);
+            // 
+            // btnQuantityMinus
+            // 
+            this.btnQuantityMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuantityMinus.Location = new System.Drawing.Point(258, 426);
+            this.btnQuantityMinus.Name = "btnQuantityMinus";
+            this.btnQuantityMinus.Size = new System.Drawing.Size(27, 22);
+            this.btnQuantityMinus.TabIndex = 16;
+            this.btnQuantityMinus.Text = "-";
+            this.btnQuantityMinus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnQuantityMinus.UseVisualStyleBackColor = true;
+            this.btnQuantityMinus.Click += new System.EventHandler(this.btnQuantityMinus_Click);
+            // 
             // BuyForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(607, 532);
+            this.Controls.Add(this.btnQuantityMinus);
+            this.Controls.Add(this.btnQuantityPlus);
             this.Controls.Add(this.BtnConfirm);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblShowPrice);
@@ -257,5 +288,7 @@
         private System.Windows.Forms.Label lblShowPrice;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Button BtnConfirm;
+        private System.Windows.Forms.Button btnQuantityPlus;
+        private System.Windows.Forms.Button btnQuantityMinus;
     }
 }

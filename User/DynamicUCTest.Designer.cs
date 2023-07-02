@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DynamicUCTest));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
@@ -73,7 +72,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::Library.Properties.Resources.add_to_cart;
             this.pictureBox2.Location = new System.Drawing.Point(493, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
@@ -127,11 +126,11 @@
             // lblBookName
             // 
             this.lblBookName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblBookName.Location = new System.Drawing.Point(33, 11);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(124, 34);
+            this.lblBookName.Size = new System.Drawing.Size(137, 34);
             this.lblBookName.TabIndex = 4;
             this.lblBookName.Text = "Book Name:";
             this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,11 +138,11 @@
             // lblAuthorName
             // 
             this.lblAuthorName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAuthorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblAuthorName.Location = new System.Drawing.Point(33, 74);
             this.lblAuthorName.Name = "lblAuthorName";
-            this.lblAuthorName.Size = new System.Drawing.Size(124, 34);
+            this.lblAuthorName.Size = new System.Drawing.Size(137, 34);
             this.lblAuthorName.TabIndex = 5;
             this.lblAuthorName.Text = "Author Name:";
             this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,7 +164,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
-            this.lblTitle.Location = new System.Drawing.Point(183, 18);
+            this.lblTitle.Location = new System.Drawing.Point(183, 19);
             this.lblTitle.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(212, 62);
@@ -187,11 +186,11 @@
             // lblGenre
             // 
             this.lblGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblGenre.Location = new System.Drawing.Point(33, 137);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(124, 34);
+            this.lblGenre.Size = new System.Drawing.Size(137, 34);
             this.lblGenre.TabIndex = 7;
             this.lblGenre.Text = "Genre:";
             this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -210,7 +209,7 @@
             // lblReleaseYear
             // 
             this.lblReleaseYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReleaseYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.lblReleaseYear.Location = new System.Drawing.Point(33, 198);
             this.lblReleaseYear.Name = "lblReleaseYear";
@@ -225,7 +224,7 @@
             this.panel2.Controls.Add(this.btnBorrow);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnBuy);
-            this.panel2.Location = new System.Drawing.Point(4, 54);
+            this.panel2.Location = new System.Drawing.Point(20, 51);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(212, 477);
             this.panel2.TabIndex = 12;
@@ -264,7 +263,7 @@
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(150, 37);
             this.btnBuy.TabIndex = 1;
-            this.btnBuy.Text = "Buy";
+            this.btnBuy.Text = "Add to Cart";
             this.btnBuy.UseVisualStyleBackColor = false;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
@@ -272,10 +271,10 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 51);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(293, 483);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 483);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // lblUserName

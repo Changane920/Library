@@ -38,12 +38,12 @@
             this.lblGenre = new System.Windows.Forms.Label();
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.lblUpdateForm = new System.Windows.Forms.Label();
-            this.pboUpdate = new System.Windows.Forms.PictureBox();
             this.btnUpload = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.pboUpdate = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboUpdate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,10 +58,11 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Black;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Location = new System.Drawing.Point(371, 365);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.Location = new System.Drawing.Point(501, 357);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(90, 32);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -138,23 +139,15 @@
             this.lblUpdateForm.TabIndex = 9;
             this.lblUpdateForm.Text = "Update Form";
             // 
-            // pboUpdate
-            // 
-            this.pboUpdate.Location = new System.Drawing.Point(59, 88);
-            this.pboUpdate.Name = "pboUpdate";
-            this.pboUpdate.Size = new System.Drawing.Size(120, 150);
-            this.pboUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboUpdate.TabIndex = 10;
-            this.pboUpdate.TabStop = false;
-            // 
             // btnUpload
             // 
             this.btnUpload.BackColor = System.Drawing.Color.Black;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpload.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.ForeColor = System.Drawing.Color.LightBlue;
             this.btnUpload.Location = new System.Drawing.Point(62, 261);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(117, 23);
+            this.btnUpload.Size = new System.Drawing.Size(117, 37);
             this.btnUpload.TabIndex = 1;
             this.btnUpload.Text = "Upload Image";
             this.btnUpload.UseVisualStyleBackColor = false;
@@ -193,6 +186,15 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(149, 22);
             this.txtQuantity.TabIndex = 7;
+            // 
+            // pboUpdate
+            // 
+            this.pboUpdate.Location = new System.Drawing.Point(59, 88);
+            this.pboUpdate.Name = "pboUpdate";
+            this.pboUpdate.Size = new System.Drawing.Size(120, 150);
+            this.pboUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboUpdate.TabIndex = 10;
+            this.pboUpdate.TabStop = false;
             // 
             // UpdateViewBook
             // 

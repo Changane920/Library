@@ -83,6 +83,16 @@ namespace Library.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_to_cart {
+            get {
+                object obj = ResourceManager.GetObject("add-to-cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_icon_4 {
             get {
                 object obj = ResourceManager.GetObject("close-icon-4", resourceCulture);
@@ -103,6 +113,16 @@ namespace Library.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap error {
+            get {
+                object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_close_1 {
             get {
                 object obj = ResourceManager.GetObject("eye-close-1", resourceCulture);
@@ -116,6 +136,26 @@ namespace Library.Properties {
         internal static System.Drawing.Bitmap Flat_restart_icon_svg {
             get {
                 object obj = ResourceManager.GetObject("Flat_restart_icon.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_emily_768125 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-emily-768125", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_olena_bohovyk_3646105 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-olena-bohovyk-3646105", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
