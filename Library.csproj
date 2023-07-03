@@ -283,6 +283,7 @@
     <None Include="Image\pexels-emily-768125.jpg" />
     <None Include="Image\pexels-olena-bohovyk-3646105.jpg" />
     <None Include="Image\error.png" />
+    <None Include="Image\icons8-search-64.png" />
     <Content Include="Image\phoenix.jpg" />
     <None Include="Image\Shopping_Cart_Flat_Icon_Vector.svg.png" />
     <Content Include="Image\survival artist.jpg" />

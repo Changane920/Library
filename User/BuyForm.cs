@@ -26,6 +26,7 @@ namespace Library
         }
 
         int price, quantity;
+        MySqlDataReader reader = null;
 
         private void BuyForm_Load(object sender, EventArgs e)
         {
@@ -33,7 +34,8 @@ namespace Library
             {
                 btnQuantityMinus.Enabled = false;
                 lblShowPrice.Text = price.ToString();
-            } else
+            }
+            else
             {
                 btnQuantityMinus.Enabled = true;
             }
@@ -89,30 +91,65 @@ namespace Library
                 //connection open
                 MySqlConnection cn = Dataconnection.connect();
 
-                //add data into buyerhistory
-                MySqlCommand cmd = new MySqlCommand("insert into buyerhistory values (@bid,@uid,@price,@quantity,@boughDate)", cn);
+                MySqlCommand query = new MySqlCommand("select count(*) from buyerhistory where uid=@uid && bid=@bid", cn);
+                query.Parameters.AddWithValue("@uid", dataStore.uid);
+                query.Parameters.AddWithValue("@bid", dataStore.bid);
 
-                //value assign to cmd
-                cmd.Parameters.AddWithValue("@bid", dataStore.bid);
-                cmd.Parameters.AddWithValue("@uid", dataStore.uid);
-                cmd.Parameters.AddWithValue("@price", lblShowPrice.Text);
-                cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-
-                DateTime currentDate = DateTime.Now;
-                cmd.Parameters.AddWithValue("@boughDate", currentDate.ToString("yyyy-MM-dd"));
-
-                if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
+                if (int.Parse(query.ExecuteScalar().ToString()) == 0)
                 {
-                    if (MessageBox.Show("Do you want a voucher?", "Library", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    reader = query.ExecuteReader();
+                    if (reader.Read())
                     {
-                        MessageBox.Show($"Book Name is {lblShowTitle.Text}.\nAuthor Name is {lblShowAuthorName.Text}.\nPrice = {price.ToString()}.\nQuantity = {txtQuantity.Text}.\nTotal = {lblShowPrice.Text}");
-                        MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
-                        this.Close();
+                        //add data into buyerhistory
+                        MySqlCommand cmd = new MySqlCommand("insert into buyerhistory values (@bid,@uid,@price,@quantity,@boughDate)", cn);
+
+                        //value assign to cmd
+                        cmd.Parameters.AddWithValue("@bid", dataStore.bid);
+                        cmd.Parameters.AddWithValue("@uid", dataStore.uid);
+                        cmd.Parameters.AddWithValue("@price", lblShowPrice.Text);
+                        cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+
+                        DateTime currentDate = DateTime.Now;
+                        cmd.Parameters.AddWithValue("@boughDate", currentDate.ToString("yyyy-MM-dd"));
+                        reader.Close();
+
+                        if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
+                        {
+                            if (MessageBox.Show("Do you want a voucher?", "Library", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                MessageBox.Show($"Book Name is {lblShowTitle.Text}.\nAuthor Name is {lblShowAuthorName.Text}.\nPrice = {price.ToString()}.\nQuantity = {txtQuantity.Text}.\nTotal = {lblShowPrice.Text}");
+                                MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
+                                this.Close();
+                            }
+                        }
                     }
-                    else
+                }
+                else
+                {
+                    MySqlCommand query2 = new MySqlCommand("update buyerhistory set bQuantity = (select bQuantity + @quantity),price=(select price + @price) where uid=@uid && bid=@bid", cn);
+                    query2.Parameters.AddWithValue("@uid", dataStore.uid);
+                    query2.Parameters.AddWithValue("@bid", dataStore.bid);
+                    query2.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text));
+                    query2.Parameters.AddWithValue("@price", int.Parse(lblShowPrice.Text));
+
+                    if (Convert.ToBoolean(query2.ExecuteNonQuery()))
                     {
-                        MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
-                        this.Close();
+                        if (MessageBox.Show("Do you want a voucher?", "Library", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            MessageBox.Show($"Book Name is {lblShowTitle.Text}.\nAuthor Name is {lblShowAuthorName.Text}.\nPrice = {price.ToString()}.\nQuantity = {txtQuantity.Text}.\nTotal = {lblShowPrice.Text}");
+                            MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
+                            this.Close();
+                        }
                     }
                 }
 
@@ -138,7 +175,8 @@ namespace Library
             {
                 btnQuantityMinus.Enabled = false;
                 lblShowPrice.Text = price.ToString();
-            }else
+            }
+            else
             {
                 btnQuantityMinus.Enabled = true;
             }
@@ -160,33 +198,26 @@ namespace Library
             txtQuantity.Text = plusQuantity.ToString();
         }
 
+        private void BuyForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                BtnConfirm_Click(sender, e);
+            }
+            if(e.KeyChar == (char)Keys.Right)
+            {
+                btnQuantityPlus_Click(sender, e);
+            }
+            if(e.KeyChar == (char)Keys.Left)
+            {
+                btnQuantityMinus_Click(sender, e);
+            }
+        }
+
         private void btnQuantityMinus_Click(object sender, EventArgs e)
         {
             int minusQuantity = int.Parse(txtQuantity.Text) - 1;
             txtQuantity.Text = minusQuantity.ToString();
-        }
-
-        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int result = 0;
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = true;
-
-                int num = int.Parse(lblShowPrice.Text);
-                int limit = int.Parse(txtQuantity.Text);
-
-                for (int i = 0; i < limit; i++)
-                {
-                    result += num;
-                    lblShowPrice.Text = result.ToString();
-                }
-            }
-            else if (e.KeyChar == (char)Keys.Back)
-            {
-                lblShowPrice.Text = price.ToString();
-                txtQuantity.Text = "1";
-            }
         }
     }
 }

@@ -69,6 +69,8 @@ namespace Library
             MySqlConnection cn = Dataconnection.connect();
             string query = "select * from bookdetail";
             MySqlCommand cmd = new MySqlCommand(query, cn);
+            cmd.Parameters.AddWithValue("@text", txtSearch.Text);
+
             try
             {
                 MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
@@ -76,7 +78,10 @@ namespace Library
                 mda.Fill(dt);
                 return dt;
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
 
         private void GenerateUserControl()
@@ -176,7 +181,7 @@ namespace Library
 
         private void btnBorrow_Click(object sender, EventArgs e)
         {
-            if(pictureBox1.Image == null)
+            if (pictureBox1.Image == null)
             {
                 MessageBox.Show("Please select a item!");
                 return;
@@ -212,6 +217,56 @@ namespace Library
         {
             CartForm cf = new CartForm(dataStore);
             cf.ShowDialog();
+        }
+
+        public DataTable GetSearchItem()
+        {
+            MySqlConnection cn = Dataconnection.connect();
+            string query = "select * from bookdetail where genre like '"+txtSearch.Text+ "' || b_name like '%"+txtSearch.Text+"%'";
+            MySqlCommand cmd = new MySqlCommand(query, cn);
+            try
+            {
+                MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                mda.Fill(dt);
+                return dt;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //search function
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            DataTable dt = GetSearchItem();
+
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    UserControl1[] ArrayItems = new UserControl1[dt.Rows.Count];
+                    for (int i = 0; i < 1; i++)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            ArrayItems[i] = new UserControl1();
+                            //binary to img
+                            MemoryStream ms = new MemoryStream((byte[])row["Image"]);
+                            ArrayItems[i].Icon = new Bitmap(ms);
+                            ArrayItems[i].BookName = row["b_name"].ToString();
+                            ArrayItems[i].AuthorName = row["author_name"].ToString();
+                            ArrayItems[i].Genre = row["genre"].ToString();
+                            ArrayItems[i].ReleaseYear = int.Parse(row["releaseYear"].ToString());
+
+                            flowLayoutPanel1.Controls.Add(ArrayItems[i]);
+                            ArrayItems[i].Click += new System.EventHandler(this.UserControl_Click);
+                        }
+                    }
+                }
+            }
         }
     }
 }

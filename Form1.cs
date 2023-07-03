@@ -287,51 +287,74 @@ namespace Library
             }
         }
 
+        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+               signupcreateaccbtn_Click(sender, e);
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MySqlConnection cn = Dataconnection.connect();
 
             string username = txtLoginUserName.Text;
             string password = txtLoginPass.Text;
-            string query = "select * from userdata where username = @username and password = @password";
+            //string query = "select * from userdata where username = @username and password = @password";
+
+            //get ID
+            MySqlCommand getID = new MySqlCommand("select uid from userdata where username = @username", cn);
+            getID.Parameters.AddWithValue("@username", username);
+            reader = getID.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dataStore.uid = int.Parse(reader["uid"].ToString().Trim());
+            }
+            reader.Close();
+
+            //get account from userdata
+            string query = "select * from userdata where uid = @uid";
 
             MySqlCommand cmd = new MySqlCommand(query, cn);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@uid", dataStore.uid);
 
             reader = cmd.ExecuteReader();
 
-            if (reader.Read())
+            while (reader.Read())
             {
-                dataStore.uid = int.Parse(reader["uid"].ToString());
-                BuyerHistory orderedBook = new BuyerHistory(dataStore);
-
-                string type = reader["type"].ToString();
-                if (type == "Admin")
+                if(username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
                 {
-                    Dashbord ds = new Dashbord(dataStore);
-                    ds.ShowDialog();
-                    this.Hide();
+                    //dataStore.uid = int.Parse(reader["uid"].ToString());
+                    BuyerHistory orderedBook = new BuyerHistory(dataStore);
+
+                    string type = reader["type"].ToString();
+                    if (type == "Admin")
+                    {
+                        Dashbord ds = new Dashbord(dataStore);
+                        ds.ShowDialog();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        //for userDashboard             
+
+                        DynamicUCTest duc = new DynamicUCTest(dataStore);
+                        this.Hide();
+                        duc.Show();
+                    }
                 }
                 else
                 {
-                    //for userDashboard             
-                    reader.Close();
+                    MessageBox.Show("Username or Password is incorrect. \nPlease try again later", "Login fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    DynamicUCTest duc = new DynamicUCTest(dataStore);
-                    this.Hide();
-                    duc.Show();
+                    txtLoginUserName.Clear();
+                    txtLoginPass.Clear();
+                    txtLoginUserName.Focus();
+                    attempt = attempt + 1;
+                    disable();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Username or Password is incorrect. \nPlease try again later", "Login fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                txtLoginUserName.Clear();
-                txtLoginPass.Clear();
-                txtLoginUserName.Focus();
-                attempt = attempt + 1;
-                disable();
             }
         }
     }

@@ -16,7 +16,7 @@ namespace Library.User_Control
     public partial class ViewBook : UserControl
     {
         //open connection function
-        
+
 
         //declare variable
         UpdateViewBook uf = new UpdateViewBook();
@@ -50,20 +50,15 @@ namespace Library.User_Control
 
             try
             {
-                DialogResult response = MessageBox.Show("Connection success!", "Book Detail", MessageBoxButtons.OK);
+                dgv1.Visible = true;
+                dgv1.Rows.Clear();
+                string sql = "select * from BookDetail";
+                MySqlCommand cmd = new MySqlCommand(sql, cn);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (response == DialogResult.OK)
+                while (reader.Read())
                 {
-                    dgv1.Visible = true;
-                    dgv1.Rows.Clear();
-                    string sql = "select * from BookDetail";
-                    MySqlCommand cmd = new MySqlCommand(sql, cn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6], reader[7]);
-                    }
+                    dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6], reader[7]);
                 }
             }
             catch (MySqlException ex)

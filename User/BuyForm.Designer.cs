@@ -164,7 +164,6 @@
             this.txtQuantity.Text = "1";
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
-            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // lblPrice
             // 
@@ -266,6 +265,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuyForm";
             this.Load += new System.EventHandler(this.BuyForm_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BuyForm_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
