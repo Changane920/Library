@@ -76,8 +76,8 @@ namespace Library.User_Control
 
             string sql = "delete from rentbook where bid = @bid && uid = @uid";
             MySqlCommand cmd = new MySqlCommand(sql, cn);
-            cmd.Parameters.AddWithValue("@bid", dataStore.bid);
-            cmd.Parameters.AddWithValue("@uid", dataStore.uid);
+            cmd.Parameters.AddWithValue("@bid", bid);
+            cmd.Parameters.AddWithValue("@uid", uid);
 
             if (MessageBox.Show("Are you sure want to delete this?", "Delete Form", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,14 +14,33 @@ namespace Library.DynamicUserControl
 {
     public partial class AddBookForm : Form
     {
+        //animation
+        Timer timer1;
+
         public AddBookForm()
         {
             InitializeComponent();
+            timer1 = new Timer();
+            timer1.Tick += timer1_Tick;
         }
 
         private void AddBookForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //animation
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(this.Opacity > 0)
+            {
+                this.Opacity -= 1;
+            }
+            else
+            {
+                timer1.Stop();
+                Application.Exit();
+            }
         }
 
         private void btnUpload_Click_1(object sender, EventArgs e)
@@ -56,14 +76,14 @@ namespace Library.DynamicUserControl
             {
                 if (MessageBox.Show("Do you want to add another book?", "Add Book Form", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    this.Close();
+                    timer1.Start();
                     AddBookForm abs = new AddBookForm();
                     abs.Show();
                     abs.BringToFront();
                 }
                 else
                 {
-                    this.Close();
+                    timer1.Start();
                 }
             }
             else

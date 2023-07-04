@@ -25,6 +25,8 @@ namespace Library.User_Control
             dataStore = data;
         }
 
+        int bid, uid;
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgv1.Rows.Clear();
@@ -84,6 +86,8 @@ namespace Library.User_Control
                     contextMenuStrip1.Show(MousePosition);
 
                     DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+                    bid = int.Parse(row.Cells[0].Value.ToString());
+                    uid = int.Parse(row.Cells[1].Value.ToString());
                 }
             }
             catch
@@ -93,6 +97,25 @@ namespace Library.User_Control
                 if (dr == DialogResult.OK)
                 {
                     contextMenuStrip1.Visible = false;
+                }
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MySqlConnection cn = Dataconnection.connect();
+            MySqlCommand query = new MySqlCommand("delete from buyerrecord where uid=@uid && bid=@bid",cn);
+            query.Parameters.AddWithValue("@uid", uid);
+            query.Parameters.AddWithValue("@bid", bid);
+            if(MessageBox.Show("Are you sure!","Delete Form",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (Convert.ToBoolean(query.ExecuteNonQuery()))
+                {
+                    MessageBox.Show("Success!");
+                }
+                else
+                {
+                    MessageBox.Show("Fail!");
                 }
             }
         }

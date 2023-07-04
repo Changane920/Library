@@ -76,6 +76,7 @@ namespace Library
         private void Form1_Load(object sender, EventArgs e)
         {
             attempt = 0;
+            txtUserName.Focus();
 
             //hide password
             txtPass.UseSystemPasswordChar = true;
@@ -108,6 +109,7 @@ namespace Library
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             signuppanel.Visible = true;
+            txtUserName.Focus();
         }
 
         //phone textbox digit only
@@ -179,7 +181,7 @@ namespace Library
             string namePattern = @"^[a-zA-Z0-9]{6,12}$";
             string passPattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8}$";
             string emailPattern = @"^[a-zA-Z0-9._%+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            string phonePattern = @"^09";
+            string phonePattern = @"^[0-9]{11}$";
 
             if (string.IsNullOrEmpty(username)) //username null validation
             {
@@ -213,7 +215,7 @@ namespace Library
             }
             else if (!Regex.IsMatch(phone, phonePattern)) //phone number must start with 09 validation
             {
-                MessageBox.Show("Phone Number must start with 09!", "Signup Phone Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Phone Number must have 11 number!", "Signup Phone Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPhone.Focus();
                 return;
             }
@@ -289,9 +291,57 @@ namespace Library
 
         private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-               signupcreateaccbtn_Click(sender, e);
+                signupcreateaccbtn_Click(sender, e);
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                signupcreateaccbtn_Click(sender, e);
+            }
+        }
+
+        private void txtPhone_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                signupcreateaccbtn_Click(sender, e);
+            }
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                signupcreateaccbtn_Click(sender, e);
+            }
+        }
+
+        private void txtCheckPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                signupcreateaccbtn_Click(sender, e);
+            }
+        }
+
+        private void txtLoginUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+
+        private void txtLoginPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
             }
         }
 
@@ -308,7 +358,7 @@ namespace Library
             getID.Parameters.AddWithValue("@username", username);
             reader = getID.ExecuteReader();
 
-            while(reader.Read())
+            while (reader.Read())
             {
                 dataStore.uid = int.Parse(reader["uid"].ToString().Trim());
             }
@@ -322,38 +372,65 @@ namespace Library
 
             reader = cmd.ExecuteReader();
 
-            while (reader.Read())
+            if (string.IsNullOrEmpty(username))
             {
-                if(username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
+                MessageBox.Show("Please enter your Name!", "Login Username Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLoginUserName.Focus();
+                return;
+            }
+            else if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter your Password!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLoginPass.Focus();
+                return;
+            }
+            else
+            {
+                while (reader.Read())
                 {
-                    //dataStore.uid = int.Parse(reader["uid"].ToString());
-                    BuyerHistory orderedBook = new BuyerHistory(dataStore);
-
-                    string type = reader["type"].ToString();
-                    if (type == "Admin")
+                    if (username.Equals(reader["username"].ToString().Trim()) && !password.Equals(reader["password"].ToString().Trim()))
                     {
-                        Dashbord ds = new Dashbord(dataStore);
-                        ds.ShowDialog();
-                        this.Hide();
+                        MessageBox.Show("Password is incorrect!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtLoginPass.Focus();
+                        return;
+                    }
+                    else if(!username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
+                    {
+                        MessageBox.Show("Username is incorrect!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtLoginUserName.Focus();
+                        return;
+                    }
+                    else if (username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
+                    {
+                        //dataStore.uid = int.Parse(reader["uid"].ToString());
+                        BuyerHistory orderedBook = new BuyerHistory(dataStore);
+
+                        string type = reader["type"].ToString();
+                        if (type == "Admin")
+                        {
+                            Dashbord ds = new Dashbord(dataStore);
+                            ds.ShowDialog();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            //for userDashboard             
+
+                            DynamicUCTest duc = new DynamicUCTest(dataStore);
+                            this.Hide();
+                            duc.Show();
+                        }
                     }
                     else
                     {
-                        //for userDashboard             
+                        MessageBox.Show("Account doesn't exist.", "Login fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        DynamicUCTest duc = new DynamicUCTest(dataStore);
-                        this.Hide();
-                        duc.Show();
+                        txtLoginUserName.Clear();
+                        txtLoginPass.Clear();
+                        txtLoginUserName.Focus();
+                        attempt = attempt + 1;
+                        disable();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Username or Password is incorrect. \nPlease try again later", "Login fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    txtLoginUserName.Clear();
-                    txtLoginPass.Clear();
-                    txtLoginUserName.Focus();
-                    attempt = attempt + 1;
-                    disable();
                 }
             }
         }

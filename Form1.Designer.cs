@@ -86,6 +86,7 @@
             this.txtLoginUserName.TabIndex = 1;
             this.txtLoginUserName.Text = "Username";
             this.txtLoginUserName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUsername_MouseClick);
+            this.txtLoginUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoginUserName_KeyPress);
             this.txtLoginUserName.MouseEnter += new System.EventHandler(this.txtUsername_MouseEnter);
             // 
             // txtLoginPass
@@ -101,6 +102,7 @@
             this.txtLoginPass.TabIndex = 2;
             this.txtLoginPass.Text = "Password";
             this.txtLoginPass.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
+            this.txtLoginPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoginPass_KeyPress);
             // 
             // panel1
             // 
@@ -211,7 +213,7 @@
             this.signuppanel.Controls.Add(this.txtPhone);
             this.signuppanel.Controls.Add(this.txtEmail);
             this.signuppanel.Controls.Add(this.txtUserName);
-            this.signuppanel.Location = new System.Drawing.Point(439, 148);
+            this.signuppanel.Location = new System.Drawing.Point(437, 148);
             this.signuppanel.Margin = new System.Windows.Forms.Padding(2);
             this.signuppanel.Name = "signuppanel";
             this.signuppanel.Size = new System.Drawing.Size(408, 299);
@@ -287,6 +289,7 @@
             this.txtCheckPass.Name = "txtCheckPass";
             this.txtCheckPass.Size = new System.Drawing.Size(171, 22);
             this.txtCheckPass.TabIndex = 4;
+            this.txtCheckPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCheckPass_KeyPress);
             // 
             // lblPhNo
             // 
@@ -360,6 +363,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(171, 22);
             this.txtPass.TabIndex = 3;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // txtPhone
             // 
@@ -371,6 +375,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(171, 22);
             this.txtPhone.TabIndex = 2;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress_1);
             // 
             // txtEmail
             // 
@@ -382,6 +387,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(171, 22);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // txtUserName
             // 
