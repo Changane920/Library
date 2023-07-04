@@ -77,6 +77,9 @@ namespace Library.User
         {
             if(MessageBox.Show("Are you sure?","Cart",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                VoucherForm myObj = new VoucherForm(dataStore);
+                myObj.ShowDialog();
+
                 MySqlConnection cn = Dataconnection.connect();
                 MySqlCommand query = new MySqlCommand("insert into buyerrecord select * from buyerhistory where uid=@uid",cn);
                 query.Parameters.AddWithValue("@uid", dataStore.uid);

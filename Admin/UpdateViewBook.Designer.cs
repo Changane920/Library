@@ -56,10 +56,12 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Black;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.BackColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Location = new System.Drawing.Point(501, 357);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 32);
@@ -142,6 +144,7 @@
             // btnUpload
             // 
             this.btnUpload.BackColor = System.Drawing.Color.Black;
+            this.btnUpload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.ForeColor = System.Drawing.Color.LightBlue;
@@ -217,6 +220,7 @@
             this.Controls.Add(this.lblBookName);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtBookName);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpdateViewBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

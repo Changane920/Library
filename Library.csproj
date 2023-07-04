@@ -202,6 +202,12 @@
     <Compile Include="User\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\VoucherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\VoucherForm.Designer.cs">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\AddBookForm.resx">
       <DependentUpon>AddBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +263,9 @@
     <EmbeddedResource Include="User\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\VoucherForm.resx">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -272,10 +281,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Image\user.png" />
     <None Include="Image\trash-can-icon-24.png" />
     <None Include="Image\6684701.png" />
     <None Include="Image\22249-200.png" />
     <None Include="Image\add-to-cart.png" />
+    <None Include="Image\agenda.png" />
+    <None Include="Image\add.png" />
     <Content Include="Image\Columbus and other cannibals.jpg" />
     <None Include="Image\pexels-stanislav-kondratiev-2908984.jpg" />
     <None Include="Image\Flat_restart_icon.svg.png" />
@@ -284,8 +296,11 @@
     <None Include="Image\pexels-olena-bohovyk-3646105.jpg" />
     <None Include="Image\error.png" />
     <None Include="Image\icons8-search-64.png" />
+    <None Include="Image\investor.png" />
+    <None Include="Image\paper.png" />
     <Content Include="Image\phoenix.jpg" />
     <None Include="Image\Shopping_Cart_Flat_Icon_Vector.svg.png" />
+    <None Include="Image\research.png" />
     <Content Include="Image\survival artist.jpg" />
     <Content Include="Image\the rise of the meritocracy.jpg" />
   </ItemGroup>

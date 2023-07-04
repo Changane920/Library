@@ -101,6 +101,46 @@ namespace Library.User_Control
             }
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgv1.Rows.Clear();
+            MySqlConnection cn = Dataconnection.connect();
+
+            string sql = "select * from buyerrecord where uid like '%"+txtUid.Text+ "%'";
+            MySqlCommand cmd = new MySqlCommand(sql, cn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
+            }
+            cn.Close();
+        }
+
+        private void txtBid_TextChanged(object sender, EventArgs e)
+        {
+            dgv1.Rows.Clear();
+            MySqlConnection cn = Dataconnection.connect();
+
+            string sql = "select * from buyerrecord where bid like '%" + txtBid.Text + "%'";
+            MySqlCommand cmd = new MySqlCommand(sql, cn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
+            }
+            cn.Close();
+        }
+
+        private void txtUid_Click(object sender, EventArgs e)
+        {
+            txtBid.Clear();
+        }
+
+        private void txtBid_Click(object sender, EventArgs e)
+        {
+            txtUid.Clear();
+        }
+
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MySqlConnection cn = Dataconnection.connect();

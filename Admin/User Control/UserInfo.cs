@@ -70,8 +70,8 @@ namespace Library.Admin.User_Control
                 if (e.Button == MouseButtons.Right)
                 {
                     dgv1.ClearSelection();
-                    dgv1.CurrentCell = dgv1.Rows[e.RowIndex].Cells[1];
-                    dgv1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+                    dgv1.CurrentCell = dgv1.Rows[e.RowIndex].Cells[0];
+                    //dgv1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
 
                     contextMenuStrip1.Show(MousePosition);
 
@@ -80,7 +80,7 @@ namespace Library.Admin.User_Control
                     updateUserInfo.Username = row.Cells[1].Value.ToString();
                     updateUserInfo.Email = row.Cells[2].Value.ToString();
                     updateUserInfo.Type = row.Cells[4].Value.ToString();
-                    updateUserInfo.PhoneNo = int.Parse(row.Cells[5].Value.ToString());
+                    updateUserInfo.PhoneNo = row.Cells[5].Value.ToString();
                 }
             }
             catch

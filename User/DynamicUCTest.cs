@@ -142,20 +142,27 @@ namespace Library
             detailPanel.Visible = false;
         }
 
-        public void getUserName()
+        string name;
+        public string getUserName()
         {
             //connection open
             MySqlConnection cn = Dataconnection.connect();
+
 
             //get username from userdata
             MySqlCommand cmd = new MySqlCommand("select username from userdata where uid = '" + dataStore.uid + "'", cn);
 
             reader = cmd.ExecuteReader();
 
-            if (reader.Read()) lblUserName.Text = reader["username"].ToString();
 
+            if (reader.Read())
+            {
+                name = reader["username"].ToString();
+                lblUserName.Text = name;
+            }
             reader.Close();
             cn.Close();
+            return name;
         }
 
         public void getBookID()

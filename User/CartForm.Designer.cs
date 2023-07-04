@@ -41,7 +41,7 @@
             this.FlpCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.FlpCart.Location = new System.Drawing.Point(0, 36);
             this.FlpCart.Name = "FlpCart";
-            this.FlpCart.Size = new System.Drawing.Size(362, 412);
+            this.FlpCart.Size = new System.Drawing.Size(362, 403);
             this.FlpCart.TabIndex = 0;
             // 
             // lblTotal
@@ -67,11 +67,13 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.Black;
             this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.LightBlue;
-            this.btnConfirm.Location = new System.Drawing.Point(268, 454);
+            this.btnConfirm.Location = new System.Drawing.Point(277, 445);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(90, 26);
+            this.btnConfirm.Size = new System.Drawing.Size(81, 35);
             this.btnConfirm.TabIndex = 0;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -81,9 +83,9 @@
             // 
             this.pboClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboClose.Image = global::Library.Properties.Resources.error;
-            this.pboClose.Location = new System.Drawing.Point(330, 6);
+            this.pboClose.Location = new System.Drawing.Point(335, 6);
             this.pboClose.Name = "pboClose";
-            this.pboClose.Size = new System.Drawing.Size(28, 24);
+            this.pboClose.Size = new System.Drawing.Size(23, 24);
             this.pboClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboClose.TabIndex = 1;
             this.pboClose.TabStop = false;

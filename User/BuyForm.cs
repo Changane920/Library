@@ -115,17 +115,8 @@ namespace Library
 
                         if (Convert.ToBoolean(cmd.ExecuteNonQuery()))
                         {
-                            if (MessageBox.Show("Do you want a voucher?", "Library", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                            {
-                                MessageBox.Show($"Book Name is {lblShowTitle.Text}.\nAuthor Name is {lblShowAuthorName.Text}.\nPrice = {price.ToString()}.\nQuantity = {txtQuantity.Text}.\nTotal = {lblShowPrice.Text}");
-                                MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
-                                this.Close();
-                            }
+                            MessageBox.Show("Thank You!", "Library", MessageBoxButtons.OK);
+                            this.Close();
                         }
                     }
                 }
@@ -200,15 +191,15 @@ namespace Library
 
         private void BuyForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 BtnConfirm_Click(sender, e);
             }
-            if(e.KeyChar == (char)Keys.Right)
+            if (e.KeyChar == (char)Keys.Right)
             {
                 btnQuantityPlus_Click(sender, e);
             }
-            if(e.KeyChar == (char)Keys.Left)
+            if (e.KeyChar == (char)Keys.Left)
             {
                 btnQuantityMinus_Click(sender, e);
             }

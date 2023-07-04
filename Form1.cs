@@ -307,6 +307,11 @@ namespace Library
 
         private void txtPhone_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
             if (e.KeyChar == (char)Keys.Enter)
             {
                 signupcreateaccbtn_Click(sender, e);
@@ -394,7 +399,7 @@ namespace Library
                         txtLoginPass.Focus();
                         return;
                     }
-                    else if(!username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
+                    else if (!username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
                     {
                         MessageBox.Show("Username is incorrect!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtLoginUserName.Focus();

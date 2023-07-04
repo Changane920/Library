@@ -70,7 +70,7 @@
             this.lblGenre.Size = new System.Drawing.Size(112, 34);
             this.lblGenre.TabIndex = 22;
             this.lblGenre.Text = "Genre";
-            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtReleaseYear
             // 
@@ -90,7 +90,7 @@
             this.lblReleaseYear.Size = new System.Drawing.Size(112, 34);
             this.lblReleaseYear.TabIndex = 21;
             this.lblReleaseYear.Text = "Release Year";
-            this.lblReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReleaseYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtAuthorName
             // 
@@ -110,30 +110,38 @@
             this.lblAuthorName.Size = new System.Drawing.Size(112, 34);
             this.lblAuthorName.TabIndex = 19;
             this.lblAuthorName.Text = "Author Name";
-            this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAdd
             // 
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Location = new System.Drawing.Point(472, 307);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(114, 34);
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // btnUpload
             // 
+            this.btnUpload.BackColor = System.Drawing.Color.Black;
+            this.btnUpload.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnUpload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.ForeColor = System.Drawing.Color.LightBlue;
             this.btnUpload.Location = new System.Drawing.Point(436, 267);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(150, 34);
             this.btnUpload.TabIndex = 12;
             this.btnUpload.Text = "Upload Image";
-            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click_1);
             // 
             // txtBookName
@@ -154,7 +162,7 @@
             this.lblBookName.Size = new System.Drawing.Size(109, 34);
             this.lblBookName.TabIndex = 15;
             this.lblBookName.Text = "Book Name";
-            this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBookName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pb1
             // 
@@ -169,8 +177,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(142)))), ((int)(((byte)(112)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.Controls.Add(this.lblGenre);
             this.panel2.Controls.Add(this.lblReleaseYear);
             this.panel2.Controls.Add(this.lblBookName);
@@ -195,7 +202,10 @@
             this.ClientSize = new System.Drawing.Size(708, 546);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddBookForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddBookForm";
             this.Load += new System.EventHandler(this.AddBookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();

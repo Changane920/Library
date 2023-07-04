@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashbord));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.dbPanel = new System.Windows.Forms.Panel();
+            this.linklblLogout = new System.Windows.Forms.LinkLabel();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.rentBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.dbPanel = new System.Windows.Forms.Panel();
-            this.linklblLogout = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,72 +53,18 @@
             this.rentBookToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MaximumSize = new System.Drawing.Size(1285, 516);
+            this.menuStrip1.MinimumSize = new System.Drawing.Size(0, 50);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1285, 56);
+            this.menuStrip1.Size = new System.Drawing.Size(1285, 50);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // booksToolStripMenuItem
-            // 
-            this.booksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newBooksToolStripMenuItem,
-            this.viewBooksToolStripMenuItem});
-            this.booksToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.booksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("booksToolStripMenuItem.Image")));
-            this.booksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(119, 54);
-            this.booksToolStripMenuItem.Text = "Books";
-            // 
-            // newBooksToolStripMenuItem
-            // 
-            this.newBooksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newBooksToolStripMenuItem.Image")));
-            this.newBooksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.newBooksToolStripMenuItem.Name = "newBooksToolStripMenuItem";
-            this.newBooksToolStripMenuItem.Size = new System.Drawing.Size(254, 56);
-            this.newBooksToolStripMenuItem.Text = "Add new books";
-            this.newBooksToolStripMenuItem.Click += new System.EventHandler(this.newBooksToolStripMenuItem_Click);
-            // 
-            // viewBooksToolStripMenuItem
-            // 
-            this.viewBooksToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewBooksToolStripMenuItem.Image")));
-            this.viewBooksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.viewBooksToolStripMenuItem.Name = "viewBooksToolStripMenuItem";
-            this.viewBooksToolStripMenuItem.Size = new System.Drawing.Size(254, 56);
-            this.viewBooksToolStripMenuItem.Text = "View books";
-            this.viewBooksToolStripMenuItem.Click += new System.EventHandler(this.viewBooksToolStripMenuItem_Click);
-            // 
-            // studentToolStripMenuItem
-            // 
-            this.studentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
-            this.studentToolStripMenuItem.Size = new System.Drawing.Size(58, 54);
-            this.studentToolStripMenuItem.Text = "User";
-            this.studentToolStripMenuItem.Click += new System.EventHandler(this.studentToolStripMenuItem_Click);
-            // 
-            // orderToolStrip
-            // 
-            this.orderToolStrip.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.orderToolStrip.Name = "orderToolStrip";
-            this.orderToolStrip.Size = new System.Drawing.Size(125, 54);
-            this.orderToolStrip.Text = "Buyer Record";
-            this.orderToolStrip.Click += new System.EventHandler(this.orderToolStrip_Click);
-            // 
-            // rentBookToolStripMenuItem
-            // 
-            this.rentBookToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rentBookToolStripMenuItem.Name = "rentBookToolStripMenuItem";
-            this.rentBookToolStripMenuItem.Size = new System.Drawing.Size(102, 54);
-            this.rentBookToolStripMenuItem.Text = "Rent Book";
-            this.rentBookToolStripMenuItem.Click += new System.EventHandler(this.rentBookToolStripMenuItem_Click);
             // 
             // dbPanel
             // 
             this.dbPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.dbPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dbPanel.Location = new System.Drawing.Point(0, 56);
+            this.dbPanel.Location = new System.Drawing.Point(0, 50);
             this.dbPanel.MaximumSize = new System.Drawing.Size(1285, 516);
             this.dbPanel.Name = "dbPanel";
             this.dbPanel.Size = new System.Drawing.Size(1285, 516);
@@ -141,6 +86,61 @@
             this.linklblLogout.Text = "Logout";
             this.linklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_LinkClicked);
             // 
+            // booksToolStripMenuItem
+            // 
+            this.booksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newBooksToolStripMenuItem,
+            this.viewBooksToolStripMenuItem});
+            this.booksToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.booksToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.booksToolStripMenuItem.Image = global::Library.Properties.Resources.agenda;
+            this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(101, 48);
+            this.booksToolStripMenuItem.Text = "Books";
+            // 
+            // newBooksToolStripMenuItem
+            // 
+            this.newBooksToolStripMenuItem.Image = global::Library.Properties.Resources.add;
+            this.newBooksToolStripMenuItem.Name = "newBooksToolStripMenuItem";
+            this.newBooksToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.newBooksToolStripMenuItem.Text = "Add new books";
+            this.newBooksToolStripMenuItem.Click += new System.EventHandler(this.newBooksToolStripMenuItem_Click);
+            // 
+            // viewBooksToolStripMenuItem
+            // 
+            this.viewBooksToolStripMenuItem.Image = global::Library.Properties.Resources.research;
+            this.viewBooksToolStripMenuItem.Name = "viewBooksToolStripMenuItem";
+            this.viewBooksToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.viewBooksToolStripMenuItem.Text = "View books";
+            this.viewBooksToolStripMenuItem.Click += new System.EventHandler(this.viewBooksToolStripMenuItem_Click);
+            // 
+            // studentToolStripMenuItem
+            // 
+            this.studentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.studentToolStripMenuItem.Image = global::Library.Properties.Resources.user;
+            this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(90, 48);
+            this.studentToolStripMenuItem.Text = "User";
+            this.studentToolStripMenuItem.Click += new System.EventHandler(this.studentToolStripMenuItem_Click);
+            // 
+            // orderToolStrip
+            // 
+            this.orderToolStrip.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.orderToolStrip.Image = global::Library.Properties.Resources.investor;
+            this.orderToolStrip.Name = "orderToolStrip";
+            this.orderToolStrip.Size = new System.Drawing.Size(157, 48);
+            this.orderToolStrip.Text = "Buyer Record";
+            this.orderToolStrip.Click += new System.EventHandler(this.orderToolStrip_Click);
+            // 
+            // rentBookToolStripMenuItem
+            // 
+            this.rentBookToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rentBookToolStripMenuItem.Image = global::Library.Properties.Resources.paper;
+            this.rentBookToolStripMenuItem.Name = "rentBookToolStripMenuItem";
+            this.rentBookToolStripMenuItem.Size = new System.Drawing.Size(134, 48);
+            this.rentBookToolStripMenuItem.Text = "Rent Book";
+            this.rentBookToolStripMenuItem.Click += new System.EventHandler(this.rentBookToolStripMenuItem_Click);
+            // 
             // Dashbord
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -152,6 +152,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Dashbord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashbord";

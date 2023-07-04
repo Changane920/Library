@@ -157,7 +157,7 @@
             // 
             this.txtQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtQuantity.Enabled = false;
-            this.txtQuantity.Location = new System.Drawing.Point(291, 426);
+            this.txtQuantity.Location = new System.Drawing.Point(283, 426);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(53, 22);
             this.txtQuantity.TabIndex = 10;
@@ -204,8 +204,9 @@
             // BtnConfirm
             // 
             this.BtnConfirm.BackColor = System.Drawing.Color.Black;
+            this.BtnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
             this.BtnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfirm.ForeColor = System.Drawing.Color.LightBlue;
             this.BtnConfirm.Location = new System.Drawing.Point(87, 472);
             this.BtnConfirm.Name = "BtnConfirm";
@@ -218,7 +219,7 @@
             // btnQuantityPlus
             // 
             this.btnQuantityPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuantityPlus.Location = new System.Drawing.Point(350, 426);
+            this.btnQuantityPlus.Location = new System.Drawing.Point(336, 426);
             this.btnQuantityPlus.Name = "btnQuantityPlus";
             this.btnQuantityPlus.Size = new System.Drawing.Size(27, 22);
             this.btnQuantityPlus.TabIndex = 15;
@@ -230,7 +231,7 @@
             // btnQuantityMinus
             // 
             this.btnQuantityMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuantityMinus.Location = new System.Drawing.Point(258, 426);
+            this.btnQuantityMinus.Location = new System.Drawing.Point(256, 426);
             this.btnQuantityMinus.Name = "btnQuantityMinus";
             this.btnQuantityMinus.Size = new System.Drawing.Size(27, 22);
             this.btnQuantityMinus.TabIndex = 16;

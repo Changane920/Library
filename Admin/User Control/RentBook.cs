@@ -139,5 +139,51 @@ namespace Library.User_Control
 
             cn.Close();
         }
+
+        private void txtUid_TextChanged(object sender, EventArgs e)
+        {
+            dgv1.Rows.Clear();
+            MySqlConnection cn = Dataconnection.connect();
+
+            string sql = "select * from rentbook where uid like '%"+txtUid.Text+"%'";
+            MySqlCommand cmd = new MySqlCommand(sql, cn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[4]).ToString("yyyy/MM/dd"), reader[5]);
+            }
+
+            cn.Close();
+        }
+
+        private void txtBid_TextChanged(object sender, EventArgs e)
+        {
+            dgv1.Rows.Clear();
+            MySqlConnection cn = Dataconnection.connect();
+
+            string sql = "select * from rentbook where bid like '%" + txtBid.Text + "%'";
+            MySqlCommand cmd = new MySqlCommand(sql, cn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[4]).ToString("yyyy/MM/dd"), reader[5]);
+            }
+
+            cn.Close();
+        }
+
+        private void txtUid_Click(object sender, EventArgs e)
+        {
+            txtBid.Clear();
+        }
+
+        private void txtBid_Click(object sender, EventArgs e)
+        {
+            txtUid.Clear();
+        }
     }
 }

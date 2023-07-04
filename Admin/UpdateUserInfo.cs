@@ -21,7 +21,7 @@ namespace Library.Admin
         public int Uid { get; set; }
         public string Username { get; set; }
         public string Type { get; set; }
-        public int PhoneNo { get; set; }
+        public string PhoneNo { get; set; }
         public string Email { get; set; }
 
         private void UpdateUserInfo_Load(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace Library.Admin
             query.Parameters.AddWithValue("@username", txtUsername.Text);
             query.Parameters.AddWithValue("@email", txtEmail.Text);
             query.Parameters.AddWithValue("@type", txtType.Text);
-            query.Parameters.AddWithValue("@phoneNo", int.Parse(txtPhone.Text));
+            query.Parameters.AddWithValue("@phoneNo", txtPhone.Text);
             query.Parameters.AddWithValue("@uid", Uid);
             if (Convert.ToBoolean(query.ExecuteNonQuery()))
             {

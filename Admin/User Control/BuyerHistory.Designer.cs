@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -40,6 +40,10 @@
             this.dv_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_boughDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtUid = new System.Windows.Forms.TextBox();
+            this.lblUid = new System.Windows.Forms.Label();
+            this.lblBid = new System.Windows.Forms.Label();
+            this.txtBid = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -79,7 +83,7 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.closeToolStripMenuItem.Text = "Delete";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -88,14 +92,14 @@
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.dgv1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv1.ColumnHeadersHeight = 30;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -104,9 +108,9 @@
             this.dv_Price,
             this.dv_Quantity,
             this.dv_boughDate});
-            this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgv1.Location = new System.Drawing.Point(152, 0);
+            this.dgv1.Location = new System.Drawing.Point(152, 45);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
             this.dgv1.RowHeadersVisible = false;
@@ -114,7 +118,7 @@
             this.dgv1.RowTemplate.Height = 24;
             this.dgv1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv1.Size = new System.Drawing.Size(1133, 516);
+            this.dgv1.Size = new System.Drawing.Size(1133, 471);
             this.dgv1.TabIndex = 7;
             this.dgv1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CellMouseDown);
             // 
@@ -158,10 +162,54 @@
             this.dv_boughDate.Name = "dv_boughDate";
             this.dv_boughDate.ReadOnly = true;
             // 
+            // txtUid
+            // 
+            this.txtUid.Location = new System.Drawing.Point(220, 11);
+            this.txtUid.Name = "txtUid";
+            this.txtUid.Size = new System.Drawing.Size(158, 22);
+            this.txtUid.TabIndex = 0;
+            this.txtUid.Click += new System.EventHandler(this.txtUid_Click);
+            this.txtUid.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lblUid
+            // 
+            this.lblUid.AutoSize = true;
+            this.lblUid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUid.ForeColor = System.Drawing.Color.White;
+            this.lblUid.Location = new System.Drawing.Point(171, 12);
+            this.lblUid.Name = "lblUid";
+            this.lblUid.Size = new System.Drawing.Size(33, 18);
+            this.lblUid.TabIndex = 9;
+            this.lblUid.Text = "Uid";
+            // 
+            // lblBid
+            // 
+            this.lblBid.AutoSize = true;
+            this.lblBid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBid.ForeColor = System.Drawing.Color.White;
+            this.lblBid.Location = new System.Drawing.Point(393, 12);
+            this.lblBid.Name = "lblBid";
+            this.lblBid.Size = new System.Drawing.Size(32, 18);
+            this.lblBid.TabIndex = 11;
+            this.lblBid.Text = "Bid";
+            // 
+            // txtBid
+            // 
+            this.txtBid.Location = new System.Drawing.Point(442, 11);
+            this.txtBid.Name = "txtBid";
+            this.txtBid.Size = new System.Drawing.Size(158, 22);
+            this.txtBid.TabIndex = 1;
+            this.txtBid.Click += new System.EventHandler(this.txtBid_Click);
+            this.txtBid.TextChanged += new System.EventHandler(this.txtBid_TextChanged);
+            // 
             // BuyerHistory
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
+            this.Controls.Add(this.lblBid);
+            this.Controls.Add(this.txtBid);
+            this.Controls.Add(this.lblUid);
+            this.Controls.Add(this.txtUid);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.panel1);
             this.Name = "BuyerHistory";
@@ -171,6 +219,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -186,5 +235,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_boughDate;
+        private System.Windows.Forms.TextBox txtUid;
+        private System.Windows.Forms.Label lblUid;
+        private System.Windows.Forms.Label lblBid;
+        private System.Windows.Forms.TextBox txtBid;
     }
 }

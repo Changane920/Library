@@ -64,9 +64,10 @@
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.Black;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnConfirm.ForeColor = System.Drawing.Color.LightBlue;
             this.btnConfirm.Location = new System.Drawing.Point(18, 388);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(160, 39);
