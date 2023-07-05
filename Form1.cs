@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library.User_Control;
@@ -356,7 +357,6 @@ namespace Library
 
             string username = txtLoginUserName.Text;
             string password = txtLoginPass.Text;
-            //string query = "select * from userdata where username = @username and password = @password";
 
             //get ID
             MySqlCommand getID = new MySqlCommand("select uid from userdata where username = @username", cn);
@@ -397,12 +397,16 @@ namespace Library
                     {
                         MessageBox.Show("Password is incorrect!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtLoginPass.Focus();
+                        attempt = attempt + 1;
+                        disable();
                         return;
                     }
                     else if (!username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
                     {
                         MessageBox.Show("Username is incorrect!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtLoginUserName.Focus();
+                        attempt = attempt + 1;
+                        disable();
                         return;
                     }
                     else if (username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))

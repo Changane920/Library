@@ -2,12 +2,14 @@
 using Library.User;
 using MySql.Data.MySqlClient;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -182,6 +184,7 @@ namespace Library
         {
             GenerateUserControl();
             detailPanel.Visible = false;
+            txtSearch.Visible = false;
 
             getUserName();
         }
@@ -229,19 +232,51 @@ namespace Library
         public DataTable GetSearchItem()
         {
             MySqlConnection cn = Dataconnection.connect();
-            string query = "select * from bookdetail where genre like '"+txtSearch.Text+ "' || b_name like '%"+txtSearch.Text+"%'";
-            MySqlCommand cmd = new MySqlCommand(query, cn);
-            try
+            DataTable dt = new DataTable();
+
+            if (cboType.SelectedIndex == 0)
             {
+                string query = "select * from bookdetail where author_name like '%"+txtSearch.Text+"%'";
+                MySqlCommand cmd = new MySqlCommand(query, cn);
                 MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                mda.Fill(dt);
-                return dt;
-            }
-            catch
+                try
+                {
+                    mda.Fill(dt);
+                }
+                catch
+                {
+                    throw;
+                }
+            } 
+            else if(cboType.SelectedIndex == 1)
             {
-                throw;
+                string query = "select * from bookdetail where b_name like '%" + txtSearch.Text + "%'";
+                MySqlCommand cmd = new MySqlCommand(query, cn);
+                MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
+                try
+                {
+                    mda.Fill(dt);
+                }
+                catch
+                {
+                    throw;
+                }
+            } 
+            else if(cboType.SelectedIndex == 2)
+            {
+                string query = "select * from bookdetail where genre like '%" + txtSearch.Text + "%'";
+                MySqlCommand cmd = new MySqlCommand(query, cn);
+                MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
+                try
+                {
+                    mda.Fill(dt);
+                }
+                catch
+                {
+                    throw;
+                }
             }
+            return dt;
         }
 
         //search function
@@ -273,6 +308,26 @@ namespace Library
                         }
                     }
                 }
+            }
+        }
+
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // index author,bookname,genre
+            if (cboType.SelectedIndex == 0)
+            {
+                txtSearch.Clear();
+                txtSearch.Visible = true;
+            }
+            else if (cboType.SelectedIndex == 1)
+            {
+                txtSearch.Clear();
+                txtSearch.Visible = true;
+            }
+            else if (cboType.SelectedIndex == 2)
+            {
+                txtSearch.Visible = true;
+                txtSearch.Clear();
             }
         }
     }

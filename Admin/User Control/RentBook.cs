@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Library.Admin;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Library.User_Control
 {
     public partial class RentBook : UserControl
     {
+        ReturnIssueForm returnIssueForm = new ReturnIssueForm();
         DataStore dataStore = new DataStore();
         public RentBook(DataStore data)
         {
@@ -36,29 +38,37 @@ namespace Library.User_Control
 
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), reader[4], reader[5]);
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), reader[4], reader[5], reader[6]);
             }
             reader.Close();
         }
 
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Right)
+            {
+                dgv1.ClearSelection();
+
+                //get row when click cell
+                dgv1.CurrentCell = dgv1.Rows[e.RowIndex].Cells[1];
+                dgv1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+
+                contextMenuStrip1.Show(MousePosition);
+
+                DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+                bid = int.Parse(row.Cells[0].Value.ToString());
+                uid = int.Parse(row.Cells[1].Value.ToString());
+
+                returnIssueForm.bid = bid;
+                returnIssueForm.uid = uid;
+                returnIssueForm.rentDate = row.Cells[2].Value.ToString();
+                returnIssueForm.expectedReturnDate = row.Cells[3].Value.ToString();
+                returnIssueForm.actualReturnDate = row.Cells[4].Value.ToString();
+                returnIssueForm.rentIssue = row.Cells[5].Value.ToString();
+                returnIssueForm.returnIssue = row.Cells[6].Value.ToString();
+            }
             try
             {
-                if (e.Button == MouseButtons.Right)
-                {
-                    dgv1.ClearSelection();
-
-                    //get row when click cell
-                    dgv1.CurrentCell = dgv1.Rows[e.RowIndex].Cells[1];
-                    dgv1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
-
-                    contextMenuStrip1.Show(MousePosition);
-
-                    DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
-                    bid = int.Parse(row.Cells[0].Value.ToString());
-                    uid = int.Parse(row.Cells[1].Value.ToString());
-                }
             }
             catch
             {
@@ -89,6 +99,8 @@ namespace Library.User_Control
 
         private void returnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            returnIssueForm.ShowDialog();
+
             DateTime newTime = DateTime.Now;
 
             MySqlConnection cn = Dataconnection.connect();
@@ -99,7 +111,7 @@ namespace Library.User_Control
             cmd.Parameters.AddWithValue("@uid", uid);
             cmd.ExecuteNonQuery();
 
-            MySqlCommand query = new MySqlCommand("select expectReturnDate,actualReturnDate from rentbook where bid = @bid && uid = @uid", cn);
+            MySqlCommand query = new MySqlCommand("select expectReturnDate,actualReturnDate,returnIssue from rentbook where bid = @bid && uid = @uid", cn);
             query.Parameters.AddWithValue("@bid", bid);
             query.Parameters.AddWithValue("uid", uid);
             MySqlDataReader reader = query.ExecuteReader();
@@ -110,8 +122,25 @@ namespace Library.User_Control
                 {
                     TimeSpan expireDate = Convert.ToDateTime(reader["actualReturnDate"]) - Convert.ToDateTime(reader["expectReturnDate"]);
                     int getDay = expireDate.Days;
+                    int result = 100 * getDay;
 
-                    MessageBox.Show($"{getDay} is expired. So 1 day = 100. Total penalty fee is" + 100*getDay,"Form",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    if (!string.IsNullOrEmpty(reader["returnIssue"].ToString()))
+                    {
+                        string error = reader["returnIssue"].ToString();
+                        reader.Close();
+                        MySqlCommand query2 = new MySqlCommand("select price from bookdetail where bid in (select bid from rentbook where bid=@bid && uid=@uid)",cn);
+                        query2.Parameters.AddWithValue("@uid", uid);
+                        query2.Parameters.AddWithValue("@bid", bid);
+                        reader = query2.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            int penaltyFee = int.Parse(reader["price"].ToString()) / 2;
+                            MessageBox.Show($"{getDay} is expired. So 1 day = 100. Total penalty fee is {result}.\nPenalty Fee is {penaltyFee} because of {error}.","Form",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        }
+                    } else
+                    {
+                        MessageBox.Show($"{getDay} is expired. So 1 day = 100. Total penalty fee is {result}.", "Form", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 } 
                 else
                 {
@@ -131,10 +160,9 @@ namespace Library.User_Control
             MySqlCommand cmd = new MySqlCommand(sql, cn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
-
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[4]).ToString("yyyy/MM/dd"), reader[5]);
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[4]).ToString("yyyy/MM/dd"), reader[5], reader[6]);
             }
 
             cn.Close();
@@ -170,7 +198,7 @@ namespace Library.User_Control
 
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[4]).ToString("yyyy/MM/dd"), reader[5]);
+                dgv1.Rows.Add(reader[0], reader[1], Convert.ToDateTime(reader[2]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[3]).ToString("yyyy/MM/dd"), Convert.ToDateTime(reader[4]).ToString("yyyy/MM/dd"), reader[5], reader[6]);
             }
 
             cn.Close();

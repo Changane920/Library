@@ -119,6 +119,12 @@
     <Compile Include="Admin\Dashbord.Designer.cs">
       <DependentUpon>Dashbord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ReturnIssueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ReturnIssueForm.Designer.cs">
+      <DependentUpon>ReturnIssueForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UpdateUserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Dashbord.resx">
       <DependentUpon>Dashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ReturnIssueForm.resx">
+      <DependentUpon>ReturnIssueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UpdateUserInfo.resx">
       <DependentUpon>UpdateUserInfo.cs</DependentUpon>

@@ -47,6 +47,7 @@
             this.dv_ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_ActualReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dv_ReturnIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -96,7 +97,8 @@
             this.dv_RentDate,
             this.dv_ReturnDate,
             this.dv_ActualReturnDate,
-            this.dv_Issue});
+            this.dv_Issue,
+            this.dv_ReturnIssue});
             this.dgv1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgv1.Location = new System.Drawing.Point(152, 47);
             this.dgv1.Name = "dgv1";
@@ -194,7 +196,7 @@
             this.dv_RentDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this.dv_RentDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dv_RentDate.FillWeight = 60F;
+            this.dv_RentDate.FillWeight = 80F;
             this.dv_RentDate.HeaderText = "Rent Date";
             this.dv_RentDate.MinimumWidth = 7;
             this.dv_RentDate.Name = "dv_RentDate";
@@ -202,7 +204,7 @@
             // dv_ReturnDate
             // 
             this.dv_ReturnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_ReturnDate.FillWeight = 60F;
+            this.dv_ReturnDate.FillWeight = 80F;
             this.dv_ReturnDate.HeaderText = "Expected Return Date";
             this.dv_ReturnDate.MinimumWidth = 6;
             this.dv_ReturnDate.Name = "dv_ReturnDate";
@@ -210,7 +212,7 @@
             // dv_ActualReturnDate
             // 
             this.dv_ActualReturnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_ActualReturnDate.FillWeight = 60F;
+            this.dv_ActualReturnDate.FillWeight = 80F;
             this.dv_ActualReturnDate.HeaderText = "Actual Return Date";
             this.dv_ActualReturnDate.MinimumWidth = 6;
             this.dv_ActualReturnDate.Name = "dv_ActualReturnDate";
@@ -218,10 +220,18 @@
             // dv_Issue
             // 
             this.dv_Issue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_Issue.FillWeight = 200F;
-            this.dv_Issue.HeaderText = "Issue";
+            this.dv_Issue.FillWeight = 150F;
+            this.dv_Issue.HeaderText = "Rent Issue";
             this.dv_Issue.MinimumWidth = 6;
             this.dv_Issue.Name = "dv_Issue";
+            // 
+            // dv_ReturnIssue
+            // 
+            this.dv_ReturnIssue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dv_ReturnIssue.FillWeight = 120F;
+            this.dv_ReturnIssue.HeaderText = "Return Issue";
+            this.dv_ReturnIssue.MinimumWidth = 6;
+            this.dv_ReturnIssue.Name = "dv_ReturnIssue";
             // 
             // RentBook
             // 
@@ -261,5 +271,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_ReturnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_ActualReturnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Issue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dv_ReturnIssue;
     }
 }

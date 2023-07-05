@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.txtUid = new System.Windows.Forms.TextBox();
+            this.lblUid = new System.Windows.Forms.Label();
+            this.lblBid = new System.Windows.Forms.Label();
+            this.txtBid = new System.Windows.Forms.TextBox();
             this.dv_bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_uid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_boughDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtUid = new System.Windows.Forms.TextBox();
-            this.lblUid = new System.Windows.Forms.Label();
-            this.lblBid = new System.Windows.Forms.Label();
-            this.txtBid = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -92,14 +92,14 @@
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(73)))), ((int)(((byte)(54)))));
             this.dgv1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv1.ColumnHeadersHeight = 30;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -121,46 +121,6 @@
             this.dgv1.Size = new System.Drawing.Size(1133, 471);
             this.dgv1.TabIndex = 7;
             this.dgv1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CellMouseDown);
-            // 
-            // dv_bid
-            // 
-            this.dv_bid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_bid.HeaderText = "Book ID";
-            this.dv_bid.MinimumWidth = 6;
-            this.dv_bid.Name = "dv_bid";
-            this.dv_bid.ReadOnly = true;
-            // 
-            // dv_uid
-            // 
-            this.dv_uid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_uid.HeaderText = "User ID";
-            this.dv_uid.MinimumWidth = 6;
-            this.dv_uid.Name = "dv_uid";
-            this.dv_uid.ReadOnly = true;
-            // 
-            // dv_Price
-            // 
-            this.dv_Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_Price.HeaderText = "Price";
-            this.dv_Price.MinimumWidth = 6;
-            this.dv_Price.Name = "dv_Price";
-            this.dv_Price.ReadOnly = true;
-            // 
-            // dv_Quantity
-            // 
-            this.dv_Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_Quantity.HeaderText = "Quantity";
-            this.dv_Quantity.MinimumWidth = 6;
-            this.dv_Quantity.Name = "dv_Quantity";
-            this.dv_Quantity.ReadOnly = true;
-            // 
-            // dv_boughDate
-            // 
-            this.dv_boughDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dv_boughDate.HeaderText = "Bough Date";
-            this.dv_boughDate.MinimumWidth = 6;
-            this.dv_boughDate.Name = "dv_boughDate";
-            this.dv_boughDate.ReadOnly = true;
             // 
             // txtUid
             // 
@@ -202,6 +162,46 @@
             this.txtBid.Click += new System.EventHandler(this.txtBid_Click);
             this.txtBid.TextChanged += new System.EventHandler(this.txtBid_TextChanged);
             // 
+            // dv_bid
+            // 
+            this.dv_bid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dv_bid.HeaderText = "Book ID";
+            this.dv_bid.MinimumWidth = 6;
+            this.dv_bid.Name = "dv_bid";
+            this.dv_bid.ReadOnly = true;
+            // 
+            // dv_uid
+            // 
+            this.dv_uid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dv_uid.HeaderText = "User ID";
+            this.dv_uid.MinimumWidth = 6;
+            this.dv_uid.Name = "dv_uid";
+            this.dv_uid.ReadOnly = true;
+            // 
+            // dv_Price
+            // 
+            this.dv_Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dv_Price.HeaderText = "Price";
+            this.dv_Price.MinimumWidth = 6;
+            this.dv_Price.Name = "dv_Price";
+            this.dv_Price.ReadOnly = true;
+            // 
+            // dv_Quantity
+            // 
+            this.dv_Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dv_Quantity.HeaderText = "Quantity";
+            this.dv_Quantity.MinimumWidth = 6;
+            this.dv_Quantity.Name = "dv_Quantity";
+            this.dv_Quantity.ReadOnly = true;
+            // 
+            // dv_boughDate
+            // 
+            this.dv_boughDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dv_boughDate.HeaderText = "Buy Date";
+            this.dv_boughDate.MinimumWidth = 6;
+            this.dv_boughDate.Name = "dv_boughDate";
+            this.dv_boughDate.ReadOnly = true;
+            // 
             // BuyerHistory
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -230,14 +230,14 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.TextBox txtUid;
+        private System.Windows.Forms.Label lblUid;
+        private System.Windows.Forms.Label lblBid;
+        private System.Windows.Forms.TextBox txtBid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_bid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_uid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_boughDate;
-        private System.Windows.Forms.TextBox txtUid;
-        private System.Windows.Forms.Label lblUid;
-        private System.Windows.Forms.Label lblBid;
-        private System.Windows.Forms.TextBox txtBid;
     }
 }
