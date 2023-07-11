@@ -41,6 +41,7 @@
             this.txtBid = new System.Windows.Forms.TextBox();
             this.dv_bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_uid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dv_BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_boughDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,6 +106,7 @@
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dv_bid,
             this.dv_uid,
+            this.dv_BookName,
             this.dv_Price,
             this.dv_Quantity,
             this.dv_boughDate});
@@ -178,6 +180,15 @@
             this.dv_uid.Name = "dv_uid";
             this.dv_uid.ReadOnly = true;
             // 
+            // dv_BookName
+            // 
+            this.dv_BookName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dv_BookName.FillWeight = 200F;
+            this.dv_BookName.HeaderText = "Book Name";
+            this.dv_BookName.MinimumWidth = 6;
+            this.dv_BookName.Name = "dv_BookName";
+            this.dv_BookName.ReadOnly = true;
+            // 
             // dv_Price
             // 
             this.dv_Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -236,6 +247,7 @@
         private System.Windows.Forms.TextBox txtBid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_bid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_uid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dv_BookName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_boughDate;

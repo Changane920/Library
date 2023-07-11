@@ -101,11 +101,12 @@ namespace Library
                     if (reader.Read())
                     {
                         //add data into buyerhistory
-                        MySqlCommand cmd = new MySqlCommand("insert into buyerhistory values (@bid,@uid,@price,@quantity,@boughDate)", cn);
+                        MySqlCommand cmd = new MySqlCommand("insert into buyerhistory values (@bid,@uid,@bName,@price,@quantity,@boughDate)", cn);
 
                         //value assign to cmd
                         cmd.Parameters.AddWithValue("@bid", dataStore.bid);
                         cmd.Parameters.AddWithValue("@uid", dataStore.uid);
+                        cmd.Parameters.AddWithValue("@bName",lblShowTitle.Text);
                         cmd.Parameters.AddWithValue("@price", lblShowPrice.Text);
                         cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
 

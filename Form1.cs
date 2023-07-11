@@ -358,22 +358,12 @@ namespace Library
             string username = txtLoginUserName.Text;
             string password = txtLoginPass.Text;
 
-            //get ID
-            MySqlCommand getID = new MySqlCommand("select uid from userdata where username = @username", cn);
-            getID.Parameters.AddWithValue("@username", username);
-            reader = getID.ExecuteReader();
-
-            while (reader.Read())
-            {
-                dataStore.uid = int.Parse(reader["uid"].ToString().Trim());
-            }
-            reader.Close();
-
             //get account from userdata
-            string query = "select * from userdata where uid = @uid";
+            string query = "select * from userdata where username = @username && password = @password";
 
             MySqlCommand cmd = new MySqlCommand(query, cn);
-            cmd.Parameters.AddWithValue("@uid", dataStore.uid);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
 
             reader = cmd.ExecuteReader();
 
@@ -391,55 +381,37 @@ namespace Library
             }
             else
             {
-                while (reader.Read())
+                if (reader.Read())
                 {
-                    if (username.Equals(reader["username"].ToString().Trim()) && !password.Equals(reader["password"].ToString().Trim()))
-                    {
-                        MessageBox.Show("Password is incorrect!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtLoginPass.Focus();
-                        attempt = attempt + 1;
-                        disable();
-                        return;
-                    }
-                    else if (!username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
-                    {
-                        MessageBox.Show("Username is incorrect!", "Login Password Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtLoginUserName.Focus();
-                        attempt = attempt + 1;
-                        disable();
-                        return;
-                    }
-                    else if (username.Equals(reader["username"].ToString().Trim()) && password.Equals(reader["password"].ToString().Trim()))
-                    {
-                        //dataStore.uid = int.Parse(reader["uid"].ToString());
-                        BuyerHistory orderedBook = new BuyerHistory(dataStore);
 
-                        string type = reader["type"].ToString();
-                        if (type == "Admin")
-                        {
-                            Dashbord ds = new Dashbord(dataStore);
-                            ds.ShowDialog();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            //for userDashboard             
+                    //dataStore.uid = int.Parse(reader["uid"].ToString());
+                    BuyerHistory orderedBook = new BuyerHistory(dataStore);
 
-                            DynamicUCTest duc = new DynamicUCTest(dataStore);
-                            this.Hide();
-                            duc.Show();
-                        }
+                    string type = reader["type"].ToString();
+                    if (type == "Admin")
+                    {
+                        Dashbord ds = new Dashbord(dataStore);
+                        ds.ShowDialog();
+                        this.Hide();
                     }
                     else
                     {
-                        MessageBox.Show("Account doesn't exist.", "Login fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //for userDashboard             
 
-                        txtLoginUserName.Clear();
-                        txtLoginPass.Clear();
-                        txtLoginUserName.Focus();
-                        attempt = attempt + 1;
-                        disable();
+                        DynamicUCTest duc = new DynamicUCTest(dataStore);
+                        this.Hide();
+                        duc.Show();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Account doesn't exist.", "Login fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    txtLoginUserName.Clear();
+                    txtLoginPass.Clear();
+                    txtLoginUserName.Focus();
+                    attempt = attempt + 1;
+                    disable();
                 }
             }
         }

@@ -25,19 +25,25 @@ namespace Library.User_Control
             dataStore = data;
         }
 
-        int bid, uid;
+        public int bid { get; set; }
+        public int uid { get; set; }
+        public string bookName { get; set; }
+        MySqlDataReader reader = null;
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgv1.Rows.Clear();
             MySqlConnection cn = Dataconnection.connect();
+                        
+            reader.Close();
 
+            
             string sql = "select * from buyerrecord";
             MySqlCommand cmd = new MySqlCommand(sql, cn);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
+                dgv1.Rows.Add(reader[0], reader[1], bookName,reader[3], reader[4], Convert.ToDateTime(reader[5]).ToString("yyyy-MM-dd"));
             }
             cn.Close();
         }
@@ -60,7 +66,7 @@ namespace Library.User_Control
                 //insert into datagridview
                 while (reader.Read())
                 {
-                    dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
+                    dgv1.Rows.Add(reader["bid"], reader["uid"], reader["b_name"], reader["price"], reader["quantity"], Convert.ToDateTime(reader["boughDate"]).ToString("yyyy-MM-dd"));
                 }
             }
             catch (MySqlException ex)
@@ -106,12 +112,12 @@ namespace Library.User_Control
             dgv1.Rows.Clear();
             MySqlConnection cn = Dataconnection.connect();
 
-            string sql = "select * from buyerrecord where uid like '%"+txtUid.Text+ "%'";
+            string sql = "select * from buyerrecord where uid like '%" + txtUid.Text+ "%'";
             MySqlCommand cmd = new MySqlCommand(sql, cn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
+                dgv1.Rows.Add(reader[0], reader[1], bookName, reader[3], reader[4], Convert.ToDateTime(reader[5]).ToString("yyyy-MM-dd"));
             }
             cn.Close();
         }
@@ -126,7 +132,7 @@ namespace Library.User_Control
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], Convert.ToDateTime(reader[4]).ToString("yyyy-MM-dd"));
+                dgv1.Rows.Add(reader[0], reader[1], bookName, reader[3], reader[4], Convert.ToDateTime(reader[5]).ToString("yyyy-MM-dd"));
             }
             cn.Close();
         }
@@ -139,6 +145,18 @@ namespace Library.User_Control
         private void txtBid_Click(object sender, EventArgs e)
         {
             txtUid.Clear();
+        }
+
+        public void getBookName()
+        {
+            MySqlConnection cn = Dataconnection.connect();
+            MySqlCommand query = new MySqlCommand("select b_name from bookdetail where bid in (select bid from buyerrecord)", cn);
+            query.Parameters.AddWithValue("bid", bid);
+            reader = query.ExecuteReader();
+            while (reader.Read())
+            {
+                bookName = reader["b_name"].ToString();
+            }
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
