@@ -384,7 +384,7 @@ namespace Library
                 if (reader.Read())
                 {
 
-                    //dataStore.uid = int.Parse(reader["uid"].ToString());
+                    dataStore.uid = int.Parse(reader["uid"].ToString());
                     BuyerHistory orderedBook = new BuyerHistory(dataStore);
 
                     string type = reader["type"].ToString();

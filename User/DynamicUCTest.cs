@@ -35,6 +35,7 @@ namespace Library
             InitializeComponent();
             dataStore = data;
         }
+
         //to call multiple reader
         MySqlDataReader reader = null;
 
@@ -182,11 +183,11 @@ namespace Library
 
         private void DynamicUCTest_Load(object sender, EventArgs e)
         {
+            getUserName();
             GenerateUserControl();
             detailPanel.Visible = false;
             txtSearch.Visible = false;
 
-            getUserName();
         }
 
         private void btnBorrow_Click(object sender, EventArgs e)
@@ -198,8 +199,27 @@ namespace Library
             }
 
             getBookID();
-            BorrowForm borrorwForm = new BorrowForm(dataStore);
-            borrorwForm.ShowDialog();
+
+            MySqlConnection cn = Dataconnection.connect();
+
+            MySqlCommand check_stock = new MySqlCommand("select rent_quantity from bookdetail where bid = @bid", cn);
+            check_stock.Parameters.AddWithValue("@bid", dataStore.bid);
+            MySqlDataReader reader = check_stock.ExecuteReader();
+
+            if (reader.Read())
+            {
+                int check_rent_quantity = int.Parse(reader["rent_quantity"].ToString());
+
+                if (check_rent_quantity == 0)
+                {
+                    MessageBox.Show("Someone already borrowed it!");
+                }
+                else
+                {
+                    BorrowForm borrorwForm = new BorrowForm(dataStore);
+                    borrorwForm.ShowDialog();
+                }
+            }
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
@@ -236,7 +256,7 @@ namespace Library
 
             if (cboType.SelectedIndex == 0)
             {
-                string query = "select * from bookdetail where author_name like '%"+txtSearch.Text+"%'";
+                string query = "select * from bookdetail where author_name like '%" + txtSearch.Text + "%'";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
                 try
@@ -247,8 +267,8 @@ namespace Library
                 {
                     throw;
                 }
-            } 
-            else if(cboType.SelectedIndex == 1)
+            }
+            else if (cboType.SelectedIndex == 1)
             {
                 string query = "select * from bookdetail where b_name like '%" + txtSearch.Text + "%'";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
@@ -261,8 +281,8 @@ namespace Library
                 {
                     throw;
                 }
-            } 
-            else if(cboType.SelectedIndex == 2)
+            }
+            else if (cboType.SelectedIndex == 2)
             {
                 string query = "select * from bookdetail where genre like '%" + txtSearch.Text + "%'";
                 MySqlCommand cmd = new MySqlCommand(query, cn);

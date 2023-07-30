@@ -39,10 +39,6 @@ namespace Library.Admin
         {
             MySqlConnection cn = Dataconnection.connect();
 
-            MySqlCommand query2 = new MySqlCommand("update bookdetail set quantity = quantity + 1 where bid=@bid", cn);
-            query2.Parameters.AddWithValue("@bid", bid);
-            query2.ExecuteNonQuery();
-
             MySqlCommand query = new MySqlCommand("update rentbook set returnIssue = @returnIssue where uid=@uid && bid=@bid",cn);
             query.Parameters.AddWithValue("@returnIssue", txtReturnIssue.Text);
             query.Parameters.AddWithValue("@uid", uid);

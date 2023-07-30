@@ -43,6 +43,7 @@
             this.txtUid = new System.Windows.Forms.TextBox();
             this.dv_bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dv_bookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_RentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_ActualReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +95,7 @@
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dv_bid,
             this.dv_UserId,
+            this.dv_bookName,
             this.dv_RentDate,
             this.dv_ReturnDate,
             this.dv_ActualReturnDate,
@@ -117,19 +119,19 @@
             this.closeToolStripMenuItem,
             this.returnToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(120, 52);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.closeToolStripMenuItem.Text = "Delete";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
@@ -140,7 +142,7 @@
             this.lblBid.ForeColor = System.Drawing.Color.White;
             this.lblBid.Location = new System.Drawing.Point(393, 14);
             this.lblBid.Name = "lblBid";
-            this.lblBid.Size = new System.Drawing.Size(32, 18);
+            this.lblBid.Size = new System.Drawing.Size(28, 15);
             this.lblBid.TabIndex = 15;
             this.lblBid.Text = "Bid";
             // 
@@ -148,7 +150,7 @@
             // 
             this.txtBid.Location = new System.Drawing.Point(442, 13);
             this.txtBid.Name = "txtBid";
-            this.txtBid.Size = new System.Drawing.Size(158, 22);
+            this.txtBid.Size = new System.Drawing.Size(158, 20);
             this.txtBid.TabIndex = 13;
             this.txtBid.Click += new System.EventHandler(this.txtBid_Click);
             this.txtBid.TextChanged += new System.EventHandler(this.txtBid_TextChanged);
@@ -160,7 +162,7 @@
             this.lblUid.ForeColor = System.Drawing.Color.White;
             this.lblUid.Location = new System.Drawing.Point(171, 14);
             this.lblUid.Name = "lblUid";
-            this.lblUid.Size = new System.Drawing.Size(33, 18);
+            this.lblUid.Size = new System.Drawing.Size(29, 15);
             this.lblUid.TabIndex = 14;
             this.lblUid.Text = "Uid";
             // 
@@ -168,7 +170,7 @@
             // 
             this.txtUid.Location = new System.Drawing.Point(220, 13);
             this.txtUid.Name = "txtUid";
-            this.txtUid.Size = new System.Drawing.Size(158, 22);
+            this.txtUid.Size = new System.Drawing.Size(158, 20);
             this.txtUid.TabIndex = 12;
             this.txtUid.Click += new System.EventHandler(this.txtUid_Click);
             this.txtUid.TextChanged += new System.EventHandler(this.txtUid_TextChanged);
@@ -180,7 +182,7 @@
             this.dv_bid.HeaderText = "Book Id";
             this.dv_bid.MinimumWidth = 6;
             this.dv_bid.Name = "dv_bid";
-            this.dv_bid.Width = 82;
+            this.dv_bid.Width = 69;
             // 
             // dv_UserId
             // 
@@ -189,7 +191,12 @@
             this.dv_UserId.HeaderText = "User Id";
             this.dv_UserId.MinimumWidth = 6;
             this.dv_UserId.Name = "dv_UserId";
-            this.dv_UserId.Width = 79;
+            this.dv_UserId.Width = 66;
+            // 
+            // dv_bookName
+            // 
+            this.dv_bookName.HeaderText = "Book Name";
+            this.dv_bookName.Name = "dv_bookName";
             // 
             // dv_RentDate
             // 
@@ -267,6 +274,7 @@
         private System.Windows.Forms.TextBox txtUid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_bid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_UserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dv_bookName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_RentDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_ReturnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_ActualReturnDate;

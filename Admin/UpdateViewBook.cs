@@ -57,11 +57,12 @@ namespace Library
             //connection open
             MySqlConnection cn = Dataconnection.connect();
 
-            MySqlCommand cmd = new MySqlCommand("update bookdetail set b_name=@bookName, author_Name=@authorName, genre=@genre, releaseYear=@releaseYear, image=@image , price=@price, quantity=@quantity where bid=@bid", cn);
+            MySqlCommand cmd = new MySqlCommand("update bookdetail set b_name=@bookName, author_Name=@authorName, genre=@genre, releaseYear=@releaseYear, image=@image , price=@price, quantity=@quantity, rent_quantity = @rentQuantity where bid=@bid", cn);
             cmd.Parameters.AddWithValue("@bookName", txtBookName.Text);
             cmd.Parameters.AddWithValue("@authorName", txtAuthorName.Text);
             cmd.Parameters.AddWithValue("@genre", txtGenre.Text);
             cmd.Parameters.AddWithValue("@releaseYear", txtReleaseYear.Text);
+            cmd.Parameters.AddWithValue("@rentQuantity", txt_rentQuantity.Text);
 
             //image to binary 
             MemoryStream ms = new MemoryStream();

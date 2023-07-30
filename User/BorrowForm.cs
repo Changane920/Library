@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,47 +27,58 @@ namespace Library.User
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             //connection open
-            MySqlConnection cn2 = Dataconnection.connect();
+            MySqlConnection cn = Dataconnection.connect();
+
             //insert bid and uid to rentbook
-            MySqlCommand insertCmd = new MySqlCommand("insert into rentbook(bid,uid) values (@bid,@uid)", cn2);
+            MySqlCommand insertCmd = new MySqlCommand("insert into rentbook(bid,uid) values (@bid,@uid)", cn);
             insertCmd.Parameters.AddWithValue("@bid", dataStore.bid);
             insertCmd.Parameters.AddWithValue("@uid", dataStore.uid);
 
             //run insertCmd
             insertCmd.ExecuteNonQuery();
 
-            cn2.Close();
-
-            //connection open
-            MySqlConnection cn = Dataconnection.connect();
-
             //isnert into rentbook db
-            MySqlCommand cmd = new MySqlCommand("update rentbook set rentDate=@rentDate,expectReturnDate=@returnDate,issue=@issue where bid = @bid",cn);
-
+            MySqlCommand cmd = new MySqlCommand("update rentbook set book_name = (select b_name from bookdetail where bid = @bid), rentDate = @rentDate, expectReturnDate = @returnDate, issue = @issue where bid = @bid", cn);
+            
             //cmd assign value
-            cmd.Parameters.AddWithValue("@rentDate",dtpBorrow.Text);
-            cmd.Parameters.AddWithValue("@returnDate",dtpReturn.Text);
+            cmd.Parameters.AddWithValue("@rentDate", dtpBorrow.Text);
+            cmd.Parameters.AddWithValue("@returnDate", dtpReturn.Text);
             cmd.Parameters.AddWithValue("@issue", txtIssue.Text);
             cmd.Parameters.AddWithValue("@bid", dataStore.bid);
 
             if (Convert.ToBoolean(cmd.ExecuteNonQuery()) == true)
             {
-                if(MessageBox.Show("Are you sure?","Library",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                MySqlCommand check_stock = new MySqlCommand("select rent_quantity from bookdetail where bid = @bid",cn);
+                check_stock.Parameters.AddWithValue("@bid", dataStore.bid);
+                MySqlDataReader reader = check_stock.ExecuteReader();
+
+                if (reader.Read())
                 {
-                    MessageBox.Show("Borrorw Success!", "Borrow Form", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Borrorw Fail!", "Borrow Form", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int check_rent_quantity = int.Parse(reader["rent_quantity"].ToString());
+
+                    if(check_rent_quantity == 1)
+                    {
+                        if (MessageBox.Show("Are you sure?", "Library", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        {
+                            if (MessageBox.Show("Borrorw Success!", "Borrow Form", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                            {
+                                reader.Close();
+                                //reduce quantity bookdetail
+                                MySqlCommand query2 = new MySqlCommand("update bookdetail set rent_quantity = (select rent_quantity) - 1 where bid = @bid", cn);
+                                query2.Parameters.AddWithValue("@bid", dataStore.bid);
+                                query2.ExecuteNonQuery();
+
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Borrorw Fail!", "Borrow Form", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
             }
 
-            //reduce quantity bookdetail
-            MySqlCommand query2 = new MySqlCommand("update bookdetail set quantity = (select quantity) - 1 where bid = @bid", cn);
-            query2.Parameters.AddWithValue("@bid",dataStore.bid);
-            query2.ExecuteNonQuery();
-            
             cn.Close();
         }
 
@@ -98,7 +110,7 @@ namespace Library.User
             }
 
             reader.Close();
-            cn.Close();       
+            cn.Close();
         }
 
         private void dtpBorrow_ValueChanged(object sender, EventArgs e)

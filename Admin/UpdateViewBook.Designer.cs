@@ -44,14 +44,16 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.pboUpdate = new System.Windows.Forms.PictureBox();
+            this.lbl_rentQuantity = new System.Windows.Forms.Label();
+            this.txt_rentQuantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboUpdate)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBookName
             // 
-            this.txtBookName.Location = new System.Drawing.Point(442, 65);
+            this.txtBookName.Location = new System.Drawing.Point(443, 39);
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(149, 22);
+            this.txtBookName.Size = new System.Drawing.Size(149, 20);
             this.txtBookName.TabIndex = 2;
             // 
             // btnUpdate
@@ -62,7 +64,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(501, 357);
+            this.btnUpdate.Location = new System.Drawing.Point(502, 368);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 32);
             this.btnUpdate.TabIndex = 8;
@@ -74,9 +76,9 @@
             // 
             this.lblBookName.AutoSize = true;
             this.lblBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookName.Location = new System.Drawing.Point(286, 67);
+            this.lblBookName.Location = new System.Drawing.Point(287, 41);
             this.lblBookName.Name = "lblBookName";
-            this.lblBookName.Size = new System.Drawing.Size(96, 20);
+            this.lblBookName.Size = new System.Drawing.Size(81, 17);
             this.lblBookName.TabIndex = 2;
             this.lblBookName.Text = "Book Name";
             // 
@@ -84,51 +86,51 @@
             // 
             this.lblAuthorName.AutoSize = true;
             this.lblAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthorName.Location = new System.Drawing.Point(286, 115);
+            this.lblAuthorName.Location = new System.Drawing.Point(287, 89);
             this.lblAuthorName.Name = "lblAuthorName";
-            this.lblAuthorName.Size = new System.Drawing.Size(107, 20);
+            this.lblAuthorName.Size = new System.Drawing.Size(91, 17);
             this.lblAuthorName.TabIndex = 4;
             this.lblAuthorName.Text = "Author Name";
             // 
             // txtAuthorName
             // 
-            this.txtAuthorName.Location = new System.Drawing.Point(442, 113);
+            this.txtAuthorName.Location = new System.Drawing.Point(443, 87);
             this.txtAuthorName.Name = "txtAuthorName";
-            this.txtAuthorName.Size = new System.Drawing.Size(149, 22);
+            this.txtAuthorName.Size = new System.Drawing.Size(149, 20);
             this.txtAuthorName.TabIndex = 3;
             // 
             // lblReleaseYear
             // 
             this.lblReleaseYear.AutoSize = true;
             this.lblReleaseYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReleaseYear.Location = new System.Drawing.Point(286, 211);
+            this.lblReleaseYear.Location = new System.Drawing.Point(287, 185);
             this.lblReleaseYear.Name = "lblReleaseYear";
-            this.lblReleaseYear.Size = new System.Drawing.Size(109, 20);
+            this.lblReleaseYear.Size = new System.Drawing.Size(94, 17);
             this.lblReleaseYear.TabIndex = 6;
             this.lblReleaseYear.Text = "Release Year";
             // 
             // txtReleaseYear
             // 
-            this.txtReleaseYear.Location = new System.Drawing.Point(442, 209);
+            this.txtReleaseYear.Location = new System.Drawing.Point(443, 183);
             this.txtReleaseYear.Name = "txtReleaseYear";
-            this.txtReleaseYear.Size = new System.Drawing.Size(149, 22);
+            this.txtReleaseYear.Size = new System.Drawing.Size(149, 20);
             this.txtReleaseYear.TabIndex = 5;
             // 
             // lblGenre
             // 
             this.lblGenre.AutoSize = true;
             this.lblGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(286, 163);
+            this.lblGenre.Location = new System.Drawing.Point(287, 137);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(55, 20);
+            this.lblGenre.Size = new System.Drawing.Size(48, 17);
             this.lblGenre.TabIndex = 8;
             this.lblGenre.Text = "Genre";
             // 
             // txtGenre
             // 
-            this.txtGenre.Location = new System.Drawing.Point(442, 161);
+            this.txtGenre.Location = new System.Drawing.Point(443, 135);
             this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(149, 22);
+            this.txtGenre.Size = new System.Drawing.Size(149, 20);
             this.txtGenre.TabIndex = 4;
             // 
             // lblUpdateForm
@@ -137,7 +139,7 @@
             this.lblUpdateForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateForm.Location = new System.Drawing.Point(39, 27);
             this.lblUpdateForm.Name = "lblUpdateForm";
-            this.lblUpdateForm.Size = new System.Drawing.Size(160, 29);
+            this.lblUpdateForm.Size = new System.Drawing.Size(125, 25);
             this.lblUpdateForm.TabIndex = 9;
             this.lblUpdateForm.Text = "Update Form";
             // 
@@ -160,34 +162,34 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(286, 259);
+            this.lblPrice.Location = new System.Drawing.Point(287, 233);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(48, 20);
+            this.lblPrice.Size = new System.Drawing.Size(40, 17);
             this.lblPrice.TabIndex = 13;
             this.lblPrice.Text = "Price";
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(442, 257);
+            this.txtPrice.Location = new System.Drawing.Point(443, 231);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(149, 22);
+            this.txtPrice.Size = new System.Drawing.Size(149, 20);
             this.txtPrice.TabIndex = 6;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(286, 307);
+            this.lblQuantity.Location = new System.Drawing.Point(287, 281);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(71, 20);
+            this.lblQuantity.Size = new System.Drawing.Size(61, 17);
             this.lblQuantity.TabIndex = 15;
             this.lblQuantity.Text = "Quantity";
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(442, 305);
+            this.txtQuantity.Location = new System.Drawing.Point(443, 279);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(149, 22);
+            this.txtQuantity.Size = new System.Drawing.Size(149, 20);
             this.txtQuantity.TabIndex = 7;
             // 
             // pboUpdate
@@ -199,11 +201,30 @@
             this.pboUpdate.TabIndex = 10;
             this.pboUpdate.TabStop = false;
             // 
+            // lbl_rentQuantity
+            // 
+            this.lbl_rentQuantity.AutoSize = true;
+            this.lbl_rentQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rentQuantity.Location = new System.Drawing.Point(287, 328);
+            this.lbl_rentQuantity.Name = "lbl_rentQuantity";
+            this.lbl_rentQuantity.Size = new System.Drawing.Size(95, 17);
+            this.lbl_rentQuantity.TabIndex = 17;
+            this.lbl_rentQuantity.Text = "Rent Quantity";
+            // 
+            // txt_rentQuantity
+            // 
+            this.txt_rentQuantity.Location = new System.Drawing.Point(443, 326);
+            this.txt_rentQuantity.Name = "txt_rentQuantity";
+            this.txt_rentQuantity.Size = new System.Drawing.Size(149, 20);
+            this.txt_rentQuantity.TabIndex = 16;
+            // 
             // UpdateViewBook
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(684, 442);
+            this.Controls.Add(this.lbl_rentQuantity);
+            this.Controls.Add(this.txt_rentQuantity);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.lblPrice);
@@ -249,5 +270,7 @@
         public System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblQuantity;
         public System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lbl_rentQuantity;
+        public System.Windows.Forms.TextBox txt_rentQuantity;
     }
 }

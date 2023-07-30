@@ -46,6 +46,7 @@
             this.dv_Image = new System.Windows.Forms.DataGridViewImageColumn();
             this.dv_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dv_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dv_rent_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -81,19 +82,19 @@
             this.updateToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(124, 52);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.closeToolStripMenuItem.Text = "Delete";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -123,7 +124,8 @@
             this.dv_ReleaseYear,
             this.dv_Image,
             this.dv_price,
-            this.dv_quantity});
+            this.dv_quantity,
+            this.dv_rent_quantity});
             this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv1.Location = new System.Drawing.Point(152, 0);
@@ -205,6 +207,12 @@
             this.dv_quantity.ReadOnly = true;
             this.dv_quantity.Width = 125;
             // 
+            // dv_rent_quantity
+            // 
+            this.dv_rent_quantity.HeaderText = "rent_quantity";
+            this.dv_rent_quantity.Name = "dv_rent_quantity";
+            this.dv_rent_quantity.ReadOnly = true;
+            // 
             // ViewBook
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -237,5 +245,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dv_Image;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn dv_quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dv_rent_quantity;
     }
 }

@@ -38,7 +38,7 @@ namespace Library.User_Control
 
             while (reader.Read())
             {
-                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6], reader[7]);
+                dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6], reader[7], reader[8]);
             }
 
             cn.Close();
@@ -58,7 +58,7 @@ namespace Library.User_Control
 
                 while (reader.Read())
                 {
-                    dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6], reader[7]);
+                    dgv1.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6], reader[7], reader[8]);
                 }
             }
             catch (MySqlException ex)
